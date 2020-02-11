@@ -1,0 +1,13 @@
+name: "brandon-leff"
+output_dir: "."
+navbar:
+  title: "BNS Survey "
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Demographics"
+      href: demographics.html
+output:
+  html_document:
+    theme: readable
+    highlight: pygments
