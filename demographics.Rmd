@@ -124,19 +124,27 @@ a <- bns %>%
 names(a) <- "N"
 a$lab <- paste0(a$N, " (", round(a$N/NROW(bns)*100,0), ")%")
 a$type <- stringr::str_replace(rownames(a), "age_dep_", "")
+a$type <- factor(a$type)
+a$type <- a$type %>% fct_relevel(levels = c("lt5", "6_12", "13_18", "19_60", "over61"))
+a$type <- factor(a$type, labels = c("0-5", "6-12", "13-18", "19-60", "61+"))
 ggplot(a, aes(x=type, y=N)) + geom_col(fill="#336699") +  
         geom_text(aes(label=lab, y=N+2)) + xlab("Age of Dependents") +
         scale_y_continuous(limits=c(0,10)) + 
         coord_flip()
 ```
 
+About 5% (n = 8) of the total number of respondents say they have dependents that are between 6-12 years old, 5% (n = 7) say they have dependents that are between 19-60 years old, and only 1 person says they have dependents that are over 61 years old.
+
 # Student Status
 
-### firstgen
+### Are you a first generation student?
 
 ```{r}
-plot_frq(bns$firstgen)
+bns$firstgenplot <- bns$firstgen %>% factor(labels = c("No", "Yes"))
+plot_frq(bns$firstgenplot) + xlab("First Generation Student")
 ```
+
+The vast majority of respondents (94.7% n = 142) are first generation college students with only 8 (5.3%) not being fist generation students.
 
 ### What is your major at CSU, Chico?
 
@@ -155,21 +163,25 @@ plot_frq(bns$SD2) + xlab("GPA")
 ### How many units (rounded up) are you enrolled in for the current semester at CSU Chico?
 
 ```{r}
-#bns$units_relevel <- bns$SD3_1
-#bns$units_relevel[bns$units_relevel < 12] <- "< 12"
-#bns$units_relevel[bns$units_relevel <= 15 & bns$units_relevel > 12] <- "13-15"
-#plot_frq(bns$units_relevel, ylim = c(0,60)) + xlab("Units Enrolled")
+bns$units_relevel <- bns$SD3_1
+bns$units_relevel[bns$units_relevel < 12] <- "0-11"
+bns$units_relevel[bns$units_relevel > 12 & bns$units_relevel <= 15] <- "13-15"
+bns$units_relevel[bns$units_relevel >= 16] <- "16+"
+plot_frq(bns$units_relevel, ylim = c(0,100)) + xlab("Units Enrolled")
 ```
 
-When looking at the graph above, the majority of students (30.2% n = 45) are enrolled in 15 units, the next highest count is 24.2% (n = 36) being enrolled in 12 units. 
+53.7% (n = 80) of students filling out this survey are enrolled in 13-15 units in the semester of the survey, a quarter of the students (24.2% n = 36) are enrolled in 12 units, and 20.8% (n = 31) are enrolled in 16 or more units.
 
 ### If currently enrolled at more than one college, how many units (rounded up) are you enrolled in for the current semester at other colleges (NOT CSU Chico)?
 
 ```{r}
-plot_frq(bns$SD4_1, ylim = c(0,4)) + xlab("Units Enrolled Outside CSU Chico")
+bns$outside_units <- bns$SD4_1
+bns$outside_units[bns$outside_units <= 3] <- "1-3"
+bns$outside_units[bns$outside_units >= 13] <- "13+"
+plot_frq(bns$outside_units, ylim = c(0,5)) + xlab("Units Enrolled Outside CSU Chico")
 ```
 
-Out of the students who said they are enrolled at more than one college, 25.0% (n = 2) reported that they are enrolled in 12 units outside of CSU Chico, 25.0% (n = 2) reported that they are enrolled in 13 units outside of CSU Chico, and 1 student (12.5%) each reported that they are taking 1, 3, 10, and 15 units outside of CSU Chico respectively.
+Out of the students who reported they are taking units outside of CSU Chico, about 37.5% (n = 3) are taking 13 or more units in a different college, 25.0% (n = 2) are taking either 1-3 units or 12 units respectively, and only 1 person (12.5%) is enrolled in 10 units outside of CSU Chico.
 
 # Class Standing `r emo::ji("star")`
 
@@ -196,4 +208,55 @@ plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
 ```
 
 92.7% (n = 139) of respondents reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.
+
+# Student Identifiers 
+
+### I receive services through the Accessibility Resource Center or Disability Support Services Center
+
+```{r}
+plot_frq(bns$SD9_2) + xlab("Services Through ARC or DSSC")
+```
+
+The majority of the students in this survey (87.3% n = 131) report they do not receive services through the
+Accessibility Resource Center or Disability Support Services Center and 12.7% (n = 19) report they do.
+
+### I identify as a(an)... `r emo::ji("star")`
+
+* transfer student
+* former foster youth/child
+* an International student
+* non-California resident (Not International)
+* Upward Bound,Educational Talent Search,AVID, TRIO, or other college prep program alumni student
+* EOP (Educational Opportunity Program) student
+* REACH (Raising Educational Achievement in Collaborative Hubs) student
+* ESL (English as a Second Language) student
+* Veteran of military service
+* Active duty military personnel
+* student athlete
+* DREAM (i.e. undocumented) student
+* DACA (i.e. Deferred Action for Childhood Arrivals) student
+
+```{r}
+npct <- function(var){
+  paste0(sum(var=="Yes", na.rm=TRUE), "/", sum(!is.na(var)), 
+         " (", round(mean(var=="Yes", na.rm = TRUE)*100,1), "%)")
+}
+
+bns %>% summarise(Transfer = npct(SD9_1), 
+                  Foster = npct(SD9_3), 
+                  International = npct(SD9_4), 
+                  `Non-Resident` = npct(SD9_5), 
+                  `College Prep` = npct(SD9_6), 
+                  EOP = npct(SD9_7), 
+                  REACH = npct(SD9a_1), 
+                  ESL = npct(SD9a_2), 
+                  Veteran = npct(SD9a_3), 
+                  `Active Duty` = npct(SD9a_4), 
+                  `Student Athlete` = npct(SD9a_5), 
+                  Dreamer = npct(SD9a_6),
+                  DACA = npct(SD9a_7)) %>%
+  t() %>% kable()
+
+```
+
 
