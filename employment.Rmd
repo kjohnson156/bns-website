@@ -1,0 +1,83 @@
+---
+title: "Employment"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+---
+
+```{r, include=FALSE}
+library(ggplot2)
+library(sjPlot)
+library(kableExtra)
+library(knitr)
+library(dplyr)
+library(tidyverse)
+
+load("../data/bns_clean.Rdata")
+bns <- out
+
+opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
+# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
+
+# Helper functions to display text answers without blank lines
+display.text <- function(data, var){
+  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
+           kable(col.names=NULL) %>% 
+           kable_styling(full_width = FALSE, 
+           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
+}
+
+sjPlot::set_theme(base = theme_bw())
+```
+
+# Supported Employment `r emo::ji("star")`
+
+### I am approved, awarded, or accepted for work study (with or without a work study job)
+
+```{r}
+plot_frq(bns$SD9b_1) + xlab ("Work Study")
+```
+
+88.0% (n = 125) of respondents reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
+
+### I participate in CalWorks(i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)
+
+```{r}
+plot_frq(bns$SD9b_2) + xlab("CalWorks/AFDC")
+```
+
+76.0% (n = 111) of respondents report that they do not participate in Calworks or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
+
+### I participate in the Job Opportunities and Basic Skills (JOBS) Program
+
+```{r}
+plot_frq(bns$SD9b_3) + xlab("JOBS Program")
+```
+
+95.2% (n = 138) of respondents report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.
+
+### I participate in the CalFresh Employment or Training (CFET) Program
+
+```{r}
+plot_frq(bns$SD9b_4) + xlab("CFET Program")
+```
+
+83.3% (n = 120) of respondents report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.
+
+### I am enrolled in Workforce Innovation and Opportunity Act (WIOA)
+
+```{r}
+plot_frq(bns$SD9b_5) + xlab("WIOA")
+```
+
+All respondents in this survey (100% n = 147) report that they are not enrolled in Workforce Innovation and Opportunity Act.
+
+### I am enrolled in Cooperative Agencies Resources for Education (CARE)
+
+```{r}
+plot_frq(bns$SD9b_6) + xlab("CARE")
+```
+
+A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.
+

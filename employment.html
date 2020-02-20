@@ -11,7 +11,7 @@
 
 
 
-<title>Basic Needs Survey</title>
+<title>Employment</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
@@ -231,6 +234,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -238,6 +304,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -275,23 +351,49 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Basic Needs Survey</h1>
+<h1 class="title toc-ignore">Employment</h1>
 
 </div>
 
 
-<p>The Center for Healthy Communities developed the Basic Needs Survey (BNS), and administered it to undergraduate EOP students at CSU, Chico from April 2, 2019 to May 2, 2019. A total of 150 students participated in the survey.</p>
-<p>This report provides a top level descriptive analysis of each question students responded to in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate further resarch hypotheses and questions.</p>
-<p>Questions marked with a ⭐ are questions of interest for the EOP office.</p>
-<p>Questions about the survey or data analysis presented in this report can be directed to:</p>
-<div id="stephanie-bianco" class="section level4">
-<h4><a href="https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml">Stephanie Bianco</a></h4>
-<p>Email: <a href="mailto:sbianco@csuchico.edu" class="email">sbianco@csuchico.edu</a></p>
-<p>Phone: 530-898-4022</p>
+<div id="supported-employment" class="section level1">
+<h1>Supported Employment ⭐</h1>
+<div id="i-am-approved-awarded-or-accepted-for-work-study-with-or-without-a-work-study-job" class="section level3">
+<h3>I am approved, awarded, or accepted for work study (with or without a work study job)</h3>
+<p><img src="employment_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>88.0% (n = 125) of respondents reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.</p>
+</div>
+<div id="i-participate-in-calworksi.e.tanf-or-cash-aid-for-needy-families-or-aid-to-families-with-dependent-children-afdc" class="section level3">
+<h3>I participate in CalWorks(i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)</h3>
+<p><img src="employment_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>76.0% (n = 111) of respondents report that they do not participate in Calworks or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.</p>
+</div>
+<div id="i-participate-in-the-job-opportunities-and-basic-skills-jobs-program" class="section level3">
+<h3>I participate in the Job Opportunities and Basic Skills (JOBS) Program</h3>
+<p><img src="employment_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>95.2% (n = 138) of respondents report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.</p>
+</div>
+<div id="i-participate-in-the-calfresh-employment-or-training-cfet-program" class="section level3">
+<h3>I participate in the CalFresh Employment or Training (CFET) Program</h3>
+<p><img src="employment_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>83.3% (n = 120) of respondents report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.</p>
+</div>
+<div id="i-am-enrolled-in-workforce-innovation-and-opportunity-act-wioa" class="section level3">
+<h3>I am enrolled in Workforce Innovation and Opportunity Act (WIOA)</h3>
+<p><img src="employment_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>All respondents in this survey (100% n = 147) report that they are not enrolled in Workforce Innovation and Opportunity Act.</p>
+</div>
+<div id="i-am-enrolled-in-cooperative-agencies-resources-for-education-care" class="section level3">
+<h3>I am enrolled in Cooperative Agencies Resources for Education (CARE)</h3>
+<p><img src="employment_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.</p>
+</div>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -324,6 +426,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
