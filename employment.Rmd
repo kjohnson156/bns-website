@@ -81,3 +81,59 @@ plot_frq(bns$SD9b_6) + xlab("CARE")
 
 A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.
 
+### I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program
+
+```{r}
+plot_frq(bns$SD9b_7) + xlab("MESA")
+```
+
+The majority of respondents (95.3% n = 142) reported that they are not enrolled in the MESA Program while 4.7% (n = 7) report they are.
+
+### I am a student attending CSU, receiving Cal Grant A OR B
+
+```{r}
+plot_frq(bns$SD9c_1) + xlab("Cal Grant A or B")
+```
+
+87.4% (n = 125) of respondents reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.
+
+### I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)
+
+```{r}
+plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
+```
+
+A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.
+
+### I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare
+
+```{r}
+plot_frq(bns$SD9c_3) + xlab("Parental Control")
+```
+
+All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.
+
+### I am a single parent of a dependent household member under the age of 12
+
+```{r}
+plot_frq(bns$SD9c_4) + xlab("Single Parent")
+```
+
+Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
+
+### Which best describes your current housing situation? 
+
+```{r}
+test1 <- as.data.frame(table(bns$SD10))
+test2 <- as.data.frame(prop.table(table(bns$SD10)))
+finaltest <- left_join(test1, test2, by = "Var1")
+names(finaltest) <- c("Housing Situation", "n", "%")
+finaltest$`%` <- round(finaltest$`%` * 100, 2)
+finaltest %>% kable() %>% kable_styling()
+```
+
+# Employment `r emo::ji("star")`
+
+
+
+
