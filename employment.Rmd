@@ -18,7 +18,7 @@ load("../data/bns_clean.Rdata")
 bns <- out
 
 opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
+# don't forget when done with session to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
 
 # Helper functions to display text answers without blank lines
 display.text <- function(data, var){
@@ -133,6 +133,124 @@ finaltest %>% kable() %>% kable_styling()
 ```
 
 # Employment `r emo::ji("star")`
+
+### Paid Job or Paid Internship
+
+```{r}
+bns$paid_hours <- bns$FSI2
+bns$paid_hours[bns$paid_hours >= 1 & bns$paid_hours <= 5] <- "1-5"
+bns$paid_hours[bns$paid_hours == 6] <- "6-10"
+bns$paid_hours[bns$paid_hours == 7] <- "6-10"
+bns$paid_hours[bns$paid_hours == 8] <- "6-10"
+bns$paid_hours[bns$paid_hours == 9] <- "6-10"
+bns$paid_hours[bns$paid_hours == 10] <- "6-10"
+bns$paid_hours[bns$paid_hours > 10 & bns$paid_hours <= 15] <- "11-15"
+bns$paid_hours[bns$paid_hours > 15 & bns$paid_hours <= 20] <- "16-20"
+bns$paid_hours <- factor(bns$paid_hours, labels = c("0", "1-5", "6-10", "11-15", "16-20", "21"))
+```
+
+```{r}
+plot_frq(bns$paid_hours) + xlab("Paid Hours")
+```
+
+The majority of the students in this survey (n = 51 34.2%) reported that they work 0 paid hours a week, roughly 20% (n = 29) reported they work 6-10 paid hours a week and only 4.7% (n = 7) work 1-5 paid hours a week.
+
+### Unpaid Position or Volunteer
+
+For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.
+
+```{r}
+bns$unpaid_hours <- bns$FSI3
+bns$unpaid_hours[bns$unpaid_hours >= 1 & bns$unpaid_hours <= 5] <- "1-5"
+bns$unpaid_hours[bns$unpaid_hours == 6] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 7] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 8] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 9] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 10] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours > 10 & bns$unpaid_hours <= 15] <- "11-15"
+bns$unpaid_hours[bns$unpaid_hours > 15 & bns$unpaid_hours <= 20] <- "16-20"
+bns$unpaid_hours <- factor(bns$unpaid_hours, labels = c("0", "1-5", "6-10", "11-15", "16-20", "21"))
+```
+
+```{r}
+plot_frq(bns$unpaid_hours) + xlab("Unpaid Hours")
+```
+
+The majority of respondents (n = 87 58.4%) reported that they work 0 unpaid hours a week, 19.5% (n = 29) work 1-5 unpaid hours, and lastly 12.1% (n = 18) reported they work 21 unpaid hours a week.
+
+### If you are currently in a PAID position, what is your average hourly wage from all jobsworked during the academic year?
+
+```{r}
+plot_frq(bns$FSI4) + coord_flip() + xlab("Hourly Wage")
+```
+
+### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you?
+
+```{r}
+#plot_frq(bns$FSI5)
+```
+
+### How much is your household's gross monthly income (before taxes and not including financial aid)?
+
+```{r}
+plot_frq(bns$FSI6) + coord_flip() + xlab("Gross Monthly Income")
+```
+
+### Before attending college, did you expect to find or want to find a PAID job or PAID internshipduring the academic year to help cover your college expenses and personal expenses while in college?
+
+```{r}
+plot_frq(bns$FSI7) + xlab("Expected to Find Paid Job")
+```
+
+### If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?
+
+```{r}
+plot_frq(bns$FSI8) + xlab("Success in Finding Job")
+```
+
+## If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
+
+### I was offered jobs,but did not have transportation to a job or available jobs were not within walking/bike riding/busdistance of my residence or campus.
+
+```{r}
+plot_frq(bns$FSI9_1) + xlab("No Transportation")
+```
+
+### I searched and applied for jobs but was not offered a job. 
+
+```{r}
+plot_frq(bns$FSI9_2) + xlab("Not Offered a Job")
+```
+
+### I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.
+
+```{r}
+plot_frq(bns$FSI9_3) + xlab("Schedule Conflict")
+```
+
+### I searched for jobs, but family obligations interfered with any jobs offered to me.
+
+```{r}
+plot_frq(bns$FSI9_4) + xlab("Family Obligations Interfered")
+```
+
+### I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.
+
+```{r}
+plot_frq(bns$FSI9_5) + xlab("No Time")
+```
+
+### I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.
+
+```{r}
+plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
+```
+
+### I did not expect to or want to find a job while in college.
+
+```{r}
+plot_frq(bns$FSI9_7) + xlab("Did Not Expect a Job")
+```
 
 
 
