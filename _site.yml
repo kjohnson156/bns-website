@@ -9,6 +9,8 @@ navbar:
       href: demographics.html
     - text: "Employment"
       href: employment.html
+    - text: "CalFresh Participation"
+      href: cfo_participation.html
 output:
   html_document:
     theme: readable
