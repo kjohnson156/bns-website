@@ -97,7 +97,7 @@ plot_frq(bns$SRC1a_1) + xlab("Work in Paid Position")
 plot_frq(bns$SRC1a_2) + xlab("More Time for Unpaid Work")
 ```
 
-20.0% (n = 20) of respondents agreed that they had more time for unpaid work when they received CalFresh benefits and 26.0% (n = 26) disagreed with the statement. 33.0% (n = 33) neither agreed or disagreed.
+20.0% (n = 20) of respondents agreed that they had more time for unpaid work when they received CalFresh benefits and 26.0% (n = 26) disagreed with the statement. 33.0% (n = 33) neither agreed nor disagreed.
 
 ### I have/had more money to pay for bills (rent, utility bills, clothes, etc.)
 
@@ -105,7 +105,7 @@ plot_frq(bns$SRC1a_2) + xlab("More Time for Unpaid Work")
 plot_frq(bns$SRC1a_3) + xlab("More Money for Bills")
 ```
 
-35.0% (n = 35) of respondents agreed that they had more money to pay bills when they received CalFresh benefits and 18.0% (n = 18) disagreed with the statement. 20.0% (n = 20) neither agreed or disagreed.
+35.0% (n = 35) of respondents agreed that they had more money to pay bills when they received CalFresh benefits and 18.0% (n = 18) disagreed with the statement. 20.0% (n = 20) neither agreed nor disagreed.
 
 ### I have/had more money for entertainment and social activities(ex. attending movies, shopping, and bars or parties, etc.)
 
@@ -113,7 +113,7 @@ plot_frq(bns$SRC1a_3) + xlab("More Money for Bills")
 plot_frq(bns$SRC1a_4) + xlab("More Money for Entertainment") + ylim(c(0,35))
 ```
 
-31.0% (n = 31) of respondents agreed that they had more money for entertainment and social activities when they received CalFresh benefits and 25.0% (n = 25) disagreed with the statement. 25.0% (n = 20) neither agreed or disagreed.
+31.0% (n = 31) of respondents agreed that they had more money for entertainment and social activities when they received CalFresh benefits and 25.0% (n = 25) disagreed with the statement. 25.0% (n = 20) neither agreed nor disagreed.
 
 ### I am/was able to shop/shopped more frequently at the farmers’ market.
 
@@ -121,7 +121,7 @@ plot_frq(bns$SRC1a_4) + xlab("More Money for Entertainment") + ylim(c(0,35))
 plot_frq(bns$SRC1a_5) + xlab("Farmers' Market") + ylim(c(0,35))
 ```
 
-23.0% (n = 23) of respondents agreed that they were able to shop more at the farmers' market when they received CalFresh benefits and 24.0% (n = 24) disagreed with the statement. 27.0% (n = 27) neither agreed or disagreed.
+23.0% (n = 23) of respondents agreed that they were able to shop more at the farmers' market when they received CalFresh benefits and 24.0% (n = 24) disagreed with the statement. 27.0% (n = 27) neither agreed nor disagreed.
 
 ### I have/had learned more about healthier foods.
 
@@ -129,7 +129,7 @@ plot_frq(bns$SRC1a_5) + xlab("Farmers' Market") + ylim(c(0,35))
 plot_frq(bns$SRC1a_6) + xlab("Learned More about Healthy Foods")
 ```
 
-48.0% (n = 48) of respondents agreed that they learned more about healthier foods when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 15.0% (n = 15) neither agreed or disagreed.
+48.0% (n = 48) of respondents agreed that they learned more about healthier foods when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 15.0% (n = 15) neither agreed nor disagreed.
 
 ### I am/was able to purchase/purchased healthier foods.
 
@@ -137,7 +137,7 @@ plot_frq(bns$SRC1a_6) + xlab("Learned More about Healthy Foods")
 plot_frq(bns$SRC1a_7) + xlab("Purchase Healthier Foods")
 ```
 
-40.0% (n = 40) of respondents agreed that they were able to purchase healthier foods when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 15.0% (n = 15) neither agreed or disagreed.
+40.0% (n = 40) of respondents agreed that they were able to purchase healthier foods when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 15.0% (n = 15) neither agreed nor disagreed.
 
 ### I cook/cooked more frequently at home.
 
@@ -145,7 +145,7 @@ plot_frq(bns$SRC1a_7) + xlab("Purchase Healthier Foods")
 plot_frq(bns$SRC1b_1) + xlab("Cook More Frequently at Home")
 ```
 
-40.0% (n = 40) of respondents agreed that they were able to cook more frequently at home when they received CalFresh benefits and 2.0% (n = 2) disagreed with the statement. 7.0% (n = 7) neither agreed or disagreed.
+40.0% (n = 40) of respondents agreed that they were able to cook more frequently at home when they received CalFresh benefits and 2.0% (n = 2) disagreed with the statement. 7.0% (n = 7) neither agreed nor disagreed.
 
 ### I consume/consumed a healthier diet.
 
@@ -153,7 +153,7 @@ plot_frq(bns$SRC1b_1) + xlab("Cook More Frequently at Home")
 plot_frq(bns$SRC1b_2) + xlab("Healthier Diet")
 ```
 
-45.0% (n = 45) of respondents agreed that were able to consume a healthier diet when they received CalFresh benefits and 7.0% (n = 7) disagreed with the statement. 14.0% (n = 14) neither agreed or disagreed.
+45.0% (n = 45) of respondents agreed that were able to consume a healthier diet when they received CalFresh benefits and 7.0% (n = 7) disagreed with the statement. 14.0% (n = 14) neither agreed nor disagreed.
 
 ### I consume/consumed less fast food.
 
@@ -161,7 +161,7 @@ plot_frq(bns$SRC1b_2) + xlab("Healthier Diet")
 plot_frq(bns$SRC1b_3) + xlab("Less Fast Food")
 ```
 
-44.0% (n = 44) of respondents agreed that they eat less fast food when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 11.0% (n = 11) neither agreed or disagreed.
+44.0% (n = 44) of respondents agreed that they eat less fast food when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 11.0% (n = 11) neither agreed nor disagreed.
 
 ### I consume/consumed fewer processed foods.
 
@@ -169,7 +169,7 @@ plot_frq(bns$SRC1b_3) + xlab("Less Fast Food")
 plot_frq(bns$SRC1b_4) + xlab("Less Processed Foods")
 ```
 
-38.0% (n = 38) of respondents agreed that they eat less processed foods when they received CalFresh benefits and 7.0% (n = 7) disagreed with the statement. 23.0% (n = 23) neither agreed or disagreed.
+38.0% (n = 38) of respondents agreed that they eat less processed foods when they received CalFresh benefits and 7.0% (n = 7) disagreed with the statement. 23.0% (n = 23) neither agreed nor disagreed.
 
 ### I consume/consumed fewer sugar-sweetened beverages like soda and energy drinks.
 
@@ -177,7 +177,7 @@ plot_frq(bns$SRC1b_4) + xlab("Less Processed Foods")
 plot_frq(bns$SRC1b_5) + xlab("Fewer Sugar-Sweetened Beverages")
 ```
 
-37.0% (n = 37) of respondents agreed that they drink fewer sugar-sweetened drinks when they received CalFresh benefits and 11.0% (n = 11) disagreed with the statement. 17.0% (n = 17) neither agreed or disagreed.
+37.0% (n = 37) of respondents agreed that they drink fewer sugar-sweetened drinks when they received CalFresh benefits and 11.0% (n = 11) disagreed with the statement. 17.0% (n = 17) neither agreed nor disagreed.
 
 ### I consume/consumed less alcohol or fewer alcoholic beverages.
 
@@ -185,7 +185,7 @@ plot_frq(bns$SRC1b_5) + xlab("Fewer Sugar-Sweetened Beverages")
 plot_frq(bns$SRC1b_6) + xlab("Less Alcoholic Beverages")
 ```
 
-29.0% (n = 29) of respondents agreed that they drink fewer alcoholic drinks when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 28.0% (n = 28) neither agreed or disagreed.
+29.0% (n = 29) of respondents agreed that they drink fewer alcoholic drinks when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 28.0% (n = 28) neither agreed nor disagreed.
 
 ### I enroll/enrolled in more classes.
 
@@ -193,7 +193,95 @@ plot_frq(bns$SRC1b_6) + xlab("Less Alcoholic Beverages")
 plot_frq(bns$SRC1c_1) + xlab("Enrolled in More Classes")
 ```
 
-38.0% (n = 38) of respondents agreed that they enrolled in more classes when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 39.0% (n = 39) neither agreed or disagreed.
+38.0% (n = 38) of respondents agreed that they enrolled in more classes when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 39.0% (n = 39) neither agreed nor disagreed.
+
+### I concentrate/concentrated more in class(es)
+
+```{r}
+plot_frq(bns$SRC1c_2) + xlab("Concentrated in Class")
+```
+
+55.0% (n = 55) of respondents agreed that they concentrated more in classes when they received CalFresh benefits and 3.0% (n = 3) disagreed with the statement. 20.0% (n = 20) neither agreed nor disagreed.
+
+### My grades have/had improved
+
+```{r}
+plot_frq(bns$SRC1c_3) + xlab("Grades Improved")
+```
+
+41.0% (n = 41) of respondents agreed that their grades improved when they received CalFresh benefits and 2.0% (n = 2) disagreed with the statement. 36.0% (n = 36) neither agreed nor disagreed.
+
+### I have/had more time to study for exams and quizzes
+
+```{r}
+plot_frq(bns$SRC1c_4) + xlab("More Time to Study for Exams")
+```
+
+41.0% (n = 41) of respondents agreed that they had more time to study for exams and quizzes when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 34.0% (n = 34) neither agreed nor disagreed.
+
+### I have/had more time to read course materials or prepare for the next class`
+
+```{r}
+plot_frq(bns$SRC1c_5) + xlab("More Time to Read/Prepare for Class")
+```
+
+42.4% (n = 42) of respondents agreed that they had more time to read and prepare for their next class when they received CalFresh benefits and 5.1% (n = 5) disagreed with the statement. 33.3% (n = 33) neither agreed nor disagreed.
+
+### I have/had more time to finish homework or course assignments and activities
+
+```{r}
+plot_frq(bns$SRC1c_6) + xlab("More Time to Finish Homework/Activities")
+```
+
+41.0% (n = 41) of respondents agreed that they had more time to finish homework and other course assignments when they received CalFresh benefits and 5.0% (n = 5) disagreed with the statement. 32.0% (n = 32) neither agreed nor disagreed.
+
+### I have/had more time to go to my professors’office hours when needed
+
+```{r}
+plot_frq(bns$SRC1c_7) + xlab("More Time to Go to Office Hours")
+```
+
+38.0% (n = 38) of respondents agreed that they had more time to go to their professors' office hours when they received CalFresh benefits and 8.0% (n = 8) disagreed with the statement. 35.0% (n = 35) neither agreed nor disagreed.
+
+### I have/had more time to attend all classes as they are scheduled
+
+```{r}
+plot_frq(bns$SRC1c_8) + xlab("More Time to Attend All Classes")
+```
+
+39.4% (n = 39) of respondents agreed that they had more time to attend all their classes as they are scheduled when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 34.3% (n = 34) neither agreed nor disagreed.
+
+### I have/had more time to go on field trips or field work placements
+
+```{r}
+plot_frq(bns$SRC1c_9) + xlab("More Time to Go on Field Trips")
+```
+
+31.0% (n = 31) of respondents agreed that they had more time to go on field trips or field work placements when they received CalFresh benefits and 8.0% (n = 8) disagreed with the statement. 42.0% (n = 42) neither agreed nor disagreed.
+
+### My sleep quality has/had improved
+
+```{r}
+plot_frq(bns$SRC1c_10) + xlab("Sleep Quality Improved")
+```
+
+39.4% (n = 39) of respondents agreed that their sleep quality improved when they received CalFresh benefits and 10.1% (n = 10) disagreed with the statement. 26.3% (n = 26) neither agreed nor disagreed.
+
+### My stress level has/had decreased. (ex. I’m not stressed about having money for food or bills)
+
+```{r}
+plot_frq(bns$SRC1c_11) + xlab("Stress Levels Decreased")
+```
+
+34.0% (n = 34) of respondents agreed that their stress levels decreased when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 14.0% (n = 14) neither agreed nor disagreed. Additionally, 35.0% (n = 35) strongly agreed that their stress levels decreased.
+
+
+
+
+
+
+
+
 
 
 
