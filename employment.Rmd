@@ -258,7 +258,7 @@ plot_frq(bns$FSI9_4) + xlab("Family Obligations Interfered")
 plot_frq(bns$FSI9_5) + xlab("No Time")
 ```
 
-25.4% (n = 28) disagreed with 
+25.4% (n = 28) disagreed that they expected to find a job, but never searched for one because their school work did not allow time and 23.6% (n = 26) agreed with the statement. 20.0% (n = 22) neither agreed nor disagreed with the statement.
 
 ### I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.
 
@@ -266,12 +266,159 @@ plot_frq(bns$FSI9_5) + xlab("No Time")
 plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
 ```
 
+33.6% (n = 37) disagreed that they expected to find a job, but due to other unexpected obligations, they did not find a job and 12.7% (n = 14) agreed with the statement. 25.4% (n = 28) neither agreed nor disagreed with the statement.
+
 ### I did not expect to or want to find a job while in college.
 
 ```{r}
 plot_frq(bns$FSI9_7) + xlab("Did Not Expect a Job")
 ```
 
+### Do you receive Supplemental Security Income (SSI)* in California?
 
+```{r}
+plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
+```
 
+The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.
+
+### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?
+
+```{r}
+plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
+```
+
+The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another souce and 3.0% (n = 4) reported they do.
+
+# Time Related Expenses `r emo::ji("star")`
+
+### Please estimate the monthly housing/rent/mortgage bill (garbage may or may not be included) that you pay for with your own money.
+
+```{r}
+plot_frq(bns$ME1, vjust="center", y.offset=5) + xlab("Monthly Housing Bill") + coord_flip()
+```
+
+43.5% (n = 64) of respondents reported that they pay \$100-\$500 a month in housing/rent with their own money and 35.4% (n = 52) reported that they pay \$500-\$1,000 a month. Only 7.5% (n = 11) reported that they pay \$0 because someone else pays.
+
+### If someone else pays for you, how much do they pay each month?
+
+```{r}
+plot_frq(bns$ME1a, y.offset = 0.1) + xlab("Monthly Housing Bill") + ylim(c(0,5))
+```
+
+Out of the respondents who said they have others pay for their monthly rent/housing, 44.4% (n = 4) reported that they pay \$500-\$1000 and 33.3% (n = 3) pay \$1000-\$1500.
+
+### Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.
+
+```{r}
+plot_frq(bns$ME2) + xlab("Monthly Utility Bill")
+```
+
+51.0% (n = 74) of respondents reported that they pay \$50-\$99 a month for their utility bill, 20.7% (n = 30) reported that they pay less than \$50 a month, and only 9.7% (n = 14) reported that they pay \$0 because someone else pays.
+
+### If someone else pays for you, how much do they pay each month?
+
+```{r}
+plot_frq(bns$ME2a, y.offset = .3) + xlab("Monthly Utility Bill") + ylim(c(0,8))
+```
+
+Out of people who have someone else pay for their monthly utility bill, 50% (n = 6) reported that they pay \$100+ a month and 33.3% (n = 4) reported they pay \$50-\$99 a month, and 16.7% (n = 2) reported they pay less than \$50 a month.
+
+### Please estimate your monthly internet, cable tv/satellite, and streaming service bills that you pay for with your own money.
+
+```{r}
+plot_frq(bns$ME3) + xlab("Monthly Internet/TV Bill")
+```
+
+59.0% (n = 85) of respondents reported that they pay less than `$50` a month for their 
+### If someone else pays for you, how much do they pay each month?
+
+```{r}
+plot_frq(bns$ME3a, y.offset = .3) + xlab("Monthly Internet/TV Bill") + ylim(c(0,8))
+```
+
+### Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.
+
+```{r}
+bns$ME4[bns$ME4 == "$0- I donâ€™t have a mobile/cellphone or landline phone"] <- "$0-I don’t have a mobile/cellphone or landline phone"
+plot_frq(bns$ME4) + xlab("Monthly Cell Phone Bill")
+```
+
+### If someone else pays for you, how much do they pay each month?
+
+```{r}
+plot_frq(bns$ME4a) + xlab("Monthly Cell Phone Bill") + ylim(c(0,25))
+```
+
+### Please estimate the monthly medical expenses (including insurance premiums, co-pays, deductibles, medications, etc.) that you pay for with your own money.
+
+```{r}
+plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
+```
+
+### What type of health insurance do you currently have?
+
+```{r}
+plot_frq(bns$ME6)
+```
+
+### Please estimate the monthly transportation bills that you pay for with your own money
+
+```{r}
+bns$ME7 <- as.character(bns$ME7)
+```
+
+```{r}
+bns$ME7[bns$ME7 == "$200-$249/mo" | bns$ME7 == "$250-$300/mo" | bns$ME7 == "$300+/mo"] <- "$200+/mo"
+bns$ME7[bns$ME7 == "$100-$149/mo" | bns$ME7 == "$150-$199/mo"] <- "$100-$199/mo"
+```
+
+```{r}
+bns$ME7 <- factor(bns$ME7, labels = c("0","<$25/mo", "$25-$99/mo", "$100-$199/mo", "$200+/mo"))
+```
+
+```{r}
+plot_frq(bns$ME7, vjust = "center", y.offset = 3) + xlab("Monthly Transportation Bills") + coord_flip()
+```
+
+### Please estimate your monthly expenses for any other regularly occurring expenses such as credit cardpayments, gym membership, child care expenses, etc. that you pay for with your own money.
+
+```{r}
+plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses") + coord_flip()
+```
+
+### Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.
+
+```{r}
+levels(bns$ME9)[levels(bns$ME9) == "$351 to 450 per semester"] <- "$351-$450/term"
+plot_frq(bns$ME9, vjust = "center", y.offset = 2) + coord_flip() + xlab("Semester Expenses")
+```
+
+### Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.
+
+```{r}
+levels(bns$ME10)
+```
+
+```{r}
+levels(bns$ME10)[levels(bns$ME10) == "I donâ€™t have any other food expenses because I have a meal plan."] <- "0"
+bns$ME10 <- bns$ME10 %>% fct_relevel(c("0", "<$10/wk","$10-$49/wk",                                                       
+"$50-$99/wk",                                                        
+"$100-$149/wk" ,                                                     
+"$150-$200/wk" ,                                                     
+ "$200+/wk"))
+plot_frq(bns$ME10, vjust = "center", y.offset = 3) + xlab("Weekly Food Expenses") + coord_flip()
+```
+
+### Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.
+
+```{r}
+plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
+```
+
+### Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.
+
+```{r}
+plot_frq(bns$ME12) + xlab("Weekly Expenses for Cigarettes/Marijuana")
+```
 

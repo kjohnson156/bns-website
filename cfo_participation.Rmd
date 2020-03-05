@@ -82,7 +82,7 @@ plot_frq(bns$SRC1_6) + xlab("Free/Reduced Lunch")
 6.8% (n = 10) of respondents reported that they currently have free or reduced lunch meals at district schools for theit children or dependents, 45.3% (n = 67) reported that they have in the past, and 37.2% (n = 55) reported they have heard of it but have never used it. Only 10.8% (n = 16) reported they have never heard of it.
 
 ## Check all statements below that apply to you while you receive or received CalFresh benefits `r emo::ji("star")`
-
+<!---
 ### I am/was able to work or worked fewer hours each week in a PAID position.
 
 ```{r}
@@ -274,8 +274,23 @@ plot_frq(bns$SRC1c_11) + xlab("Stress Levels Decreased")
 ```
 
 34.0% (n = 34) of respondents agreed that their stress levels decreased when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 14.0% (n = 14) neither agreed nor disagreed. Additionally, 35.0% (n = 35) strongly agreed that their stress levels decreased.
+--->
 
+# Barriers to CalFresh `r emo::ji("star")`
 
+barrier_toolong
+barrier_toodiff
+barrier_campusnothelpful
+bns$barrier_countynotsupportive
+barrier_verif
+barrier_office
+barrier_transportation
+barrier_eligible
+barrier_family
+barrier_embarrassed
+barrier_belief
+barrier_need
+barrier_other
 
 
 
