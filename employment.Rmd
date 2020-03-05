@@ -31,7 +31,7 @@ display.text <- function(data, var){
 sjPlot::set_theme(base = theme_bw())
 ```
 
-# Supported Employment `r emo::ji("star")`
+# Supported Employment `r emo::ji("star")` `r emo::ji("pencil")`
 
 ### I am approved, awarded, or accepted for work study (with or without a work study job)
 
@@ -121,7 +121,7 @@ plot_frq(bns$SD9c_4) + xlab("Single Parent")
 
 Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
 
-### Which best describes your current housing situation? 
+### Which best describes your current housing situation? `r emo::ji("pencil")`
 
 ```{r}
 test1 <- as.data.frame(table(bns$SD10))
@@ -134,7 +134,7 @@ finaltest %>% kable() %>% kable_styling()
 
 # Employment `r emo::ji("star")`
 
-### Paid Job or Paid Internship
+### Paid Job or Paid Internship `r emo::ji("pencil")`
 
 ```{r}
 bns$paid_hours <- bns$FSI2
@@ -155,7 +155,7 @@ plot_frq(bns$paid_hours) + xlab("Paid Hours")
 
 The majority of the students in this survey (n = 51 34.2%) reported that they work 0 paid hours a week, roughly 20% (n = 29) reported they work 6-10 paid hours a week and only 4.7% (n = 7) work 1-5 paid hours a week.
 
-### Unpaid Position or Volunteer
+### Unpaid Position or Volunteer `r emo::ji("pencil")`
 
 For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.
 
@@ -186,7 +186,7 @@ plot_frq(bns$FSI4) + coord_flip() + xlab("Hourly Wage")
 
 35.8% (n = 53) of the respondents reported that they make between `$12.00` and `$12.99`/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.
 
-### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you?
+### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you? `r emo::ji("pencil")`
 
 ```{r}
 bns$adj_size <- bns$household_size
@@ -196,7 +196,7 @@ plot_frq(bns$adj_size) + xlab("Household Size")
 
 63.5% (n = 94) reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
 
-### How much is your household's gross monthly income (before taxes and not including financial aid)?
+### How much is your household's gross monthly income (before taxes and not including financial aid)? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$FSI6) + coord_flip() + xlab("Gross Monthly Income")
@@ -274,7 +274,7 @@ plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
 plot_frq(bns$FSI9_7) + xlab("Did Not Expect a Job")
 ```
 
-### Do you receive Supplemental Security Income (SSI)* in California?
+### Do you receive Supplemental Security Income (SSI)* in California? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
@@ -282,7 +282,7 @@ plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
 
 The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.
 
-### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?
+### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
@@ -365,7 +365,7 @@ plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
 
 The majority of respondents (76.3% n = 100) reported that they pay \$0 a month in medical expenses because they have no medical expenses, 12.2% (n = 16) reported that they pay \$25-\$100 a month, and 9.9% (n = 13) reported that they pay less than \$25 a month.
 
-### What type of health insurance do you currently have?
+### What type of health insurance do you currently have? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$ME6)
@@ -390,11 +390,15 @@ bns$ME7 <- factor(bns$ME7, labels = c("0","<$25/mo", "$25-$99/mo", "$100-$199/mo
 plot_frq(bns$ME7, vjust = "center", y.offset = 3) + xlab("Monthly Transportation Bills") + coord_flip()
 ```
 
-### Please estimate your monthly expenses for any other regularly occurring expenses such as credit cardpayments, gym membership, child care expenses, etc. that you pay for with your own money.
+33.1% (n = 47) of respondents reported that they pay less than \$25 a month on transportation, 22.5% (n = 32) reported that they pay \$100-\$199 a month on transportation, and 9.2% (n = 13) reported that they pay \$0.
+
+### Please estimate your monthly expenses for any other regularly occurring expenses such as credit card payments, gym membership, child care expenses, etc. that you pay for with your own money.
 
 ```{r}
 plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses") + coord_flip()
 ```
+
+35.5% of respondents reported that they pay \$0 for other regularly occuring expenses, 15.9% (n = 22) reported that they pay \$100-\$149 a month, and 14.5% (n = 20) reported that they pay \$10-\$49 a month.
 
 ### Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.
 
@@ -402,6 +406,8 @@ plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses
 levels(bns$ME9)[levels(bns$ME9) == "$351 to 450 per semester"] <- "$351-$450/term"
 plot_frq(bns$ME9, vjust = "center", y.offset = 2) + coord_flip() + xlab("Semester Expenses")
 ```
+
+20.8% (n = 30) of respondents reported that they pay \$151-\$250 a semester on expenses such as school supplies, textbooks, and school related printing expenses, 18.1% (n = 26) reported that they pay \$251-\$350 a semester, and 15.3% (n = 22) reported that they pay \$451-\$550 a semester.
 
 ### Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.
 
@@ -416,8 +422,10 @@ bns$ME10 <- bns$ME10 %>% fct_relevel(c("0", "<$10/wk","$10-$49/wk",
 "$100-$149/wk" ,                                                     
 "$150-$200/wk" ,                                                     
  "$200+/wk"))
-plot_frq(bns$ME10, vjust = "center", y.offset = 3) + xlab("Weekly Food Expenses") + coord_flip()
+plot_frq(bns$ME10, vjust = "center", y.offset = 4) + xlab("Weekly Food Expenses") + coord_flip()
 ```
+
+40.1% (n = 57) of respondents reported that they pay \$50-\$99 a week for food and non-alcoholic beverages, 27.5% (n = 39) reported that they pay \$10-\$49 a week, and 4.9% (n = 7) reported that they pay \$0.
 
 ### Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.
 
@@ -425,9 +433,13 @@ plot_frq(bns$ME10, vjust = "center", y.offset = 3) + xlab("Weekly Food Expenses"
 plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
 ```
 
+31.5% (n = 45) of respondents reported that they pay less than \$10 a week on alcoholic beverages, 19.6% reported that they pay \$10-\$49 a week, and 42.7% (n = 61) reported that they pay \$0 a week on alcoholic beverages.
+
 ### Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.
 
 ```{r}
 plot_frq(bns$ME12) + xlab("Weekly Expenses for Cigarettes/Marijuana")
 ```
+
+84.5% (n = 120) of respondents reported that they pay \$0 a week on cigarettes and tobacco, 5.6% (n = 8) reported they pay less than \$10 a week, and 6.3% (n = 9) reported they pay \$10-\$49 a week.
 

@@ -31,9 +31,9 @@ display.text <- function(data, var){
 sjPlot::set_theme(base = theme_bw())
 ```
 
-# Gender `r emo::ji("star")`
+# Gender `r emo::ji("star")` 
 
-### The US Census lists the following choices for sex: Male Female. Please choose the one that most closely fits your identity.
+### The US Census lists the following choices for sex: Male Female. Please choose the one that most closely fits your identity. `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D2) + xlab("Sex")
@@ -41,7 +41,7 @@ plot_frq(bns$D2) + xlab("Sex")
 
 70% of the respondents (n = 105) are Female and 30% of the respondents (n = 45) are Male.
 
-### What was your sex assigned at birth?
+### What was your sex assigned at birth? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D3, ylim = c(0,130)) + xlab("Sex")
@@ -49,7 +49,7 @@ plot_frq(bns$D3, ylim = c(0,130)) + xlab("Sex")
 
 70.7% of the respondents (n = 106) were Female at birth and 29.3% of the respondents (n = 44) were Male at birth.
 
-### What is your gender identity?
+### What is your gender identity? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D4) + xlab("Gender Identity")
@@ -59,7 +59,7 @@ plot_frq(bns$D4) + xlab("Gender Identity")
 
 # Race / Ethnicity `r emo::ji("star")`
 
-### How do you identify your race?
+### How do you identify your race? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D5, wrap.labels = 10) + xlab("Race")
@@ -67,7 +67,7 @@ plot_frq(bns$D5, wrap.labels = 10) + xlab("Race")
 
 A majority of the respondents did not list their race (48.2% n = 68). 22.0% (n = 31) of the respondents identified as white, followed by 9.9% (n = 14) of the respondents identified as Black or African American. 9.9% (n = 14) of the respondents identified as Mixed race, and 7.8% (n = 11) identified as Asian. Lastly, 1.4% (n = 2) identified as American Indian or Alaska Native, and 0.7% (n = 1) identified as Native Hawaiian or other Pacific Islander.
 
-### How do you identify your ethnicity?
+### How do you identify your ethnicity? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D6) + xlab("Ethnicity")
@@ -77,7 +77,7 @@ plot_frq(bns$D6) + xlab("Ethnicity")
 
 # Marital Status
 
-### What is your marital status? 
+### What is your marital status? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D7) + xlab("Marital Status")
@@ -105,7 +105,7 @@ Out of the participants that were not a U.S. citizen, 54.5% (n = 6) report they 
 
 # Dependents
 
-### How many dependents receive more than 50% of their financial support from you?
+### How many dependents receive more than 50% of their financial support from you? `r emo::ji("pencil")`
 
 ```{r}
 bns$dependents_relevel <- bns$D9_1
@@ -137,7 +137,7 @@ About 5% (n = 8) of the total number of respondents say they have dependents tha
 
 # Student Status
 
-### Are you a first generation student?
+### Are you a first generation student? `r emo::ji("pencil")`
 
 ```{r}
 bns$firstgenplot <- bns$firstgen %>% factor(labels = c("No", "Yes"))
@@ -152,7 +152,7 @@ The vast majority of respondents (94.7% n = 142) are first generation college st
 table(tolower(bns$major)) %>% kable(col.names = c("Major", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
 ```
 
-### What is your approximate overall Grade Point Average (GPA) for your current degree in progress? `r emo::ji("star")`
+### What is your approximate overall Grade Point Average (GPA) for your current degree in progress? `r emo::ji("star")` `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$SD2) + xlab("GPA")
@@ -160,7 +160,7 @@ plot_frq(bns$SD2) + xlab("GPA")
 
 34.0% (n = 51) reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.
 
-### How many units (rounded up) are you enrolled in for the current semester at CSU Chico?
+### How many units (rounded up) are you enrolled in for the current semester at CSU Chico? `r emo::ji("pencil")`
 
 ```{r}
 bns$units_relevel <- bns$SD3_1
@@ -185,7 +185,7 @@ Out of the students who reported they are taking units outside of CSU Chico, abo
 
 # Class Standing `r emo::ji("star")`
 
-### Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester):
+### Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester): `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + xlab("Class Level")
@@ -193,15 +193,15 @@ plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + x
 
 45.0% (n = 67) of respondents reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
 
-### What month and year did you first attend Chico State?
+### What month and year did you first attend Chico State? `r emo::ji("pencil")`
 
 Out of all the students who took this survey, the student who attended Chico state the earliest started in `r min(bns$matriculation_date)` and the student who attended the latest started in `r max(bns$matriculation_date)`.
 
-### What month and year do you expect to graduate from Chico State to earn your current degree?
+### What month and year do you expect to graduate from Chico State to earn your current degree? `r emo::ji("pencil")`
 
 Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in `r min(bns$exp_grad_date, na.rm = TRUE)` and the student who expects to graduate the latest expects to graduate in `r max(bns$exp_grad_date, na.rm = TRUE)`.
 
-### Have you taken a semester off since you began attending Chico State? If so, how many? 
+### Have you taken a semester off since you began attending Chico State? If so, how many? `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
@@ -209,7 +209,7 @@ plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
 
 92.7% (n = 139) of respondents reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.
 
-# Student Identifiers 
+# Student Identifiers `r emo::ji("pencil")`
 
 ### I receive services through the Accessibility Resource Center or Disability Support Services Center
 

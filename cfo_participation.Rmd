@@ -31,7 +31,7 @@ display.text <- function(data, var){
 sjPlot::set_theme(base = theme_bw())
 ```
 
-## Participation in Programs `r emo::ji("star")`
+## Participation in Programs `r emo::ji("star")` `r emo::ji("pencil")`
 
 ### CalFresh(also known as Food Stamps or SNAP benefits)
 
@@ -291,6 +291,86 @@ barrier_embarrassed
 barrier_belief
 barrier_need
 barrier_other
+
+# Temporary Home for Questions `r emo::ji("pencil")`
+
+## At any time in the last 12 months, have you utilized campus food pantries or local food banks for food? 
+```{r}
+plot_frq(bns$SRC2, vjust = "center", y.offset = 4) + coord_flip() + xlab("Utilized Campus Food Pantries")
+```
+
+## “In the last 12 months, the food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.” Was that often, sometimes,or nevertrue for (you/your household)?
+
+```{r}
+plot_frq(bns$HH3) + xlab("Food Didn't Last + No Money to Get More")
+```
+
+## “In the last 12 months, (I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true for (you/your household)?
+
+```{r}
+plot_frq(bns$HH4) + xlab("Couldn't Afford Balanced Meals")
+```
+
+## In the last 12 months, did you or other adults in your household,ever cut the size of your meals or skip meals because there wasn’t enough money for food?
+
+```{r}
+plot_frq(bns$AD1) + xlab("Cut Size/Skip Meals Because No Money")
+```
+
+## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+
+```{r}
+plot_frq(bns$AD1a) + xlab("Cut Size/Skip Meals Because No Money")
+```
+
+## In the last 12 months, did you ever eat less than you felt you should because there was not enough money for food?
+
+```{r}
+plot_frq(bns$AD2) + xlab("Ate Less Because Not Enough Money")
+```
+
+## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+
+```{r}
+plot_frq(bns$AD2a) + xlab("Ate Less Because Not Enough Money")
+```
+
+## In the last 12 months, were you ever hungry but you did not eat because there wasn’t enough money for food?
+
+```{r}
+plot_frq(bns$AD3) + xlab("Hungry Because Not Eating Due to Money")
+```
+
+## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+
+```{r}
+plot_frq(bns$AD3a) + xlab("Hungry Because Not Eating Due to Money")
+```
+
+## In the last 12 months, did you lose weight because there wasn’t enough money for food?
+
+```{r}
+plot_frq(bns$AD4) + xlab("Lose Weight Because No Money for Food")
+```
+
+## In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn’t enough money for food? 
+
+```{r}
+plot_frq(bns$AD5) + xlab("Adults did not Eat Because No Money")
+```
+
+## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+
+```{r}
+plot_frq(bns$AD5a) + xlab("Adults did not Eat Because No Money") + ylim(c(0,20))
+```
+
+## Food Insecure
+
+```{r}
+bns$food_insecurity <- factor(bns$food_insecurity, labels = c("No", "Yes"))
+plot_frq(bns$food_insecurity) + xlab("Food Insecure")
+```
 
 
 
