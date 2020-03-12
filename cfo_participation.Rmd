@@ -13,6 +13,7 @@ library(kableExtra)
 library(knitr)
 library(dplyr)
 library(tidyverse)
+library(formattable)
 
 load("../data/bns_clean.Rdata")
 bns <- out
@@ -318,26 +319,49 @@ plot_likert(src3,
 
 # Barriers to CalFresh `r emo::ji("star")`
 
-barrier_toolong
-barrier_toodiff
-barrier_campusnothelpful
-bns$barrier_countynotsupportive
-barrier_verif
-barrier_office
-barrier_transportation
-barrier_eligible
-barrier_family
-barrier_embarrassed
-barrier_belief
-barrier_need
-barrier_other
+```{r}
+library(questionr)
+```
+
+```{r}
+barrier <- bns %>% select(barrier_toolong,
+barrier_toodiff,
+barrier_campusnothelpful,
+bns$barrier_countynotsupportive,
+barrier_verif,
+barrier_office,
+barrier_transportation,
+barrier_eligible,
+barrier_family,
+barrier_embarrassed,
+barrier_belief,
+barrier_need,
+barrier_other)
+```
+
+```{r}
+multi.table(barrier) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
+
 
 # Temporary Home for Questions `r emo::ji("pencil")`
 
-## At any time in the last 12 months, have you utilized campus food pantries or local food banks for food? 
+## At any time in the last 12 months, have you utilized campus food pantries or local food banks for food?
+
+```{r}
+levels(bns$SRC2)
+```
+
+```{r}
+levels(bns$SRC2)[levels(bns$SRC2) == "Yes, three or four times per month."] <- "Yes 3-4/mo"
+bns$SRC2 <- bns$SRC2 %>% fct_relevel(c("No need","No do not know location", "No do not like food", "Yes 1-2/mo",  "Yes 3-4/mo", "Yes 5-6/mo", "Yes 7-8/mo", "Yes >8/mo"))
+```
+
 ```{r}
 plot_frq(bns$SRC2, vjust = "center", y.offset = 4) + coord_flip() + xlab("Utilized Campus Food Pantries")
 ```
+
+47.6% (n = 69) of the respondents reported that they utilized the food pantry for 1-2 months in the last year, 7.6% (n = 11) reported that they utilized the pantry more than 8 months in the last year, and 17.2% (n = 25) reported they did not utilize the food pantry because there was no need.
 
 ## “In the last 12 months, the food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.” Was that often, sometimes,or nevertrue for (you/your household)?
 
