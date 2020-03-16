@@ -33,23 +33,23 @@ sjPlot::set_theme(base = theme_bw())
 
 # Gender `r emo::ji("star")` 
 
-### The US Census lists the following choices for sex: Male Female. Please choose the one that most closely fits your identity. `r emo::ji("pencil")`
+**The US Census lists the following choices for sex: Male Female. Please choose the one that most closely fits your identity.** `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D2) + xlab("Sex")
 ```
 
-70% of the respondents (n = 105) are Female and 30% of the respondents (n = 45) are Male.
+Of the 150 participants, 70% of the respondents (n = 105) are Female and 30% of the respondents (n = 45) are Male.
 
-### What was your sex assigned at birth? `r emo::ji("pencil")`
+**What was your sex assigned at birth?** `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D3, ylim = c(0,130)) + xlab("Sex")
 ```
 
-70.7% of the respondents (n = 106) were Female at birth and 29.3% of the respondents (n = 44) were Male at birth.
+Most respondants, or 70.7%, (n = 106) reported that they were Female at birth and 29.3% of the respondents (n = 44) were Male at birth.
 
-### What is your gender identity? `r emo::ji("pencil")`
+**What is your gender identity?** `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D4) + xlab("Gender Identity")
