@@ -24,7 +24,8 @@ display.text <- function(data, var){
 # brandon set global theme option here for plots
 ```
 
-The Center for Healthy Communities developed the Basic Needs Survey (BNS), and administered it to undergraduate EOP students at CSU, Chico from April 2, 2019 to May 2, 2019. A total of 150 students participated in the survey.
+The Center for Healthy Communities developed the Basic Needs Survey (BNS), 
+and administered it to undergraduate EOP students at CSU, Chico from April 2, 2019 to May 2, 2019. A total of 150 students participated in the survey.
 
 This report provides a top level descriptive analysis of each question students responded to in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate further resarch hypotheses and questions.
   
