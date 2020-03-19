@@ -32,7 +32,7 @@ display.text <- function(data, var){
 sjPlot::set_theme(base = theme_bw())
 ```
 
-## Participation in Programs `r emo::ji("star")` `r emo::ji("pencil")`
+# Participation in Programs `r emo::ji("star")` `r emo::ji("pencil")`
 
 ### CalFresh(also known as Food Stamps or SNAP benefits)
 
@@ -277,28 +277,28 @@ plot_frq(bns$SRC1c_11) + xlab("Stress Levels Decreased")
 34.0% (n = 34) of respondents agreed that their stress levels decreased when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 14.0% (n = 14) neither agreed nor disagreed. Additionally, 35.0% (n = 35) strongly agreed that their stress levels decreased.
 --->
 
-```{r}
+```{r, fig.width = 8}
 src1 <- bns %>% select(starts_with("SRC1a_"))
 names(src1) <- c("Fewer Hours Paid", "More Time for Unpaid", "More Money for Bills", "More Money for Entertainment", "Shop More at Farmers' Market", "Learned More about Healthy Foods", "Able to Purchase Healthy Foods")
 plot_likert(src1, 
-            grid.range = c(1.2, 1.4),
+            grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw()
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
-```{r}
+```{r, fig.width=8}
 src2 <- bns %>% select(starts_with("SRC1b_"))
 names(src2) <- c("Cook at Home", "Consumed Healthier Diet", "Consumed Less Fast Food", "Consumed Fewer Processed Foods", "Consumed Fewer Sweetened Drinks", "Consumed Fewer Alcoholic Beverages")
 plot_likert(src2, 
-            grid.range = c(1.2, 1.4),
+            grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw()
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 
-```{r}
+```{r, fig.width=8}
 src3 <- bns %>% select(starts_with("SRC1c_"))
 names(src3) <- c("Enrolled in More Classes",
                  "Concentrated More in Classes",
@@ -307,14 +307,15 @@ names(src3) <- c("Enrolled in More Classes",
                  "More Time to Prepare for Class",
                  "More Time for Homework",
                  "More Time for Office Hours",
+                 "More Time to Attend Classes",
                  "More Time for Field Trips",
                  "Sleep Quality Improved",
                  "Stress Level Decreased")
 plot_likert(src3, 
-            grid.range = c(1.2, 1.4),
+            grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw()
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 # Barriers to CalFresh `r emo::ji("star")`
@@ -324,19 +325,33 @@ library(questionr)
 ```
 
 ```{r}
-barrier <- bns %>% select(barrier_toolong,
-barrier_toodiff,
-barrier_campusnothelpful,
-bns$barrier_countynotsupportive,
-barrier_verif,
-barrier_office,
-barrier_transportation,
-barrier_eligible,
-barrier_family,
-barrier_embarrassed,
-barrier_belief,
-barrier_need,
-barrier_other)
+barrier <- bns %>% select(barrier_eligible,
+                          barrier_toolong,
+                          barrier_verif,
+                          barrier_other,
+                          barrier_toodiff,
+                          barrier_office,
+                          barrier_family,
+                          barrier_need,
+                          barrier_embarrassed,
+                          barrier_transportation,
+                          barrier_belief,
+                          barrier_campusnothelpful)
+```
+
+```{r}
+names(barrier) <- c("Didn't Think They Were Eligible",
+                    "Too Long",
+                    "Could Not Get Verification Document",
+                    "Other",
+                    "Too Difficult",
+                    "No Time To Go To Office",
+                    "Family Does Not Want To",
+                    "No Need",
+                    "Embarrassed",
+                    "No Transportation",
+                    "Beliefs",
+                    "Campus Was Not Helpful")
 ```
 
 ```{r}
