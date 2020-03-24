@@ -1,0 +1,164 @@
+---
+title: "Food Pantry"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+---
+
+```{r, include=FALSE}
+library(ggplot2)
+library(sjPlot)
+library(kableExtra)
+library(knitr)
+library(dplyr)
+library(tidyverse)
+library(questionr)
+
+load("../data/bns_clean.Rdata")
+bns <- out
+
+opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
+# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
+
+# Helper functions to display text answers without blank lines
+display.text <- function(data, var){
+  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
+           kable(col.names=NULL) %>% 
+           kable_styling(full_width = FALSE, 
+           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
+}
+
+sjPlot::set_theme(base = theme_bw())
+```
+
+# Impact of Pantries
+
+## "For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.
+
+### While I utilize/utilized campus food pantry/pantries or local food bank(s):
+
+```{r, fig.width=8}
+src2a <- bns %>% select(starts_with("SRC2a_"))
+names(src2a) <- c("Fewer Hours Paid",
+                  "More Time Unpaid",
+                  "More Money for Bills",
+                  "More Money for Entertainment",
+                  "Shop More at Farmers' Market",
+                  "Learned More about Healthy Foods",
+                  "Purchase More Healthy Foods",
+                  "Cook More at Home",
+                  "Consumed a Healthier Diet",
+                  "Consumed Less Fast Food",
+                  "Consumed Fewer Processed Foods",
+                  "Consumed Fewer Sweetened Beverages",
+                  "Consumed Fewer Alcoholic Beverages")
+plot_likert(src2a, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+```{r, fig.width=8}
+src2b <- bns %>% select(starts_with("SRC2b_"))
+names(src2b) <- c("Enrolled in More Classes",
+                  "Concentrated More in Classes",
+                  "Grades have Improved",
+                  "More Time to Study for Exams",
+                  "More Time to Prepare for Class",
+                  "More Time for Homework",
+                  "More Time for Office Hours",
+                  "More Time to Attend All Classes",
+                  "More Time for Field Trips",
+                  "Sleep Quality Improved",
+                  "Stress Level Decreased")
+plot_likert(src2b, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+# Barriers for Food Pantries
+
+## What is/are the reason(s) for you to not go to campus food pantries or local food banks?
+
+```{r}
+pb <- bns %>% select(PB_Embarrassed,
+                     PB_NotAware,
+                     PB_NoTime,
+                     PB_NoTransportation,
+                     PB_FamilyBarrier,
+                     PB_DontBelieve,
+                     PB_NoLocalLoc,
+                     PB_Other)
+```
+
+```{r}
+names(pb) <- c("Embarrassed",
+               "Not Aware",
+               "No Time",
+               "No Transportation",
+               "Family Barrier",
+               "Don't Believe",
+               "No Local Pantries",
+               "Other")
+```
+
+```{r}
+multi.table(pb) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
+
+# Habits
+
+## For each of the following statements, indicate how strongly agree or disagree about your current eating and cooking habits
+
+```{r, fig.width=8}
+eh1 <- bns %>% select(starts_with("EH1_"))
+names(eh1) <- c("No Access to a Kitchen",
+                  "Secure Place to Store Food",
+                  "No Room to Store Food",
+                  "Thinking about Food is Stressful",
+                  "Wish I Had more Food to Eat",
+                  "Always Skip Meals",
+                  "Don't Cook or Shop for Food",
+                  "No One Cooks at Home",
+                  "Do Not Think about Habits")
+plot_likert(eh1, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+## How many servings of fruits and vegetables do you usually consume per day? 
+
+```{r}
+plot_frq(bns$EH2)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
