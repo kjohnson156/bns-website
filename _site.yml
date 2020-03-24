@@ -11,6 +11,8 @@ navbar:
       href: employment.html
     - text: "CalFresh Participation"
       href: cfo_participation.html
+    - text: "Food Pantry"
+      href: pantry.html
 output:
   html_document:
     theme: readable
