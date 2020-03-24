@@ -13,6 +13,8 @@ navbar:
       href: cfo_participation.html
     - text: "Food Pantry"
       href: pantry.html
+    - text: "Academics"
+      href: academics.html
 output:
   html_document:
     theme: readable
