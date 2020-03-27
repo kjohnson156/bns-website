@@ -1,0 +1,130 @@
+---
+title: "Health"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+---
+
+```{r, include=FALSE}
+library(ggplot2)
+library(sjPlot)
+library(kableExtra)
+library(knitr)
+library(dplyr)
+library(tidyverse)
+library(questionr)
+
+load("../data/bns_clean.Rdata")
+bns <- out
+
+opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
+# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
+
+# Helper functions to display text answers without blank lines
+display.text <- function(data, var){
+  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
+           kable(col.names=NULL) %>% 
+           kable_styling(full_width = FALSE, 
+           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
+}
+
+sjPlot::set_theme(base = theme_bw())
+```
+
+# Physical Activity
+
+## On how many of the past 7 days did you
+
+### Do moderate-intensity cardio or aerobic exercise (caused a noticeable increase in heart rate, such as brisk walk) for at least 30 minutes?
+
+```{r}
+plot_frq(bns$PA1_1) + xlab("# of Days/Week")
+```
+
+25.0% (n = 37) of respondents reported that they do not do any days a week of cardio or aerobic excercise for at least 30 minutes, 11.5% (n = 17) reported that they exercise for 1 day, and 18.9% (n = 28) reported that they excerise for 2 days.
+
+### Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?
+
+```{r}
+plot_frq(bns$PA1_2) + xlab("# of Days/Week") + ylim(c(0,70))
+```
+
+36.5% (n = 54) of respondents reported that they did not do vigorous-intensity cardio for at least 20 minutes per day in the past 7 days, 18.2% (n = 27) reported they did for 1 day, and 20.9% (n = 31) reported they did for 2 days.
+
+### Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?
+
+```{r}
+plot_frq(bns$PA1_3) + xlab("# of Days") + ylim(c(0,90))
+```
+
+47.3% (n = 70) of respondents that they did not do 8-10 strength training exercises per day in the past 7 days, 11.5% (n = 17) reported they did for 1 day, and 16.2% (n = 24) reported they did for 2 days.
+
+# Smoking
+
+## Have you smoked at least 100 tobacco cigarettes in your entire life? 
+
+```{r}
+plot_frq(bns$TU1) + xlab("100 Cigarettes in Entire Life") + ylim(c(0,180))
+```
+
+Only 7.4% (n = 11) of respondents reported that they have smoked over 100 cigarettes in their entire life and 92.6% (n = 137) reported they have not.
+
+## How frequently do you currently smoke tobacco cigarettes?
+
+```{r}
+plot_frq(bns$TU2) + xlab("Frequency of Smoking Cigarettes")
+```
+
+3.4% (n = 5) reported that they smoke cigarettes on some days and 96.6% (n = 142) reported that they do not smoke cigarettes.
+
+# Sleep
+
+## On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during the week?
+
+```{r}
+nsleep <- as.data.frame(table(bns$SLPD1_1))
+pctsleep <- as.data.frame(prop.table(table(bns$SLPD1_1)))
+sleep <- left_join(nsleep,pctsleep, by = "Var1")
+names(sleep) <- c("Hours", "n", "%")
+sleep$`%` <- round(sleep$`%` * 100, 2)
+sleep %>% kable() %>% kable_styling()
+```
+
+## On average, during the academic year, howmany hours of sleep do you getin a typical 24-hour period during weekends?
+
+```{r}
+nsleep2 <- as.data.frame(table(bns$SLPD2_1))
+pctsleep2 <- as.data.frame(prop.table(table(bns$SLPD2_1)))
+sleep2 <- left_join(nsleep2,pctsleep2, by = "Var1")
+names(sleep2) <- c("Hours", "n", "%")
+sleep2$`%` <- round(sleep2$`%` * 100, 2)
+sleep2 %>% kable() %>% kable_styling()
+```
+
+## On average, how many times per month do you feel deprived of sleep?
+
+```{r}
+nsleep3 <- as.data.frame(table(bns$SLPD3_1))
+pctsleep3 <- as.data.frame(prop.table(table(bns$SLPD3_1)))
+sleep3 <- left_join(nsleep3,pctsleep3, by = "Var1")
+names(sleep3) <- c("Days", "n", "%")
+sleep3$`%` <- round(sleep3$`%` * 100, 2)
+sleep3 %>% kable() %>% kable_styling()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

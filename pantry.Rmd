@@ -80,6 +80,21 @@ plot_likert(src2b,
             show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
+## Please choose the options that best match your feelings of using Food Pantries or CalFresh
+
+```{r, fig.width=8}
+src3m <- bns %>% select(starts_with("SRC3_"))
+names(src3m) <- c("Embarrassed to Access Food Pantry",
+                  "Grateful to Access Food Panty",
+                  "Embarrassed by Having CalFresh",
+                  "Grateful for having CalFresh")
+plot_likert(src3m, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
 # Barriers for Food Pantries
 
 ## What is/are the reason(s) for you to not go to campus food pantries or local food banks?
@@ -194,6 +209,20 @@ plot_frq(bns$EH8a) + xlab("Servings of Alcohol")
 
 54.7% (n = 35) of respondents reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.
 
+## The following questions pertain to how comfortable you feel about buying or preparing food
+
+```{r, fig.width=8}
+eh9 <- bns %>% select(starts_with("EH9_"))
+names(eh9) <- c("Use Same Healthy Ingredient in More Than One Meal",
+                "Basic Cooking Skills",
+                "Buy Healthy Foods on a Budget",
+                "Cook Healthy Foods on a Budget")
+plot_likert(eh9, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+```
 
 
 

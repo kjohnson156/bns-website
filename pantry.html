@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -15,7 +16,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -23,8 +24,25 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -55,6 +73,7 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="styles.css" type="text/css" />
 
 
 
@@ -89,33 +108,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 66px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 71px;
-  margin-top: -71px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 71px;
-  margin-top: -71px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 71px;
-  margin-top: -71px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 71px;
-  margin-top: -71px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 71px;
-  margin-top: -71px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 71px;
-  margin-top: -71px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -218,7 +237,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -247,12 +265,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -332,7 +344,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="index.html">Abstract</a>
 </li>
 <li>
   <a href="demographics.html">Demographics</a>
@@ -348,6 +360,9 @@ div.tocify {
 </li>
 <li>
   <a href="academics.html">Academics</a>
+</li>
+<li>
+  <a href="health.html">Health</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -369,12 +384,16 @@ div.tocify {
 <div id="impact-of-pantries" class="section level1">
 <h1>Impact of Pantries</h1>
 <div id="for-the-following-questions-please-choose-how-much-you-agree-or-disagree-with-the-impact-campus-food-pantriesfood-banks-has-or-had-on-your-life." class="section level2">
-<h2>&quot;For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.</h2>
+<h2>"For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.</h2>
 <div id="while-i-utilizeutilized-campus-food-pantrypantries-or-local-food-banks" class="section level3">
 <h3>While I utilize/utilized campus food pantry/pantries or local food bank(s):</h3>
 <p><img src="pantry_files/figure-html/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p><img src="pantry_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
+</div>
+<div id="please-choose-the-options-that-best-match-your-feelings-of-using-food-pantries-or-calfresh" class="section level2">
+<h2>Please choose the options that best match your feelings of using Food Pantries or CalFresh</h2>
+<p><img src="pantry_files/figure-html/unnamed-chunk-4-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="barriers-for-food-pantries" class="section level1">
@@ -491,46 +510,50 @@ Other
 <h1>Habits</h1>
 <div id="for-each-of-the-following-statements-indicate-how-strongly-agree-or-disagree-about-your-current-eating-and-cooking-habits" class="section level2">
 <h2>For each of the following statements, indicate how strongly agree or disagree about your current eating and cooking habits</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="how-many-servings-of-fruits-and-vegetables-do-you-usually-consume-per-day" class="section level2">
 <h2>How many servings of fruits and vegetables do you usually consume per day?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (n = 101 70.6%) reported that they consume 1-2 servings of fruit and vegetables a day and 16.1% (n = 23) reported that they consume none.</p>
 </div>
 <div id="how-many-ounces-of-100-fruit-juices-like-orange-juice-apple-juice-or-grape-juice-do-you-consume-each-day" class="section level2">
 <h2>How many ounces of 100% fruit juices like orange juice, apple juice or grape juice do you consume each day?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>52.4% (n = 76) of respondents reported that they drink no 100% fruit juice each day and 34.5% (n = 50) reported that they drink between 1 to 8 ounces a day.</p>
 </div>
 <div id="how-many-ounces-of-regular-soda-cola-or-pop-sports-drink-or-energy-drinks-do-you-consume-each-day" class="section level2">
 <h2>How many ounces of regular soda, cola, or pop, sports drink, or energy drinks do you consume each day?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>48.6% (n = 71) of respondents reported that they don’t drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.</p>
 </div>
 <div id="how-many-ounces-or-cups-of-water-or-unsweetened-clear-drinks-such-as-tea-do-you-consume-each-day" class="section level2">
 <h2>How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="how-frequently-do-you-eat-out-at-family-style-or-sit-down-restaurantscafé-types-of-dining-establishment-per-week" class="section level2">
 <h2>How frequently do you eat out at family-style or sit-down restaurants/café types of dining establishment per week?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>38.9% (n = 56) of respondents reported that they do not go out to sit-down restaurants in a week and 45.8% (n = 66) reported that they go out between 1 to 2 times in a week.</p>
 </div>
 <div id="how-frequently-do-you-eat-from-fast-food-restaurants-convenience-stores-or-vending-machines-for-a-meal-or-meal-replacement" class="section level2">
 <h2>How frequently do you eat from fast food restaurants, convenience stores, or vending machines for a meal or meal replacement?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>20.5% (n = 30) of respondents reported that they do not eat fast food, from convenience stores, or vending machines in a week and 47.3% (n = 69) reported that they eat fast food between 1 to 2 times a week.</p>
 </div>
 <div id="how-often-do-you-consume-at-least-one-serving-of-alcohol" class="section level2">
 <h2>How often do you consume at least one serving of alcohol?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>50.0% (n = 73) of respondents reported that they do not drink alcohol in a week and 43.1% (n = 63) reported they drink at least one serving of alcohol between 1 to 2 days a week.</p>
 </div>
 <div id="typically-how-many-servings-of-alcohol-do-you-consume-when-you-drink-alcohol" class="section level2">
 <h2>Typically, how many servings of alcohol do you consume when you drink alcohol?</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>54.7</p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>54.7% (n = 35) of respondents reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.</p>
+</div>
+<div id="the-following-questions-pertain-to-how-comfortable-you-feel-about-buying-or-preparing-food" class="section level2">
+<h2>The following questions pertain to how comfortable you feel about buying or preparing food</h2>
+<p><img src="pantry_files/figure-html/unnamed-chunk-17-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 
