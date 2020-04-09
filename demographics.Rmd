@@ -67,7 +67,7 @@ plot_frq(bns$D5, wrap.labels = 10) + xlab("Race")
 
 A majority of the respondents did not list their race (48.2% n = 68). 22.0% (n = 31) of the respondents identified as white, followed by 9.9% (n = 14) of the respondents identified as Black or African American. 9.9% (n = 14) of the respondents identified as Mixed race, and 7.8% (n = 11) identified as Asian. Lastly, 1.4% (n = 2) identified as American Indian or Alaska Native, and 0.7% (n = 1) identified as Native Hawaiian or other Pacific Islander.
 
-### How do you identify your ethnicity? `r emo::ji("pencil")`
+**How do you identify your ethnicity? **`r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D6) + xlab("Ethnicity")
@@ -77,7 +77,7 @@ plot_frq(bns$D6) + xlab("Ethnicity")
 
 # Marital Status
 
-### What is your marital status? `r emo::ji("pencil")`
+**What is your marital status?** `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D7) + xlab("Marital Status")
@@ -87,15 +87,15 @@ A large proportion (88.5% n = 131) of the respondents reported that they are sin
 
 # Citizenship
 
-### Are you a US citizen?
+**Are you a US citizen?**
 
 ```{r}
 plot_frq(bns$D8) + xlab("Citizenship Status")
 ```
 
-92.6% (n = 137) of respondents reported that they are U.S. citizens and 7.4% (n = 11) reported they are not citizens.
+Most respondents, or 92.6% (n = 137), reported that they are U.S. citizens and 7.4% (n = 11) reported they are not citizens.
 
-### If not a U.S. citizen, are you a lawful permanent resident (i.e. have a “green card”)?
+**If not a U.S. citizen, are you a lawful permanent resident (i.e. have a “green card”)?**
 
 ```{r}
 plot_frq(bns$D8a, ylim = c(0,8)) + xlab("Permanent Resident")
@@ -105,7 +105,7 @@ Out of the participants that were not a U.S. citizen, 54.5% (n = 6) report they 
 
 # Dependents
 
-### How many dependents receive more than 50% of their financial support from you? `r emo::ji("pencil")`
+**How many dependents receive more than 50% of their financial support from you?** `r emo::ji("pencil")`
 
 ```{r}
 bns$dependents_relevel <- bns$D9_1
@@ -113,9 +113,9 @@ bns$dependents_relevel[bns$dependents_relevel >= "2"] <- "2+"
 plot_frq(bns$dependents_relevel) + xlab("Number of Dependents")
 ```
 
-88.0% (n = 132) of participants report that they have 0 dependents who receive more than 50% of their financial support from them. 6.0% (n = 9) report that they have 1 dependent and 6.0% (n = 9) report that they have 2 or more dependents.
+Most participants, or 88.0% (n = 132), reported that they have 0 dependents who receive more than 50% of their financial support from them. 6.0% (n = 9) report that they have 1 dependent and 6.0% (n = 9) report that they have 2 or more dependents.
 
-### What is/are the age(s) of your dependent(s)?
+**What is/are the age(s) of your dependent(s)?**
 
 ```{r}
 a <- bns %>% 
@@ -137,7 +137,7 @@ About 5% (n = 8) of the total number of respondents say they have dependents tha
 
 # Student Status
 
-### Are you a first generation student? `r emo::ji("pencil")`
+**Are you a first generation student?** `r emo::ji("pencil")`
 
 ```{r}
 bns$firstgenplot <- bns$firstgen %>% factor(labels = c("No", "Yes"))
@@ -146,21 +146,21 @@ plot_frq(bns$firstgenplot) + xlab("First Generation Student")
 
 The vast majority of respondents (94.7% n = 142) are first generation college students with only 8 (5.3%) not being fist generation students.
 
-### What is your major at CSU, Chico?
+**What is your major at CSU, Chico?**
 
 ```{r}
 table(tolower(bns$major)) %>% kable(col.names = c("Major", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
 ```
 
-### What is your approximate overall Grade Point Average (GPA) for your current degree in progress? `r emo::ji("star")` `r emo::ji("pencil")`
+ **What is your approximate overall Grade Point Average (GPA) for your current degree in progress?** `r emo::ji("star")` `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$SD2) + xlab("GPA")
 ```
 
-34.0% (n = 51) reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.
+About a third, or 34.0% (n = 51), of participants reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.
 
-### How many units (rounded up) are you enrolled in for the current semester at CSU Chico? `r emo::ji("pencil")`
+**How many units (rounded up) are you enrolled in for the current semester at CSU Chico?** `r emo::ji("pencil")`
 
 ```{r}
 bns$units_relevel <- bns$SD3_1
@@ -170,9 +170,9 @@ bns$units_relevel[bns$units_relevel >= 16] <- "16+"
 plot_frq(bns$units_relevel, ylim = c(0,100)) + xlab("Units Enrolled")
 ```
 
-53.7% (n = 80) of students filling out this survey are enrolled in 13-15 units in the semester of the survey, a quarter of the students (24.2% n = 36) are enrolled in 12 units, and 20.8% (n = 31) are enrolled in 16 or more units.
+More than half, or 53.7% (n = 80), of students filling out this survey are enrolled in 13-15 units in the semester of the survey, a quarter of the students (24.2% n = 36) are enrolled in 12 units, and 20.8% (n = 31) are enrolled in 16 or more units.
 
-### If currently enrolled at more than one college, how many units (rounded up) are you enrolled in for the current semester at other colleges (NOT CSU Chico)?
+**If currently enrolled at more than one college, how many units (rounded up) are you enrolled in for the current semester at other colleges (NOT CSU Chico)?**
 
 ```{r}
 bns$outside_units <- bns$SD4_1
