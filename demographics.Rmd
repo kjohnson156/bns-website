@@ -191,7 +191,7 @@ Out of the students who reported they are taking units outside of CSU Chico, abo
 plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + xlab("Class Level")
 ```
 
-45.0% (n = 67) of respondents reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
+Just under half, or 45.0% (n = 67) of respondents, reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
 
 **What month and year did you first attend Chico State?** `r emo::ji("pencil")`
 
@@ -207,7 +207,7 @@ Out of all the students who took this survey, the student who expects to graduat
 plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
 ```
 
-92.7% (n = 139) of respondents reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.
+The majority of respondents, or 92.7% (n = 139), reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.
 
 # Student Identifiers `r emo::ji("pencil")`
 
