@@ -59,7 +59,7 @@ Most respondants, or 69.3 % of the respondents, identify as a Woman (n = 104), 2
 
 # Race / Ethnicity `r emo::ji("star")`
 
- **How do you identify your race?** `r emo::ji("pencil")`
+**How do you identify your race?** `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$D5, wrap.labels = 10) + xlab("Race")
@@ -185,7 +185,7 @@ Out of the students who reported they are taking units outside of CSU Chico, abo
 
 # Class Standing `r emo::ji("star")`
 
-### Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester): `r emo::ji("pencil")`
+**Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester)**: `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + xlab("Class Level")
@@ -193,15 +193,15 @@ plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + x
 
 45.0% (n = 67) of respondents reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
 
-### What month and year did you first attend Chico State? `r emo::ji("pencil")`
+**What month and year did you first attend Chico State?** `r emo::ji("pencil")`
 
 Out of all the students who took this survey, the student who attended Chico state the earliest started in `r min(bns$matriculation_date)` and the student who attended the latest started in `r max(bns$matriculation_date)`.
 
-### What month and year do you expect to graduate from Chico State to earn your current degree? `r emo::ji("pencil")`
+**What month and year do you expect to graduate from Chico State to earn your current degree?** `r emo::ji("pencil")`
 
 Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in `r min(bns$exp_grad_date, na.rm = TRUE)` and the student who expects to graduate the latest expects to graduate in `r max(bns$exp_grad_date, na.rm = TRUE)`.
 
-### Have you taken a semester off since you began attending Chico State? If so, how many? `r emo::ji("pencil")`
+**Have you taken a semester off since you began attending Chico State? If so, how many?** `r emo::ji("pencil")`
 
 ```{r}
 plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
@@ -211,7 +211,7 @@ plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
 
 # Student Identifiers `r emo::ji("pencil")`
 
-### I receive services through the Accessibility Resource Center or Disability Support Services Center
+**I receive services through the Accessibility Resource Center or Disability Support Services Center**
 
 ```{r}
 plot_frq(bns$SD9_2) + xlab("Services Through ARC or DSSC")
@@ -220,7 +220,7 @@ plot_frq(bns$SD9_2) + xlab("Services Through ARC or DSSC")
 The majority of the students in this survey (87.3% n = 131) report they do not receive services through the
 Accessibility Resource Center or Disability Support Services Center and 12.7% (n = 19) report they do.
 
-### I identify as a(an)... `r emo::ji("star")`
+**I identify as a(an)... `r emo::ji("star")`**
 
 * transfer student
 * former foster youth/child
