@@ -33,7 +33,7 @@ sjPlot::set_theme(base = theme_bw())
 
 # Gender `r emo::ji("star")` 
 
-**The US Census lists the following choices for sex: Male Female. Please choose the one that most closely fits your identity.** `r emo::ji("pencil")`
+**The US Census lists the following choices for sex: Male Female. Please choose the one that most closely fits your identity.** 
 
 ```{r}
 plot_frq(bns$D2) + xlab("Sex")
@@ -41,7 +41,7 @@ plot_frq(bns$D2) + xlab("Sex")
 
 Of the 150 participants, 70% of the respondents (n = 105) are Female and 30% of the respondents (n = 45) are Male.
 
-**What was your sex assigned at birth?** `r emo::ji("pencil")`
+**What was your sex assigned at birth?** 
 
 ```{r}
 plot_frq(bns$D3, ylim = c(0,130)) + xlab("Sex")
@@ -49,7 +49,7 @@ plot_frq(bns$D3, ylim = c(0,130)) + xlab("Sex")
 
 Most respondants, or 70.7%, (n = 106) reported that they were Female at birth and 29.3% of the respondents (n = 44) were Male at birth.
 
-**What is your gender identity?** `r emo::ji("pencil")`
+**What is your gender identity?** 
 
 ```{r}
 plot_frq(bns$D4) + xlab("Gender Identity")
@@ -59,7 +59,7 @@ Most respondants, or 69.3 % of the respondents, identify as a Woman (n = 104), 2
 
 # Race / Ethnicity `r emo::ji("star")`
 
-**How do you identify your race?** `r emo::ji("pencil")`
+**How do you identify your race?** 
 
 ```{r}
 plot_frq(bns$D5, wrap.labels = 10) + xlab("Race")
@@ -67,7 +67,7 @@ plot_frq(bns$D5, wrap.labels = 10) + xlab("Race")
 
 A majority of the respondents did not list their race (48.2% n = 68). 22.0% (n = 31) of the respondents identified as white, followed by 9.9% (n = 14) of the respondents identified as Black or African American. 9.9% (n = 14) of the respondents identified as Mixed race, and 7.8% (n = 11) identified as Asian. Lastly, 1.4% (n = 2) identified as American Indian or Alaska Native, and 0.7% (n = 1) identified as Native Hawaiian or other Pacific Islander.
 
-**How do you identify your ethnicity? **`r emo::ji("pencil")`
+**How do you identify your ethnicity? **
 
 ```{r}
 plot_frq(bns$D6) + xlab("Ethnicity")
@@ -77,7 +77,7 @@ plot_frq(bns$D6) + xlab("Ethnicity")
 
 # Marital Status
 
-**What is your marital status?** `r emo::ji("pencil")`
+**What is your marital status?**
 
 ```{r}
 plot_frq(bns$D7) + xlab("Marital Status")
@@ -105,7 +105,7 @@ Out of the participants that were not a U.S. citizen, 54.5% (n = 6) report they 
 
 # Dependents
 
-**How many dependents receive more than 50% of their financial support from you?** `r emo::ji("pencil")`
+**How many dependents receive more than 50% of their financial support from you?** 
 
 ```{r}
 bns$dependents_relevel <- bns$D9_1
@@ -137,7 +137,7 @@ About 5% (n = 8) of the total number of respondents say they have dependents tha
 
 # Student Status
 
-**Are you a first generation student?** `r emo::ji("pencil")`
+**Are you a first generation student?** 
 
 ```{r}
 bns$firstgenplot <- bns$firstgen %>% factor(labels = c("No", "Yes"))
@@ -152,7 +152,7 @@ The vast majority of respondents (94.7% n = 142) are first generation college st
 table(tolower(bns$major)) %>% kable(col.names = c("Major", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
 ```
 
- **What is your approximate overall Grade Point Average (GPA) for your current degree in progress?** `r emo::ji("star")` `r emo::ji("pencil")`
+ **What is your approximate overall Grade Point Average (GPA) for your current degree in progress?** `r emo::ji("star")` 
 
 ```{r}
 plot_frq(bns$SD2) + xlab("GPA")
@@ -160,7 +160,7 @@ plot_frq(bns$SD2) + xlab("GPA")
 
 About a third, or 34.0% (n = 51), of participants reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.
 
-**How many units (rounded up) are you enrolled in for the current semester at CSU Chico?** `r emo::ji("pencil")`
+**How many units (rounded up) are you enrolled in for the current semester at CSU Chico?** 
 
 ```{r}
 bns$units_relevel <- bns$SD3_1
@@ -185,7 +185,7 @@ Out of the students who reported they are taking units outside of CSU Chico, abo
 
 # Class Standing `r emo::ji("star")`
 
-**Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester)**: `r emo::ji("pencil")`
+**Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester)**
 
 ```{r}
 plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + xlab("Class Level")
@@ -193,15 +193,15 @@ plot_frq(bns$SD5) + theme(axis.text.x = element_text(angle = 70, hjust = 1)) + x
 
 Just under half, or 45.0% (n = 67) of respondents, reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
 
-**What month and year did you first attend Chico State?** `r emo::ji("pencil")`
+**What month and year did you first attend Chico State?** 
 
 Out of all the students who took this survey, the student who attended Chico state the earliest started in `r min(bns$matriculation_date)` and the student who attended the latest started in `r max(bns$matriculation_date)`.
 
-**What month and year do you expect to graduate from Chico State to earn your current degree?** `r emo::ji("pencil")`
+**What month and year do you expect to graduate from Chico State to earn your current degree?** 
 
 Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in `r min(bns$exp_grad_date, na.rm = TRUE)` and the student who expects to graduate the latest expects to graduate in `r max(bns$exp_grad_date, na.rm = TRUE)`.
 
-**Have you taken a semester off since you began attending Chico State? If so, how many?** `r emo::ji("pencil")`
+**Have you taken a semester off since you began attending Chico State? If so, how many?** 
 
 ```{r}
 plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
@@ -222,19 +222,6 @@ Accessibility Resource Center or Disability Support Services Center and 12.7% (n
 
 **I identify as a(an)... `r emo::ji("star")`**
 
-* transfer student
-* former foster youth/child
-* an International student
-* non-California resident (Not International)
-* Upward Bound,Educational Talent Search,AVID, TRIO, or other college prep program alumni student
-* EOP (Educational Opportunity Program) student
-* REACH (Raising Educational Achievement in Collaborative Hubs) student
-* ESL (English as a Second Language) student
-* Veteran of military service
-* Active duty military personnel
-* student athlete
-* DREAM (i.e. undocumented) student
-* DACA (i.e. Deferred Action for Childhood Arrivals) student
 
 ```{r}
 npct <- function(var){
@@ -242,22 +229,23 @@ npct <- function(var){
          " (", round(mean(var=="Yes", na.rm = TRUE)*100,1), "%)")
 }
 
-bns %>% summarise(Transfer = npct(SD9_1), 
-                  Foster = npct(SD9_3), 
-                  International = npct(SD9_4), 
-                  `Non-Resident` = npct(SD9_5), 
-                  `College Prep` = npct(SD9_6), 
-                  EOP = npct(SD9_7), 
-                  REACH = npct(SD9a_1), 
-                  ESL = npct(SD9a_2), 
-                  Veteran = npct(SD9a_3), 
-                  `Active Duty` = npct(SD9a_4), 
+bns %>% summarise('Transfer student' = npct(SD9_1), 
+                  'Former foster youth/child'= npct(SD9_3), 
+                  'International student' = npct(SD9_4), 
+                  `Non-California resident (Not International)` = npct(SD9_5), 
+                  `College prep program*` = npct(SD9_6), 
+                  'EOP (Educational Opportunity Program) student' = npct(SD9_7), 
+                  'REACH (Raising Educational Achievement in Collaborative Hubs) student' = npct(SD9a_1), 
+                  'ESL (English as a Second Language) student' = npct(SD9a_2), 
+                  'Veteran of military service' = npct(SD9a_3), 
+                  `Active duty military personnel` = npct(SD9a_4), 
                   `Student Athlete` = npct(SD9a_5), 
-                  Dreamer = npct(SD9a_6),
-                  DACA = npct(SD9a_7)) %>%
+                  'DREAM (i.e. undocumented) student' = npct(SD9a_6),
+                  'DACA (i.e. Deferred Action for Childhood Arrivals) student' = npct(SD9a_7)) %>%
   t() %>% kable()
 
 ```
 
+*Upward Bound, Educational Talent Search, AVID, TRIO, or other college prep program alumni student
 
 
