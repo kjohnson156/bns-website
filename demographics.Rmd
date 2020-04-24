@@ -222,12 +222,57 @@ Accessibility Resource Center or Disability Support Services Center and 12.7% (n
 
 **I identify as a(an)... `r emo::ji("star")`**
 
+```{r}
+library(questionr)
+```
+
+```{r}
+
+identifier <- bns %>% select(SD9_1,
+                            SD9_3,
+                            SD9_4,
+                            SD9_5,
+                            SD9_6,
+                            SD9_7,
+                            SD9a_1,
+                            SD9a_2,
+                            SD9a_3,
+                            SD9a_4,
+                            SD9a_5,
+                            SD9a_6,
+                            SD9a_7)
+
+
+```
+
+
+```{r}
+names(identifier) <- c("Transfer student",
+                    "Former foster youth/child",
+                    "International student",
+                    "Non-California resident (Not International)",
+                    "Upward Bound, Educational Talent Search, AVID, TRIO, or other college prep program alumni student",
+                    "EOP (Educational Opportunity Program) student",
+                    "REACH (Raising Educational Achievement in Collaborative Hubs) student",
+                    "ESL (English as a Second Language) student",
+                    "Veteran of military service",
+                    "Active duty military personnel",
+                    "Student Athlete",
+                    "DREAM (i.e. undocumented) student",
+                    "DACA (i.e. Deferred Action for Childhood Arrivals) student")
+
+```
+
+```{r}
+multi.table(identifier) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
+
+
 
 ```{r}
 npct <- function(var){
   paste0(sum(var=="Yes", na.rm=TRUE), "/", sum(!is.na(var)), 
-         " (", round(mean(var=="Yes", na.rm = TRUE)*100,1), "%)")
-}
+         " (", round(mean(var=="Yes", na.rm = TRUE)*100,1), "%)")}
 
 bns %>% summarise('Transfer student' = npct(SD9_1), 
                   'Former foster youth/child'= npct(SD9_3), 
@@ -241,10 +286,13 @@ bns %>% summarise('Transfer student' = npct(SD9_1),
                   `Active duty military personnel` = npct(SD9a_4), 
                   `Student Athlete` = npct(SD9a_5), 
                   'DREAM (i.e. undocumented) student' = npct(SD9a_6),
-                  'DACA (i.e. Deferred Action for Childhood Arrivals) student' = npct(SD9a_7)) %>%
+                  'DACA (i.e. Deferred Action for Childhood Arrivals) student' = npct(SD9a_7))%>%
   t() %>% kable()
+   
 
 ```
+
+
 
 *Upward Bound, Educational Talent Search, AVID, TRIO, or other college prep program alumni student
 

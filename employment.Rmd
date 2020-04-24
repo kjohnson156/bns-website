@@ -33,39 +33,41 @@ sjPlot::set_theme(base = theme_bw())
 
 # Supported Employment `r emo::ji("star")` `r emo::ji("pencil")`
 
-### I am approved, awarded, or accepted for work study (with or without a work study job)
+### Work Study, JOBS Program, CFET Program, WIOA, CARE, MESA
+
+**I am approved, awarded, or accepted for work study (with or without a work study job)**
 
 ```{r}
 plot_frq(bns$SD9b_1) + xlab ("Work Study")
 ```
 
-88.0% (n = 125) of respondents reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
+The majority of respondents, or 88.0% (n = 125), reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
 
-### I participate in CalWorks(i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)
+**I participate in CalWorks(i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)**
 
 ```{r}
 plot_frq(bns$SD9b_2) + xlab("CalWorks/AFDC")
 ```
 
-76.0% (n = 111) of respondents report that they do not participate in Calworks or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
+The majority of respondents, or 76.0% (n = 111), report that they do not participate in Calworks or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
 
-### I participate in the Job Opportunities and Basic Skills (JOBS) Program
+**I participate in the Job Opportunities and Basic Skills (JOBS) Program**
 
 ```{r}
 plot_frq(bns$SD9b_3) + xlab("JOBS Program")
 ```
 
-95.2% (n = 138) of respondents report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.
+Most respondents, or 95.2% (n = 138), report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.
 
-### I participate in the CalFresh Employment or Training (CFET) Program
+**I participate in the CalFresh Employment or Training (CFET) Program**
 
 ```{r}
 plot_frq(bns$SD9b_4) + xlab("CFET Program")
 ```
 
-83.3% (n = 120) of respondents report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.
+Of respondents, 83.3% (n = 120) report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.
 
-### I am enrolled in Workforce Innovation and Opportunity Act (WIOA)
+**I am enrolled in Workforce Innovation and Opportunity Act (WIOA)**
 
 ```{r}
 plot_frq(bns$SD9b_5) + xlab("WIOA")
@@ -73,7 +75,7 @@ plot_frq(bns$SD9b_5) + xlab("WIOA")
 
 All respondents in this survey (100% n = 147) report that they are not enrolled in Workforce Innovation and Opportunity Act.
 
-### I am enrolled in Cooperative Agencies Resources for Education (CARE)
+**I am enrolled in Cooperative Agencies Resources for Education (CARE)**
 
 ```{r}
 plot_frq(bns$SD9b_6) + xlab("CARE")
@@ -81,7 +83,7 @@ plot_frq(bns$SD9b_6) + xlab("CARE")
 
 A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.
 
-### I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program
+**I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program**
 
 ```{r}
 plot_frq(bns$SD9b_7) + xlab("MESA")
@@ -89,15 +91,17 @@ plot_frq(bns$SD9b_7) + xlab("MESA")
 
 The majority of respondents (95.3% n = 142) reported that they are not enrolled in the MESA Program while 4.7% (n = 7) report they are.
 
-### I am a student attending CSU, receiving Cal Grant A OR B
+### Cal Grant A or B, Current & former foster youth programs
+
+**I am a student attending CSU, receiving Cal Grant A OR B**
 
 ```{r}
 plot_frq(bns$SD9c_1) + xlab("Cal Grant A or B")
 ```
 
-87.4% (n = 125) of respondents reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.
+Most respondents, or 87.4% (n = 125), reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.
 
-### I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)
+**I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)**
 
 ```{r}
 plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
@@ -105,7 +109,9 @@ plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
 
 A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.
 
-### I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare
+###Dependents
+
+**I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare**
 
 ```{r}
 plot_frq(bns$SD9c_3) + xlab("Parental Control")
@@ -113,13 +119,15 @@ plot_frq(bns$SD9c_3) + xlab("Parental Control")
 
 All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.
 
-### I am a single parent of a dependent household member under the age of 12
+**I am a single parent of a dependent household member under the age of 12**
 
 ```{r}
 plot_frq(bns$SD9c_4) + xlab("Single Parent")
 ```
 
 Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
+
+####Housing 
 
 ### Which best describes your current housing situation? `r emo::ji("pencil")`
 
