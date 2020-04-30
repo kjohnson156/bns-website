@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -237,6 +236,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -265,6 +265,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -384,7 +390,7 @@ div.tocify {
 <div id="impact-of-pantries" class="section level1">
 <h1>Impact of Pantries</h1>
 <div id="for-the-following-questions-please-choose-how-much-you-agree-or-disagree-with-the-impact-campus-food-pantriesfood-banks-has-or-had-on-your-life." class="section level2">
-<h2>"For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.</h2>
+<h2>&quot;For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.</h2>
 <div id="while-i-utilizeutilized-campus-food-pantrypantries-or-local-food-banks" class="section level3">
 <h3>While I utilize/utilized campus food pantry/pantries or local food bank(s):</h3>
 <p><img src="pantry_files/figure-html/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -237,6 +236,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -265,6 +265,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -611,7 +617,7 @@ I rent an apartment or house without roommates
 <p><img src="employment_files/figure-html/unnamed-chunk-30-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.</p>
 </div>
-<div id="does-anyone-in-your-household-get-more-than-half-11-or-more-of-their-meals-per-week-from-another-source-e.g.-university-meal-plan" class="section level3">
+<div id="does-anyone-in-your-household-get-more-than-half-11-or-more-of-their-meals-per-week-from-another-source-e.g.university-meal-plan" class="section level3">
 <h3>Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? 📝</h3>
 <p><img src="employment_files/figure-html/unnamed-chunk-31-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another souce and 3.0% (n = 4) reported they do.</p>
@@ -630,7 +636,7 @@ I rent an apartment or house without roommates
 <p><img src="employment_files/figure-html/unnamed-chunk-33-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Out of the respondents who said they have others pay for their monthly rent/housing, 44.4% (n = 4) reported that they pay $500-$1000 and 33.3% (n = 3) pay $1000-$1500.</p>
 </div>
-<div id="please-estimate-the-monthly-utility-i.e.-gas-electric-water-and-garbage-bills-that-you-pay-for-with-your-own-money." class="section level3">
+<div id="please-estimate-the-monthly-utility-i.e.gas-electric-water-and-garbage-bills-that-you-pay-for-with-your-own-money." class="section level3">
 <h3>Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.</h3>
 <p><img src="employment_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>51.0% (n = 74) of respondents reported that they pay $50-$99 a month for their utility bill, 20.7% (n = 30) reported that they pay less than $50 a month, and only 9.7% (n = 14) reported that they pay $0 because someone else pays.</p>
@@ -693,7 +699,7 @@ I rent an apartment or house without roommates
 ## [5] &quot;$150-$200/wk&quot;                                                      
 ## [6] &quot;$200+/wk&quot;                                                          
 ## [7] &quot;0&quot;                                                                 
-## [8] &quot;I donâ\200\231t have any other food expenses because I have a meal plan.&quot;</code></pre>
+## [8] &quot;I donâ€™t have any other food expenses because I have a meal plan.&quot;</code></pre>
 <p><img src="employment_files/figure-html/unnamed-chunk-49-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>40.1% (n = 57) of respondents reported that they pay $50-$99 a week for food and non-alcoholic beverages, 27.5% (n = 39) reported that they pay $10-$49 a week, and 4.9% (n = 7) reported that they pay $0.</p>
 </div>

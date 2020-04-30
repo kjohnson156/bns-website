@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -237,6 +236,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -265,6 +265,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -511,14 +517,6 @@ biology
 </tr>
 <tr>
 <td style="text-align:left;">
-business- finance
-</td>
-<td style="text-align:right;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 business administration
 </td>
 <td style="text-align:right;">
@@ -563,6 +561,14 @@ business management
 </td>
 <td style="text-align:right;">
 2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business- finance
+</td>
+<td style="text-align:right;">
+1
 </td>
 </tr>
 <tr>
@@ -911,14 +917,6 @@ parks and recs
 </tr>
 <tr>
 <td style="text-align:left;">
-pre-nursing
-</td>
-<td style="text-align:right;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 pre nursing
 </td>
 <td style="text-align:right;">
@@ -928,6 +926,14 @@ pre nursing
 <tr>
 <td style="text-align:left;">
 pre recording arts min;afam studies
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pre-nursing
 </td>
 <td style="text-align:right;">
 1

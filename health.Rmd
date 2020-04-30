@@ -113,9 +113,47 @@ sleep3$`%` <- round(sleep3$`%` * 100, 2)
 sleep3 %>% kable() %>% kable_styling()
 ```
 
+# Select the activities that cause you to feel deprived of sleep
 
+```{r}
+sleep_act <- bns %>% select(starts_with("SLPD4_")) %>% select(-c("SLPD4_6_TEXT"))
+names(sleep_act) <- c("Studying or finishing coursework",
+                      "Working a paid, or unpaid job or internship",
+                      "Attending social activities or events",
+                      "Spending time with family or friends",
+                      "Watching movies, playing games, social media etc.",
+                      "Other")
+```
 
+```{r}
+multi.table(sleep_act) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
 
+## How frequently do you feel tired while at work or school?
+
+```{r}
+plot_frq(bns$SLPD5) + xlab("Frequency of Feeling Tired")
+```
+
+## Have you fallen asleep in class in the past 12 months?
+
+```{r}
+plot_frq(bns$SLPD6) + xlab("Fallen Asleep in Class")
+```
+
+## How many days in the past month have you experienced heightened anxiety, stress, depression and/or problems with emotions?
+
+```{r}
+bns$MH1_1[bns$MH1_1 >= 15 & bns$MH1_1 < 30] <- "15-29"
+bns$MH1_1[bns$MH1_1 >= 30] <- "30+"
+plot_frq(bns$MH1_1) + xlab("# of Days")
+```
+
+## Have you received or tried to receive mental health services over the past 12months?
+
+```{r}
+plot_frq(bns$MH2) + xlab("Received Mental Health Services") + ylim(c(0,100))
+```
 
 
 
