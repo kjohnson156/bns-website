@@ -31,7 +31,7 @@ display.text <- function(data, var){
 sjPlot::set_theme(base = theme_bw())
 ```
 
-# Supported Employment `r emo::ji("star")` `r emo::ji("pencil")`
+# Supported Employment `r emo::ji("star")`
 
 ### Work Study, JOBS Program, CFET Program, WIOA, CARE, MESA
 
@@ -109,7 +109,7 @@ plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
 
 A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.
 
-###Dependents
+### Dependents
 
 **I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare**
 
@@ -127,9 +127,9 @@ plot_frq(bns$SD9c_4) + xlab("Single Parent")
 
 Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
 
-####Housing 
+### Housing 
 
-### Which best describes your current housing situation? `r emo::ji("pencil")`
+**Which best describes your current housing situation?**
 
 ```{r}
 test1 <- as.data.frame(table(bns$SD10))
@@ -142,7 +142,7 @@ finaltest %>% kable() %>% kable_styling()
 
 # Employment `r emo::ji("star")`
 
-### Paid Job or Paid Internship `r emo::ji("pencil")`
+### Paid Job or Paid Internship 
 
 ```{r}
 bns$paid_hours <- bns$FSI2
@@ -163,7 +163,7 @@ plot_frq(bns$paid_hours) + xlab("Paid Hours")
 
 The majority of the students in this survey (n = 51 34.2%) reported that they work 0 paid hours a week, roughly 20% (n = 29) reported they work 6-10 paid hours a week and only 4.7% (n = 7) work 1-5 paid hours a week.
 
-### Unpaid Position or Volunteer `r emo::ji("pencil")`
+### Unpaid Position or Volunteer 
 
 For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.
 
@@ -194,7 +194,7 @@ plot_frq(bns$FSI4) + coord_flip() + xlab("Hourly Wage")
 
 35.8% (n = 53) of the respondents reported that they make between `$12.00` and `$12.99`/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.
 
-### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you? `r emo::ji("pencil")`
+### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you? 
 
 ```{r}
 bns$adj_size <- bns$household_size
@@ -202,9 +202,9 @@ bns$adj_size[bns$adj_size >= 5] <- "5+"
 plot_frq(bns$adj_size) + xlab("Household Size")
 ```
 
-63.5% (n = 94) reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
+Most respondants, or 63.5% (n = 94), reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
 
-### How much is your household's gross monthly income (before taxes and not including financial aid)? `r emo::ji("pencil")`
+### How much is your household's gross monthly income (before taxes and not including financial aid)?
 
 ```{r}
 plot_frq(bns$FSI6) + coord_flip() + xlab("Gross Monthly Income")
@@ -290,7 +290,7 @@ plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
 
 The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.
 
-### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? `r emo::ji("pencil")`
+### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? 
 
 ```{r}
 plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
@@ -373,7 +373,7 @@ plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
 
 The majority of respondents (76.3% n = 100) reported that they pay \$0 a month in medical expenses because they have no medical expenses, 12.2% (n = 16) reported that they pay \$25-\$100 a month, and 9.9% (n = 13) reported that they pay less than \$25 a month.
 
-### What type of health insurance do you currently have? `r emo::ji("pencil")`
+### What type of health insurance do you currently have? 
 
 ```{r}
 plot_frq(bns$ME6)
@@ -419,9 +419,6 @@ plot_frq(bns$ME9, vjust = "center", y.offset = 2) + coord_flip() + xlab("Semeste
 
 ### Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.
 
-```{r}
-levels(bns$ME10)
-```
 
 ```{r}
 levels(bns$ME10)[levels(bns$ME10) == "I donâ€™t have any other food expenses because I have a meal plan."] <- "0"
@@ -449,5 +446,5 @@ plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
 plot_frq(bns$ME12) + xlab("Weekly Expenses for Cigarettes/Marijuana")
 ```
 
-84.5% (n = 120) of respondents reported that they pay \$0 a week on cigarettes and tobacco, 5.6% (n = 8) reported they pay less than \$10 a week, and 6.3% (n = 9) reported they pay \$10-\$49 a week.
+Most respondents, or 84.5% (n = 120), reported that they pay \$0 a week on cigarettes and tobacco, 5.6% (n = 8) reported they pay less than \$10 a week, and 6.3% (n = 9) reported they pay \$10-\$49 a week.
 
