@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "BNS Survey "
   left:
-    - text: "Abstract"
+    - text: "Home"
       href: index.html
     - text: "Demographics"
       href: demographics.html
@@ -20,5 +20,6 @@ navbar:
 output:
   html_document:
     theme: cosmo
-    highlight: textmate
+    highlight: null
     css: styles.css
+    
