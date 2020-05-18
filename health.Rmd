@@ -36,15 +36,15 @@ sjPlot::set_theme(base = theme_bw())
 
 ## On how many of the past 7 days did you
 
-### Do moderate-intensity cardio or aerobic exercise (caused a noticeable increase in heart rate, such as brisk walk) for at least 30 minutes?
+**Do moderate-intensity cardio or aerobic exercise (caused a noticeable increase in heart rate, such as brisk walk) for at least 30 minutes?**
 
 ```{r}
 plot_frq(bns$PA1_1) + xlab("# of Days/Week")
 ```
 
-25.0% (n = 37) of respondents reported that they do not do any days a week of cardio or aerobic excercise for at least 30 minutes, 11.5% (n = 17) reported that they exercise for 1 day, and 18.9% (n = 28) reported that they excerise for 2 days.
+One fourth, or 25.0% (n = 37) of respondents, reported that they do not do any days a week of cardio or aerobic excercise for at least 30 minutes, 11.5% (n = 17) reported that they exercise for 1 day, and 18.9% (n = 28) reported that they excerise for 2 days.
 
-### Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?
+**Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?**
 
 ```{r}
 plot_frq(bns$PA1_2) + xlab("# of Days/Week") + ylim(c(0,70))
@@ -52,17 +52,17 @@ plot_frq(bns$PA1_2) + xlab("# of Days/Week") + ylim(c(0,70))
 
 36.5% (n = 54) of respondents reported that they did not do vigorous-intensity cardio for at least 20 minutes per day in the past 7 days, 18.2% (n = 27) reported they did for 1 day, and 20.9% (n = 31) reported they did for 2 days.
 
-### Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?
+**Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?**
 
 ```{r}
 plot_frq(bns$PA1_3) + xlab("# of Days") + ylim(c(0,90))
 ```
 
-47.3% (n = 70) of respondents that they did not do 8-10 strength training exercises per day in the past 7 days, 11.5% (n = 17) reported they did for 1 day, and 16.2% (n = 24) reported they did for 2 days.
+Almost half, or 47.3% (n = 70) of respondents, that they did not do 8-10 strength training exercises per day in the past 7 days, 11.5% (n = 17) reported they did for 1 day, and 16.2% (n = 24) reported they did for 2 days.
 
 # Smoking
 
-## Have you smoked at least 100 tobacco cigarettes in your entire life? 
+**Have you smoked at least 100 tobacco cigarettes in your entire life?** 
 
 ```{r}
 plot_frq(bns$TU1) + xlab("100 Cigarettes in Entire Life") + ylim(c(0,180))
@@ -70,7 +70,7 @@ plot_frq(bns$TU1) + xlab("100 Cigarettes in Entire Life") + ylim(c(0,180))
 
 Only 7.4% (n = 11) of respondents reported that they have smoked over 100 cigarettes in their entire life and 92.6% (n = 137) reported they have not.
 
-## How frequently do you currently smoke tobacco cigarettes?
+**How frequently do you currently smoke tobacco cigarettes?**
 
 ```{r}
 plot_frq(bns$TU2) + xlab("Frequency of Smoking Cigarettes")

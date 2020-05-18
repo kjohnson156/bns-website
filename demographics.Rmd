@@ -13,6 +13,7 @@ library(kableExtra)
 library(knitr)
 library(dplyr)
 library(tidyverse)
+library(questionr)
 
 load("../data/bns_clean.Rdata")
 bns <- out
@@ -222,25 +223,24 @@ Accessibility Resource Center or Disability Support Services Center and 12.7% (n
 
 **I identify as a(an)... `r emo::ji("star")`**
 
-```{r}
-library(questionr)
-```
+
 
 ```{r}
 
-identifier <- bns %>% select(SD9_1,
-                            SD9_3,
-                            SD9_4,
-                            SD9_5,
-                            SD9_6,
-                            SD9_7,
-                            SD9a_1,
-                            SD9a_2,
-                            SD9a_3,
-                            SD9a_4,
-                            SD9a_5,
-                            SD9a_6,
-                            SD9a_7)
+identifier <- bns %>% select("SD9_1",
+                            "SD9_3",
+                            "SD9_4",
+                            "SD9_5",
+                            "SD9_6",
+                            "SD9_7",
+                            "SD9a_1",
+                            "SD9a_2",
+                            "SD9a_3",
+                            "SD9a_4",
+                            "SD9a_5",
+                            "SD9a_6",
+                            "SD9a_7")    
+
 
 
 ```
@@ -260,6 +260,8 @@ names(identifier) <- c("Transfer student",
                     "Student Athlete",
                     "DREAM (i.e. undocumented) student",
                     "DACA (i.e. Deferred Action for Childhood Arrivals) student")
+
+
 
 ```
 

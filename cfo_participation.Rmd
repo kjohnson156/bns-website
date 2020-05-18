@@ -70,9 +70,6 @@ Of the students who responded, 28.4% (n = 42) reported that they currently use e
 
 **At any time in the last 12 months, have you utilized campus food pantries or local food banks for food?**
 
-```{r}
-levels(bns$SRC2)
-```
 
 ```{r}
 levels(bns$SRC2)[levels(bns$SRC2) == "Yes, three or four times per month."] <- "Yes 3-4/mo"
