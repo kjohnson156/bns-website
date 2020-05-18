@@ -34,7 +34,7 @@ sjPlot::set_theme(base = theme_bw())
 
 # Time Management and Performance
 
-## For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities and your confidence in academic performance.
+**For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities and your confidence in academic performance.**
 
 ```{r, fig.width=8}
 tm1 <- bns %>% select(starts_with("TM1_"))

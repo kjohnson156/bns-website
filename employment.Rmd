@@ -194,7 +194,9 @@ plot_frq(bns$FSI4) + coord_flip() + xlab("Hourly Wage")
 
 35.8% (n = 53) of the respondents reported that they make between `$12.00` and `$12.99`/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.
 
-### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you? 
+### Household Size & Gross Monthly Income
+
+**For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you?**
 
 ```{r}
 bns$adj_size <- bns$household_size
@@ -204,13 +206,15 @@ plot_frq(bns$adj_size) + xlab("Household Size")
 
 Most respondants, or 63.5% (n = 94), reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
 
-### How much is your household's gross monthly income (before taxes and not including financial aid)?
+**How much is your household's gross monthly income (before taxes and not including financial aid)?**
 
 ```{r}
 plot_frq(bns$FSI6) + coord_flip() + xlab("Gross Monthly Income")
 ```
 
-### Before attending college, did you expect to find or want to find a PAID job or PAID internship during the academic year to help cover your college expenses and personal expenses while in college?
+### Finding Paid Employment or Internship
+
+**Before attending college, did you expect to find or want to find a PAID job or PAID internship during the academic year to help cover your college expenses and personal expenses while in college?**
 
 ```{r}
 plot_frq(bns$FSI7) + xlab("Expected to Find Paid Job")
@@ -218,17 +222,17 @@ plot_frq(bns$FSI7) + xlab("Expected to Find Paid Job")
 
 The majority of students (n = 112 83.0%) reported that they did expect to find a paid job during the academic year to help support their expenses while 17.0% (n = 23) did not.
 
-### If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?
+**If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?**
 
 ```{r}
 plot_frq(bns$FSI8) + xlab("Success in Finding Job")
 ```
 
-34.3% (n = 48) of students reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.
+A little over a third, or 34.3% (n = 48) of students, reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.
 
-## If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
+### If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
 
-### I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.
+**I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.**
 
 ```{r}
 plot_frq(bns$FSI9_1) + xlab("No Transportation")
@@ -236,7 +240,7 @@ plot_frq(bns$FSI9_1) + xlab("No Transportation")
 
 33.6% (n = 37) of respondents reported that they disagree with the statement that they were not able to work because they had no transportation and 17.3% (n = 19) agreed with the statement.
 
-### I searched and applied for jobs but was not offered a job. 
+**I searched and applied for jobs but was not offered a job.** 
 
 ```{r}
 plot_frq(bns$FSI9_2) + xlab("Not Offered a Job")
@@ -244,7 +248,7 @@ plot_frq(bns$FSI9_2) + xlab("Not Offered a Job")
 
 31.8% (n = 35) of respondents agreed that they searched for a job but was never offered a job and 16.4% (n = 18) reported they disagree with the statement.
 
-### I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.
+**I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.**
 
 ```{r}
 plot_frq(bns$FSI9_3) + xlab("Schedule Conflict")
@@ -252,7 +256,7 @@ plot_frq(bns$FSI9_3) + xlab("Schedule Conflict")
 
 42.7% (n = 47) of respondents agreed that their class or study schedule conflicted with the work hours so were not able to work and 15.4% (n = 17) reported that they disagree with the statement.
 
-### I searched for jobs, but family obligations interfered with any jobs offered to me.
+**I searched for jobs, but family obligations interfered with any jobs offered to me.**
 
 ```{r}
 plot_frq(bns$FSI9_4) + xlab("Family Obligations Interfered")
@@ -260,7 +264,7 @@ plot_frq(bns$FSI9_4) + xlab("Family Obligations Interfered")
 
 36.4% (n = 40) of respondents disagreed that their family obligations interfered with any jobs offered to them and 10.9% (n = 12) agreed with the statement.
 
-### I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.
+**I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.**
 
 ```{r}
 plot_frq(bns$FSI9_5) + xlab("No Time")
@@ -268,7 +272,7 @@ plot_frq(bns$FSI9_5) + xlab("No Time")
 
 25.4% (n = 28) disagreed that they expected to find a job, but never searched for one because their school work did not allow time and 23.6% (n = 26) agreed with the statement. 20.0% (n = 22) neither agreed nor disagreed with the statement.
 
-### I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.
+**I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.**
 
 ```{r}
 plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
@@ -276,13 +280,13 @@ plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
 
 33.6% (n = 37) disagreed that they expected to find a job, but due to other unexpected obligations, they did not find a job and 12.7% (n = 14) agreed with the statement. 25.4% (n = 28) neither agreed nor disagreed with the statement.
 
-### I did not expect to or want to find a job while in college.
+**I did not expect to or want to find a job while in college.**
 
 ```{r}
 plot_frq(bns$FSI9_7) + xlab("Did Not Expect a Job")
 ```
 
-### Do you receive Supplemental Security Income (SSI)* in California? `r emo::ji("pencil")`
+### Do you receive Supplemental Security Income (SSI)* in California? 
 
 ```{r}
 plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
@@ -300,7 +304,9 @@ The majority of respondents (97.0% n = 129) reported that they do not have any p
 
 # Time Related Expenses `r emo::ji("star")`
 
-### Please estimate the monthly housing/rent/mortgage bill (garbage may or may not be included) that you pay for with your own money.
+### Rent
+
+**Please estimate the monthly housing/rent/mortgage bill (garbage may or may not be included) that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME1, vjust="center", y.offset=5) + xlab("Monthly Housing Bill") + coord_flip()
@@ -308,7 +314,7 @@ plot_frq(bns$ME1, vjust="center", y.offset=5) + xlab("Monthly Housing Bill") + c
 
 43.5% (n = 64) of respondents reported that they pay \$100-\$500 a month in housing/rent with their own money and 35.4% (n = 52) reported that they pay \$500-\$1,000 a month. Only 7.5% (n = 11) reported that they pay \$0 because someone else pays.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME1a, y.offset = 0.1) + xlab("Monthly Housing Bill") + ylim(c(0,5))
@@ -316,7 +322,9 @@ plot_frq(bns$ME1a, y.offset = 0.1) + xlab("Monthly Housing Bill") + ylim(c(0,5))
 
 Out of the respondents who said they have others pay for their monthly rent/housing, 44.4% (n = 4) reported that they pay \$500-\$1000 and 33.3% (n = 3) pay \$1000-\$1500.
 
-### Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.
+### Utilities
+
+**Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME2) + xlab("Monthly Utility Bill")
@@ -324,7 +332,7 @@ plot_frq(bns$ME2) + xlab("Monthly Utility Bill")
 
 51.0% (n = 74) of respondents reported that they pay \$50-\$99 a month for their utility bill, 20.7% (n = 30) reported that they pay less than \$50 a month, and only 9.7% (n = 14) reported that they pay \$0 because someone else pays.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME2a, y.offset = .3) + xlab("Monthly Utility Bill") + ylim(c(0,8))
@@ -332,7 +340,9 @@ plot_frq(bns$ME2a, y.offset = .3) + xlab("Monthly Utility Bill") + ylim(c(0,8))
 
 Out of people who have someone else pay for their monthly utility bill, 50% (n = 6) reported that they pay \$100+ a month and 33.3% (n = 4) reported they pay \$50-\$99 a month, and 16.7% (n = 2) reported they pay less than \$50 a month.
 
-### Please estimate your monthly internet, cable tv/satellite, and streaming service bills that you pay for with your own money.
+### Other (internet, TV, cell phone, medical, transportation)
+
+**Please estimate your monthly internet, cable tv/satellite, and streaming service bills that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME3) + xlab("Monthly Internet/TV Bill")
@@ -340,7 +350,7 @@ plot_frq(bns$ME3) + xlab("Monthly Internet/TV Bill")
 
 59.0% (n = 85) of respondents reported that they pay less than \$50 a month for their internet/TV bill and 21.5% (n = 31) reported that they pay \$50-\$99 a month. 12.5% (n = 18) reported that they pay \$0 because someone else pays and 4.9% (n = 7) reported they pay \$0 because it is included in their rent.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME3a, y.offset = .3) + xlab("Monthly Internet/TV Bill") + ylim(c(0,8))
@@ -348,7 +358,7 @@ plot_frq(bns$ME3a, y.offset = .3) + xlab("Monthly Internet/TV Bill") + ylim(c(0,
 
 Out of the respondents who reported that someone else payd for their monthly internet/TV bill, 42.9% (n = 6) reported that they pay less than \$50 a month, 28.6% (n = 4) reported they pay \$50-\$99 a month, and 28.6% (n = 4) reported they pay more than \$100 a month.
 
-### Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.
+**Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.**
 
 ```{r}
 bns$ME4[bns$ME4 == "$0- I donâ€™t have a mobile/cellphone or landline phone"] <- "$0-I don’t have a mobile/cellphone or landline phone"
@@ -357,7 +367,7 @@ plot_frq(bns$ME4) + xlab("Monthly Cell Phone Bill")
 
 26.2% (n = 38) of respondents reported that they pay \$50-\$99 a month for their monthly cell phone bill, 18.6% (n = 27) reported that they pay more than \$100 a month, and 42.8% (n = 62) reported that they pay \$0 because someone else pays for them.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME4a) + xlab("Monthly Cell Phone Bill") + ylim(c(0,25))
@@ -365,7 +375,7 @@ plot_frq(bns$ME4a) + xlab("Monthly Cell Phone Bill") + ylim(c(0,25))
 
 Out of the people who reported that they have someone else pay for their monthly cell phone bill, 41.3% (n = 19) reported that they pay more than \$100 a month, 30.4% (n = 14) reported that they pay less than \$50 a month, and 28.3% (n = 13) reported that they pay \$50-\$99 a month.
 
-### Please estimate the monthly medical expenses (including insurance premiums, co-pays, deductibles, medications, etc.) that you pay for with your own money.
+**Please estimate the monthly medical expenses (including insurance premiums, co-pays, deductibles, medications, etc.) that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
@@ -373,13 +383,13 @@ plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
 
 The majority of respondents (76.3% n = 100) reported that they pay \$0 a month in medical expenses because they have no medical expenses, 12.2% (n = 16) reported that they pay \$25-\$100 a month, and 9.9% (n = 13) reported that they pay less than \$25 a month.
 
-### What type of health insurance do you currently have? 
+**What type of health insurance do you currently have?** 
 
 ```{r}
 plot_frq(bns$ME6)
 ```
 
-### Please estimate the monthly transportation bills that you pay for with your own money
+**Please estimate the monthly transportation bills that you pay for with your own money**
 
 ```{r}
 bns$ME7 <- as.character(bns$ME7)
@@ -400,7 +410,9 @@ plot_frq(bns$ME7, vjust = "center", y.offset = 3) + xlab("Monthly Transportation
 
 33.1% (n = 47) of respondents reported that they pay less than \$25 a month on transportation, 22.5% (n = 32) reported that they pay \$100-\$199 a month on transportation, and 9.2% (n = 13) reported that they pay \$0.
 
-### Please estimate your monthly expenses for any other regularly occurring expenses such as credit card payments, gym membership, child care expenses, etc. that you pay for with your own money.
+### Monthly & School Supplies Expenses
+
+**Please estimate your monthly expenses for any other regularly occurring expenses such as credit card payments, gym membership, child care expenses, etc. that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses") + coord_flip()
@@ -408,7 +420,7 @@ plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses
 
 35.5% of respondents reported that they pay \$0 for other regularly occuring expenses, 15.9% (n = 22) reported that they pay \$100-\$149 a month, and 14.5% (n = 20) reported that they pay \$10-\$49 a month.
 
-### Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.
+**Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.**
 
 ```{r}
 levels(bns$ME9)[levels(bns$ME9) == "$351 to 450 per semester"] <- "$351-$450/term"
@@ -417,7 +429,9 @@ plot_frq(bns$ME9, vjust = "center", y.offset = 2) + coord_flip() + xlab("Semeste
 
 20.8% (n = 30) of respondents reported that they pay \$151-\$250 a semester on expenses such as school supplies, textbooks, and school related printing expenses, 18.1% (n = 26) reported that they pay \$251-\$350 a semester, and 15.3% (n = 22) reported that they pay \$451-\$550 a semester.
 
-### Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.
+### Food, Alcohol, Cigarettes, etc. Expenses
+
+**Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.**
 
 
 ```{r}
@@ -432,7 +446,7 @@ plot_frq(bns$ME10, vjust = "center", y.offset = 4) + xlab("Weekly Food Expenses"
 
 40.1% (n = 57) of respondents reported that they pay \$50-\$99 a week for food and non-alcoholic beverages, 27.5% (n = 39) reported that they pay \$10-\$49 a week, and 4.9% (n = 7) reported that they pay \$0.
 
-### Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.
+**Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.**
 
 ```{r}
 plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
@@ -440,7 +454,7 @@ plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
 
 31.5% (n = 45) of respondents reported that they pay less than \$10 a week on alcoholic beverages, 19.6% reported that they pay \$10-\$49 a week, and 42.7% (n = 61) reported that they pay \$0 a week on alcoholic beverages.
 
-### Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.
+**Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME12) + xlab("Weekly Expenses for Cigarettes/Marijuana")
