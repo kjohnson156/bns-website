@@ -4,33 +4,14 @@ output:
   html_document: 
     toc: yes
     toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-library(questionr)
-
-load("../data/bns_clean.Rdata")
-bns <- out
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
+source("common_code.R")
 sjPlot::set_theme(base = theme_bw())
 ```
+
 
 # Impact of Pantries
 
@@ -38,7 +19,7 @@ sjPlot::set_theme(base = theme_bw())
 
 **While I utilize/utilized campus food pantry/pantries or local food bank(s):**
 
-```{r, fig.width=8}
+```{r, fig.width=8, fig.height=8}
 src2a <- bns %>% select(starts_with("SRC2a_"))
 names(src2a) <- c("Fewer Hours Paid",
                   "More Time Unpaid",
@@ -60,7 +41,7 @@ plot_likert(src2a,
             show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
-```{r, fig.width=8}
+```{r, fig.width=8, fig.height=8}
 src2b <- bns %>% select(starts_with("SRC2b_"))
 names(src2b) <- c("Enrolled in More Classes",
                   "Concentrated More in Classes",
@@ -176,8 +157,18 @@ Alomost half, or 48.6% (n = 71) of respondents, reported that they don't drink a
 **How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?** 
 
 ```{r}
-plot_frq(bns$EH5) + xlab("Ounces of Unsweetened Drinks")
+bns$EH5[bns$EH5 == "24-36 ounces"] <- "25-36 ounces"
+bns$EH5_f <- factor(bns$EH5, levels = c("Zero", "1-8 ounces", "9-16 ounces",
+                                        "17-24 ounces", "25-36 ounces",
+                                        "37-48 ounces", "49-56 ounces",
+                                        "57-64 ounces", "65 ounces or more"))
 ```
+
+```{r}
+plot_frq(bns$EH5_f,vjust = "center", y.offset = 3) + xlab("Ounces of Unsweetened Drinks") + coord_flip() + ylim(c(0,40))
+```
+
+About 19.0% (n = 27) of respondents reported that they drink 1-8 ounces of water or other unsweetened drinks a day, 7.0% (n = 10) reported they do not drink any ounces of unsweetened drinks a day, and 9.2% (n = 13) reported that they drink more than 65 ounces a day.
 
 **How often do you consume at least one serving of alcohol?** 
 

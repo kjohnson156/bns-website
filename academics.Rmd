@@ -4,39 +4,18 @@ output:
   html_document: 
     toc: yes
     toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-library(questionr)
-
-load("../data/bns_clean.Rdata")
-bns <- out
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
-sjPlot::set_theme(base = theme_bw())
+source("common_code.R")
 ```
 
 # Time Management and Performance
 
 **For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities and your confidence in academic performance.**
 
-```{r, fig.width=8}
+```{r, fig.width=8, fig.height=10}
 tm1 <- bns %>% select(starts_with("TM1_"))
 names(tm1) <- c("Confident in Writing Skills",
                 "Confident in Test-Taking Ability",

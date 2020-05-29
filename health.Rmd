@@ -4,33 +4,13 @@ output:
   html_document: 
     toc: yes
     toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-library(questionr)
-
-load("../data/bns_clean.Rdata")
-bns <- out
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
-sjPlot::set_theme(base = theme_bw())
+source("common_code.R")
 ```
+
 
 # Physical Activity
 
@@ -143,11 +123,23 @@ plot_frq(bns$SLPD6) + xlab("Fallen Asleep in Class")
 
 ## How many days in the past month have you experienced heightened anxiety, stress, depression and/or problems with emotions?
 
+
 ```{r}
 bns$MH1_1[bns$MH1_1 >= 15 & bns$MH1_1 < 30] <- "15-29"
 bns$MH1_1[bns$MH1_1 >= 30] <- "30+"
-plot_frq(bns$MH1_1) + xlab("# of Days")
+
+plot_frq(bns$MH1_1) + xlab("# of Days") + ylab("Count")
 ```
+
+### By gender
+
+```{r, fig.width=12}
+plot_xtab(x=bns$MH1_1, grp=bns$D2, margin="col", show.total = FALSE) + 
+          xlab("# of Days") + ylab("Percent (count)") + 
+          theme(legend.position="top", legend.title=element_blank()) 
+
+```
+
 
 ## Have you received or tried to receive mental health services over the past 12months?
 

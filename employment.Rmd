@@ -4,32 +4,13 @@ output:
   html_document: 
     toc: yes
     toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-
-load("../data/bns_clean.Rdata")
-bns <- out
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with session to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
-sjPlot::set_theme(base = theme_bw())
+source("common_code.R")
 ```
+
 
 # Supported Employment `r emo::ji("star")`
 
@@ -138,6 +119,38 @@ finaltest <- left_join(test1, test2, by = "Var1")
 names(finaltest) <- c("Housing Situation", "n", "%")
 finaltest$`%` <- round(finaltest$`%` * 100, 2)
 finaltest %>% kable() %>% kable_styling()
+```
+
+### Financial Aid
+
+**Select ALL sources of financial support you currently receive while attending college?**
+
+```{r}
+finaid <- bns %>% select(FS_PellGrant,
+                         FS_CalGrantAorB,
+                         FS_NonAtheletic,
+                         FS_Atheletic,
+                         FS_OtherGrants,
+                         FS_FedLoans,
+                         FS_PrivateLoans,
+                         FS_WorkStudy,
+                         FS_GIBill,
+                         FS_Other)
+
+names(finaid) <- c("Pell Grant",
+                   "Cal Grant A or B",
+                   "Non Athletic",
+                   "Athletic",
+                   "Other Grants",
+                   "Federal Loans",
+                   "Private Loans",
+                   "Workstudy",
+                   "GI Bill",
+                   "Other")
+```
+
+```{r}
+multi.table(finaid) %>% kable(col.names = c("n", "%")) %>% kable_styling()
 ```
 
 # Employment `r emo::ji("star")`
@@ -386,8 +399,14 @@ The majority of respondents (76.3% n = 100) reported that they pay \$0 a month i
 **What type of health insurance do you currently have?** 
 
 ```{r}
-plot_frq(bns$ME6)
+hi1 <- as.data.frame(table(bns$ME6))
+hi2 <- as.data.frame(prop.table(table(bns$ME6)))
+finalhi <- left_join(hi1, hi2, by = "Var1")
+names(finalhi) <- c("Health Insurance", "n", "%")
+finalhi$`%` <- round(finalhi$`%` * 100, 2)
+finalhi %>% kable() %>% kable_styling()
 ```
+
 
 **Please estimate the monthly transportation bills that you pay for with your own money**
 

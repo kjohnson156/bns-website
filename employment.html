@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -16,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -220,6 +219,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -248,6 +248,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -322,7 +328,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">BNS Survey </a>
+      <a class="navbar-brand" href="index.html">Basic Needs Survey</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -517,73 +523,203 @@ I rent an apartment or house without roommates
 </tbody>
 </table>
 </div>
+<div id="financial-aid" class="section level3">
+<h3>Financial Aid</h3>
+<p><strong>Select ALL sources of financial support you currently receive while attending college?</strong></p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Pell Grant
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+74.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cal Grant A or B
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+83.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Non Athletic
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+7.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Athletic
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other Grants
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Federal Loans
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+50.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Private Loans
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Workstudy
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+62.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GI Bill
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+36.7
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="employment" class="section level1">
 <h1>Employment ⭐</h1>
 <div id="paid-job-or-paid-internship" class="section level3">
 <h3>Paid Job or Paid Internship</h3>
-<p><img src="employment_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of the students in this survey (n = 51 34.2%) reported that they work 0 paid hours a week, roughly 20% (n = 29) reported they work 6-10 paid hours a week and only 4.7% (n = 7) work 1-5 paid hours a week.</p>
 </div>
 <div id="unpaid-position-or-volunteer" class="section level3">
 <h3>Unpaid Position or Volunteer</h3>
 <p>For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.</p>
-<p><img src="employment_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (n = 87 58.4%) reported that they work 0 unpaid hours a week, 19.5% (n = 29) work 1-5 unpaid hours, and lastly 12.1% (n = 18) reported they work 21 unpaid hours a week.</p>
 </div>
 <div id="if-you-are-currently-in-a-paid-position-what-is-your-average-hourly-wage-from-all-jobsworked-during-the-academic-year" class="section level3">
 <h3>If you are currently in a PAID position, what is your average hourly wage from all jobsworked during the academic year?</h3>
-<p><img src="employment_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>35.8% (n = 53) of the respondents reported that they make between <code>$12.00</code> and <code>$12.99</code>/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.</p>
 </div>
 <div id="household-size-gross-monthly-income" class="section level3">
 <h3>Household Size &amp; Gross Monthly Income</h3>
 <p><strong>For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-21-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Most respondants, or 63.5% (n = 94), reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.</p>
 <p><strong>How much is your household’s gross monthly income (before taxes and not including financial aid)?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="finding-paid-employment-or-internship" class="section level3">
 <h3>Finding Paid Employment or Internship</h3>
 <p><strong>Before attending college, did you expect to find or want to find a PAID job or PAID internship during the academic year to help cover your college expenses and personal expenses while in college?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-21-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-23-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of students (n = 112 83.0%) reported that they did expect to find a paid job during the academic year to help support their expenses while 17.0% (n = 23) did not.</p>
 <p><strong>If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-24-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>A little over a third, or 34.3% (n = 48) of students, reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.</p>
 </div>
 <div id="if-you-have-not-found-paid-jobs-or-internships-that-have-consistently-covered-your-expenses-while-in-college-how-strongly-do-you-agree-or-disagree-with-these-statements" class="section level3">
 <h3>If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?</h3>
 <p><strong>I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-23-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-25-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>33.6% (n = 37) of respondents reported that they disagree with the statement that they were not able to work because they had no transportation and 17.3% (n = 19) agreed with the statement.</p>
 <p><strong>I searched and applied for jobs but was not offered a job.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-24-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-26-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>31.8% (n = 35) of respondents agreed that they searched for a job but was never offered a job and 16.4% (n = 18) reported they disagree with the statement.</p>
 <p><strong>I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-25-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-27-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>42.7% (n = 47) of respondents agreed that their class or study schedule conflicted with the work hours so were not able to work and 15.4% (n = 17) reported that they disagree with the statement.</p>
 <p><strong>I searched for jobs, but family obligations interfered with any jobs offered to me.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-26-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-28-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>36.4% (n = 40) of respondents disagreed that their family obligations interfered with any jobs offered to them and 10.9% (n = 12) agreed with the statement.</p>
 <p><strong>I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-27-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-29-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>25.4% (n = 28) disagreed that they expected to find a job, but never searched for one because their school work did not allow time and 23.6% (n = 26) agreed with the statement. 20.0% (n = 22) neither agreed nor disagreed with the statement.</p>
 <p><strong>I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-28-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-30-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>33.6% (n = 37) disagreed that they expected to find a job, but due to other unexpected obligations, they did not find a job and 12.7% (n = 14) agreed with the statement. 25.4% (n = 28) neither agreed nor disagreed with the statement.</p>
 <p><strong>I did not expect to or want to find a job while in college.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-29-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-31-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="do-you-receive-supplemental-security-income-ssi-in-california" class="section level3">
 <h3>Do you receive Supplemental Security Income (SSI)* in California?</h3>
-<p><img src="employment_files/figure-html/unnamed-chunk-30-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-32-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.</p>
 </div>
 <div id="does-anyone-in-your-household-get-more-than-half-11-or-more-of-their-meals-per-week-from-another-source-e.g.-university-meal-plan" class="section level3">
 <h3>Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?</h3>
-<p><img src="employment_files/figure-html/unnamed-chunk-31-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-33-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another souce and 3.0% (n = 4) reported they do.</p>
 </div>
 </div>
@@ -592,67 +728,159 @@ I rent an apartment or house without roommates
 <div id="rent" class="section level3">
 <h3>Rent</h3>
 <p><strong>Please estimate the monthly housing/rent/mortgage bill (garbage may or may not be included) that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-32-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>43.5% (n = 64) of respondents reported that they pay $100-$500 a month in housing/rent with their own money and 35.4% (n = 52) reported that they pay $500-$1,000 a month. Only 7.5% (n = 11) reported that they pay $0 because someone else pays.</p>
 <p><strong>If someone else pays for you, how much do they pay each month?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-33-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-35-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Out of the respondents who said they have others pay for their monthly rent/housing, 44.4% (n = 4) reported that they pay $500-$1000 and 33.3% (n = 3) pay $1000-$1500.</p>
 </div>
 <div id="utilities" class="section level3">
 <h3>Utilities</h3>
 <p><strong>Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-36-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>51.0% (n = 74) of respondents reported that they pay $50-$99 a month for their utility bill, 20.7% (n = 30) reported that they pay less than $50 a month, and only 9.7% (n = 14) reported that they pay $0 because someone else pays.</p>
 <p><strong>If someone else pays for you, how much do they pay each month?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-35-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-37-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Out of people who have someone else pay for their monthly utility bill, 50% (n = 6) reported that they pay $100+ a month and 33.3% (n = 4) reported they pay $50-$99 a month, and 16.7% (n = 2) reported they pay less than $50 a month.</p>
 </div>
 <div id="other-internet-tv-cell-phone-medical-transportation" class="section level3">
 <h3>Other (internet, TV, cell phone, medical, transportation)</h3>
 <p><strong>Please estimate your monthly internet, cable tv/satellite, and streaming service bills that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-36-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-38-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>59.0% (n = 85) of respondents reported that they pay less than $50 a month for their internet/TV bill and 21.5% (n = 31) reported that they pay $50-$99 a month. 12.5% (n = 18) reported that they pay $0 because someone else pays and 4.9% (n = 7) reported they pay $0 because it is included in their rent.</p>
 <p><strong>If someone else pays for you, how much do they pay each month?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-37-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-39-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Out of the respondents who reported that someone else payd for their monthly internet/TV bill, 42.9% (n = 6) reported that they pay less than $50 a month, 28.6% (n = 4) reported they pay $50-$99 a month, and 28.6% (n = 4) reported they pay more than $100 a month.</p>
 <p><strong>Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-38-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-40-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>26.2% (n = 38) of respondents reported that they pay $50-$99 a month for their monthly cell phone bill, 18.6% (n = 27) reported that they pay more than $100 a month, and 42.8% (n = 62) reported that they pay $0 because someone else pays for them.</p>
 <p><strong>If someone else pays for you, how much do they pay each month?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-39-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-41-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Out of the people who reported that they have someone else pay for their monthly cell phone bill, 41.3% (n = 19) reported that they pay more than $100 a month, 30.4% (n = 14) reported that they pay less than $50 a month, and 28.3% (n = 13) reported that they pay $50-$99 a month.</p>
 <p><strong>Please estimate the monthly medical expenses (including insurance premiums, co-pays, deductibles, medications, etc.) that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-40-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-42-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (76.3% n = 100) reported that they pay $0 a month in medical expenses because they have no medical expenses, 12.2% (n = 16) reported that they pay $25-$100 a month, and 9.9% (n = 13) reported that they pay less than $25 a month.</p>
 <p><strong>What type of health insurance do you currently have?</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-41-1.png" width="576" style="display: block; margin: auto;" /></p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Health Insurance
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+No insurance plan
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+12.70
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Plan through employer
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.79
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Medicaid/Medical
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+54.76
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Medicare
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3.97
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other gov program
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.79
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Plan through parents
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+26.98
+</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Please estimate the monthly transportation bills that you pay for with your own money</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-45-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-47-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>33.1% (n = 47) of respondents reported that they pay less than $25 a month on transportation, 22.5% (n = 32) reported that they pay $100-$199 a month on transportation, and 9.2% (n = 13) reported that they pay $0.</p>
 </div>
 <div id="monthly-school-supplies-expenses" class="section level3">
 <h3>Monthly &amp; School Supplies Expenses</h3>
 <p><strong>Please estimate your monthly expenses for any other regularly occurring expenses such as credit card payments, gym membership, child care expenses, etc. that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-46-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-48-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>35.5% of respondents reported that they pay $0 for other regularly occuring expenses, 15.9% (n = 22) reported that they pay $100-$149 a month, and 14.5% (n = 20) reported that they pay $10-$49 a month.</p>
 <p><strong>Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-47-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-49-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>20.8% (n = 30) of respondents reported that they pay $151-$250 a semester on expenses such as school supplies, textbooks, and school related printing expenses, 18.1% (n = 26) reported that they pay $251-$350 a semester, and 15.3% (n = 22) reported that they pay $451-$550 a semester.</p>
 </div>
 <div id="food-alcohol-cigarettes-etc.-expenses" class="section level3">
 <h3>Food, Alcohol, Cigarettes, etc. Expenses</h3>
 <p><strong>Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-48-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-50-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>40.1% (n = 57) of respondents reported that they pay $50-$99 a week for food and non-alcoholic beverages, 27.5% (n = 39) reported that they pay $10-$49 a week, and 4.9% (n = 7) reported that they pay $0.</p>
 <p><strong>Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-49-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-51-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>31.5% (n = 45) of respondents reported that they pay less than $10 a week on alcoholic beverages, 19.6% reported that they pay $10-$49 a week, and 42.7% (n = 61) reported that they pay $0 a week on alcoholic beverages.</p>
 <p><strong>Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.</strong></p>
-<p><img src="employment_files/figure-html/unnamed-chunk-50-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="employment_files/figure-html/unnamed-chunk-52-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Most respondents, or 84.5% (n = 120), reported that they pay $0 a week on cigarettes and tobacco, 5.6% (n = 8) reported they pay less than $10 a week, and 6.3% (n = 9) reported they pay $10-$49 a week.</p>
 </div>
 </div>
 
+
+<hr>
+
+Add copyrite info here.
+
+<br>
+
+Replace this image with the wide CHC logo
+
+<img src="pic_trulli.jpg" alt="CHC Logo">
 
 
 </div>

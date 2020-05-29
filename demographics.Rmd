@@ -4,33 +4,13 @@ output:
   html_document: 
     toc: yes
     toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-library(questionr)
-
-load("../data/bns_clean.Rdata")
-bns <- out
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
-sjPlot::set_theme(base = theme_bw())
+source("common_code.R")
 ```
+
 
 # Gender `r emo::ji("star")` 
 
@@ -289,7 +269,7 @@ bns %>% summarise('Transfer student' = npct(SD9_1),
                   `Student Athlete` = npct(SD9a_5), 
                   'DREAM (i.e. undocumented) student' = npct(SD9a_6),
                   'DACA (i.e. Deferred Action for Childhood Arrivals) student' = npct(SD9a_7))%>%
-  t() %>% kable()
+  t() %>% kable(col.names = c("Percentage")) %>% kable_styling()
    
 
 ```

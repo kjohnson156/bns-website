@@ -1,28 +1,7 @@
 ---
 title: "Basic Needs Survey"
+output: html_document
 ---
-```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
-
-# brandon set global theme option here for plots
-```
 
 The Center for Healthy Communities (CHC) developed the Basic Needs Survey (BNS), 
 and administered it to undergraduate EOP students at CSU, Chico from April 2, 2019 to May 2, 2019. A total of 150 students participated in the survey.
@@ -40,3 +19,6 @@ Email: sbianco@csuchico.edu
 Phone: 530-898-4022
 
 
+## Abstract
+
+_Kathleen add here_

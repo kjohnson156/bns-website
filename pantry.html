@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -16,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -220,6 +219,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -248,6 +248,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -322,7 +328,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">BNS Survey </a>
+      <a class="navbar-brand" href="index.html">Basic Needs Survey</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -499,29 +505,40 @@ Other
 <p><img src="pantry_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Alomost half, or 48.6% (n = 71) of respondents, reported that they don’t drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.</p>
 <p><strong>How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?</strong></p>
-<p><img src="pantry_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p><strong>How often do you consume at least one serving of alcohol?</strong></p>
 <p><img src="pantry_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>About 19.0% (n = 27) of respondents reported that they drink 1-8 ounces of water or other unsweetened drinks a day, 7.0% (n = 10) reported they do not drink any ounces of unsweetened drinks a day, and 9.2% (n = 13) reported that they drink more than 65 ounces a day.</p>
+<p><strong>How often do you consume at least one serving of alcohol?</strong></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Half, or 50.0% (n = 73) of respondents, reported that they do not drink alcohol in a week and 43.1% (n = 63) reported they drink at least one serving of alcohol between 1 to 2 days a week.</p>
 <p><strong>Typically, how many servings of alcohol do you consume when you drink alcohol?</strong></p>
-<p><img src="pantry_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>More than half, or 54.7% (n = 35) of respondents, reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.</p>
 </div>
 <div id="dining-out-or-meal-replacements" class="section level2">
 <h2>Dining Out or Meal Replacements</h2>
 <p><strong>How frequently do you eat out at family-style or sit-down restaurants/café types of dining establishment per week?</strong></p>
-<p><img src="pantry_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>38.9% (n = 56) of respondents reported that they do not go out to sit-down restaurants in a week and 45.8% (n = 66) reported that they go out between 1 to 2 times in a week.</p>
 <p><strong>How frequently do you eat from fast food restaurants, convenience stores, or vending machines for a meal or meal replacement?</strong></p>
-<p><img src="pantry_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>20.5% (n = 30) of respondents reported that they do not eat fast food, from convenience stores, or vending machines in a week and 47.3% (n = 69) reported that they eat fast food between 1 to 2 times a week.</p>
 </div>
 <div id="the-following-questions-pertain-to-how-comfortable-you-feel-about-buying-or-preparing-food" class="section level2">
 <h2>The following questions pertain to how comfortable you feel about buying or preparing food</h2>
-<p><img src="pantry_files/figure-html/unnamed-chunk-17-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="pantry_files/figure-html/unnamed-chunk-18-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 
+
+<hr>
+
+Add copyright info to the footer here.
+
+<br>
+
+Replace this image with the wide CHC logo
+
+<img src="pic_trulli.jpg" alt="CHC Logo">
 
 
 </div>

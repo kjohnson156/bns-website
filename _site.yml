@@ -1,7 +1,7 @@
-name: "brandon-leff"
+name: "BNS3 survey"
 output_dir: "."
 navbar:
-  title: "BNS Survey "
+  title: "Basic Needs Survey"
   left:
     - text: "Home"
       href: index.html
@@ -17,8 +17,10 @@ navbar:
       href: academics.html
     - text: "Health"
       href: health.html
+
 output:
   html_document:
-    theme: cosmo
     highlight: null
     css: styles.css
+    include:
+      after_body: footer.html
