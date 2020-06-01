@@ -1,24 +1,29 @@
 ---
-title: "Basic Needs Survey"
+title: "Exploring patterns of basic needs in college students"
 output: html_document
 ---
 
-The Center for Healthy Communities (CHC) developed the Basic Needs Survey (BNS), 
-and administered it to undergraduate EOP students at CSU, Chico from April 2, 2019 to May 2, 2019. A total of 150 students participated in the survey.
+### Abstract
 
-This report provides a top level descriptive analysis of each question students responded to in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate further resarch hypotheses and questions.
+Food insecurity among college students is problem that can impact student performance in the classroom. The purpose of this cross-sectional pilot study was to create a tool that identifies student perception of the impact of receiving [CalFresh](https://www.csuchico.edu/calfresh/index.shtml) assistance on their health, nutrition, cooking confidence, time management and academic performance. 
+
+---
+
+### Overview
+
+The [Center for Healthy Communities](https://www.csuchico.edu/chc/) (CHC) developed the **Basic Needs Student Success Survey (BNS3)** and administered it to undergraduate students at [California State University, Chico](https://www.csuchico.edu/) in April 2019. The [Educational Opportunity Program](https://www.csuchico.edu/eop/) (EOP) office assisted in the recruitment and provided computers for students to take the survey. Participants were given a $25 gift card for their participation. 
+
+This report provides a top level descriptive analysis of each question in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate further research hypotheses and questions.
   
 Questions marked with a `r emo::ji('star')` are questions of interest for the EOP office.
 
+---
+
+## Contact
+
 Questions about the survey or data analysis presented in this report can be directed to:
 
-#### [Stephanie Bianco](https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml)
-
-Email: sbianco@csuchico.edu
-
+##### [Stephanie Bianco](https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml)
+Email: sbianco@csuchico.edu  
 Phone: 530-898-4022
 
-
-## Abstract
-
-Food insecurity among college students is an pendemic that impacts academics. The purpose of this cross-sectional pilot study was to create a tool that identifies the impact of CalFresh’s perception of the impact using basic needs resources on health, nutrition, cooking confidence, time management and academic performance among 109 Educational Opportunity Program (EOP) students. Using Chi-square and Fisher’s exact test, this study found a positive relationship between students who reported CalFresh participation. 

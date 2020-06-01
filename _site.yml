@@ -1,7 +1,7 @@
 name: "BNS3 survey"
 output_dir: "."
 navbar:
-  title: "Basic Needs Survey"
+  title: "BNS3"
   left:
     - text: "Home"
       href: index.html
