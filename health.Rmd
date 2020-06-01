@@ -133,15 +133,23 @@ plot_frq(bns$MH1_1) + xlab("# of Days") + ylab("Count")
 
 ### By Gender Identity
 
-```{r, fig.width=12}
+All but three respondents selected either Male or Female for their gender identity. Their response distribution is below. 
 
-plot_xtab(x=bns$MH1_1, grp=bns$D4, margin="col", show.total = FALSE) + 
+```{r, fig.width=12, fig.height=5}
+toplot <- bns %>% filter(D4 %in% c('Man', 'Woman'))
+plot_xtab(x=toplot$MH1_1, grp=toplot$D4, margin="col", show.total = FALSE) + 
           xlab("# of Days") + ylab("Percent (count)") + 
           theme(legend.position="top", legend.title=element_blank()) 
 
 ```
-*Two respondants selected Gender Queer or Gender-Nonconforming
-*One respondant selected Gender Unlisted
+
+```{r, eval=FALSE}
+bns$MH1_1[bns$D4=="Gender Queer or Gender-Nonconforming"]
+bns$MH1_1[bns$D4=="Gender unlisted:"]
+```
+
+* Two respondents selected `Gender Queer or Gender-Nonconforming`, one reported `15-29` days, the other `30+` days. 
+* The one respondent who selected `Gender Unlisted` reported `10` days. 
 
 ## Have you received or tried to receive mental health services over the past 12months?
 
