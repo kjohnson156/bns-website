@@ -131,15 +131,17 @@ bns$MH1_1[bns$MH1_1 >= 30] <- "30+"
 plot_frq(bns$MH1_1) + xlab("# of Days") + ylab("Count")
 ```
 
-### By gender
+### By Gender Identity
 
 ```{r, fig.width=12}
-plot_xtab(x=bns$MH1_1, grp=bns$D2, margin="col", show.total = FALSE) + 
+
+plot_xtab(x=bns$MH1_1, grp=bns$D4, margin="col", show.total = FALSE) + 
           xlab("# of Days") + ylab("Percent (count)") + 
           theme(legend.position="top", legend.title=element_blank()) 
 
 ```
-
+*Two respondants selected Gender Queer or Gender-Nonconforming
+*One respondant selected Gender Unlisted
 
 ## Have you received or tried to receive mental health services over the past 12months?
 

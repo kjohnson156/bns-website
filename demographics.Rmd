@@ -190,7 +190,7 @@ plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
 
 The majority of respondents, or 92.7% (n = 139), reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.
 
-# Student Identifiers `r emo::ji("pencil")`
+# Student Identifiers 
 
 **I receive services through the Accessibility Resource Center or Disability Support Services Center**
 
@@ -202,54 +202,6 @@ The majority of the students in this survey (87.3% n = 131) report they do not r
 Accessibility Resource Center or Disability Support Services Center and 12.7% (n = 19) report they do.
 
 **I identify as a(an)... `r emo::ji("star")`**
-
-
-
-```{r}
-
-identifier <- bns %>% select("SD9_1",
-                            "SD9_3",
-                            "SD9_4",
-                            "SD9_5",
-                            "SD9_6",
-                            "SD9_7",
-                            "SD9a_1",
-                            "SD9a_2",
-                            "SD9a_3",
-                            "SD9a_4",
-                            "SD9a_5",
-                            "SD9a_6",
-                            "SD9a_7")    
-
-
-
-```
-
-
-```{r}
-names(identifier) <- c("Transfer student",
-                    "Former foster youth/child",
-                    "International student",
-                    "Non-California resident (Not International)",
-                    "Upward Bound, Educational Talent Search, AVID, TRIO, or other college prep program alumni student",
-                    "EOP (Educational Opportunity Program) student",
-                    "REACH (Raising Educational Achievement in Collaborative Hubs) student",
-                    "ESL (English as a Second Language) student",
-                    "Veteran of military service",
-                    "Active duty military personnel",
-                    "Student Athlete",
-                    "DREAM (i.e. undocumented) student",
-                    "DACA (i.e. Deferred Action for Childhood Arrivals) student")
-
-
-
-```
-
-```{r}
-multi.table(identifier) %>% kable(col.names = c("n", "%")) %>% kable_styling()
-```
-
-
 
 ```{r}
 npct <- function(var){
