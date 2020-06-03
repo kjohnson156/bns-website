@@ -90,36 +90,7 @@ plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
 
 A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.
 
-### Dependents
 
-**I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare**
-
-```{r}
-plot_frq(bns$SD9c_3) + xlab("Parental Control")
-```
-
-All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.
-
-**I am a single parent of a dependent household member under the age of 12**
-
-```{r}
-plot_frq(bns$SD9c_4) + xlab("Single Parent")
-```
-
-Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
-
-### Housing 
-
-**Which best describes your current housing situation?**
-
-```{r}
-test1 <- as.data.frame(table(bns$SD10))
-test2 <- as.data.frame(prop.table(table(bns$SD10)))
-finaltest <- left_join(test1, test2, by = "Var1")
-names(finaltest) <- c("Housing Situation", "n", "%")
-finaltest$`%` <- round(finaltest$`%` * 100, 2)
-finaltest %>% kable() %>% kable_styling()
-```
 
 ### Financial Aid
 

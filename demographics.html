@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -219,7 +220,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -248,12 +248,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -389,7 +383,7 @@ div.tocify {
 <p>A majority of the respondents did not list their race (48.2% n = 68). 22.0% (n = 31) of the respondents identified as white, followed by 9.9% (n = 14) of the respondents identified as Black or African American. 9.9% (n = 14) of the respondents identified as Mixed race, and 7.8% (n = 11) identified as Asian. Lastly, 1.4% (n = 2) identified as American Indian or Alaska Native, and 0.7% (n = 1) identified as Native Hawaiian or other Pacific Islander.</p>
 <p><strong>How do you identify your ethnicity? </strong></p>
 <p><img src="demographics_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>74.7% (n = 109) of respondents identified as Hispanic or Latino and 25.3% (n = 37) identified as Non-Hispanic or Latino.</p>
+<p>Most respondents, or 74.7% (n = 109), identified as Hispanic or Latino and 25.3% (n = 37) identified as Non-Hispanic or Latino.</p>
 </div>
 <div id="marital-status" class="section level1">
 <h1>Marital Status</h1>
@@ -414,11 +408,126 @@ div.tocify {
 <p><strong>What is/are the age(s) of your dependent(s)?</strong></p>
 <p><img src="demographics_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>About 5% (n = 8) of the total number of respondents say they have dependents that are between 6-12 years old, 5% (n = 7) say they have dependents that are between 19-60 years old, and only 1 person says they have dependents that are over 61 years old.</p>
+<p><strong>I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare</strong></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.</p>
+<p><strong>I am a single parent of a dependent household member under the age of 12</strong></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.</p>
+</div>
+<div id="housing" class="section level1">
+<h1>Housing</h1>
+<p><strong>Which best describes your current housing situation?</strong></p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Housing Situation
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+I am temporarily living with friends or relatives, without permanent housing (couch surfing)
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live in a sorority or fraternity house
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live in a/the university housing or residence halls
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+4.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live with parents or other relatives, not paying rent with my own money
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+7.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live with parents or other relatives, paying rent with my own money
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I own my own home
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I rent an apartment or house with roommates
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+71.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I rent an apartment or house without roommates
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+10.67
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="student-status" class="section level1">
 <h1>Student Status</h1>
 <p><strong>Are you a first generation student?</strong></p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The vast majority of respondents (94.7% n = 142) are first generation college students with only 8 (5.3%) not being fist generation students.</p>
 <p><strong>What is your major at CSU, Chico?</strong></p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:500px; ">
@@ -1054,32 +1163,32 @@ undeclared or not decided
 </table>
 </div>
 <p><strong>What is your approximate overall Grade Point Average (GPA) for your current degree in progress?</strong> ⭐</p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>About a third, or 34.0% (n = 51), of participants reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.</p>
 <p><strong>How many units (rounded up) are you enrolled in for the current semester at CSU Chico?</strong></p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>More than half, or 53.7% (n = 80), of students filling out this survey are enrolled in 13-15 units in the semester of the survey, a quarter of the students (24.2% n = 36) are enrolled in 12 units, and 20.8% (n = 31) are enrolled in 16 or more units.</p>
 <p><strong>If currently enrolled at more than one college, how many units (rounded up) are you enrolled in for the current semester at other colleges (NOT CSU Chico)?</strong></p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Out of the students who reported they are taking units outside of CSU Chico, about 37.5% (n = 3) are taking 13 or more units in a different college, 25.0% (n = 2) are taking either 1-3 units or 12 units respectively, and only 1 person (12.5%) is enrolled in 10 units outside of CSU Chico.</p>
 </div>
 <div id="class-standing" class="section level1">
 <h1>Class Standing ⭐</h1>
 <p><strong>Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester)</strong></p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Just under half, or 45.0% (n = 67) of respondents, reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.</p>
 <p><strong>What month and year did you first attend Chico State?</strong></p>
 <p>Out of all the students who took this survey, the student who attended Chico state the earliest started in 2012-08-01 and the student who attended the latest started in 2019-08-01.</p>
 <p><strong>What month and year do you expect to graduate from Chico State to earn your current degree?</strong></p>
 <p>Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in 2019-05-31 and the student who expects to graduate the latest expects to graduate in 2023-05-31.</p>
 <p><strong>Have you taken a semester off since you began attending Chico State? If so, how many?</strong></p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-21-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents, or 92.7% (n = 139), reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.</p>
 </div>
 <div id="student-identifiers" class="section level1">
 <h1>Student Identifiers</h1>
 <p><strong>I receive services through the Accessibility Resource Center or Disability Support Services Center</strong></p>
-<p><img src="demographics_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="demographics_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of the students in this survey (87.3% n = 131) report they do not receive services through the Accessibility Resource Center or Disability Support Services Center and 12.7% (n = 19) report they do.</p>
 <p><strong>I identify as a(an)… ⭐</strong></p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
