@@ -94,7 +94,7 @@ A large proportion (96.6% n = 144) of respondents reported that they are not enr
 
 ### Financial Aid
 
-**Select ALL sources of financial support you currently receive while attending college?**
+**Select ALL sources of financial support you currently receive while attending college? (Select all that apply)**
 
 ```{r}
 finaid <- bns %>% select(FS_PellGrant,
@@ -128,6 +128,8 @@ multi.table(finaid) %>% kable(col.names = c("n", "%")) %>% kable_styling()
 
 ### Paid Job or Paid Internship 
 
+**Estimate the number of hours you work in a PAID job or paid internship per week**
+
 ```{r}
 bns$paid_hours <- bns$FSI2
 bns$paid_hours[bns$paid_hours >= 1 & bns$paid_hours <= 5] <- "1-5"
@@ -149,6 +151,7 @@ The majority of the students in this survey (n = 51 34.2%) reported that they wo
 
 ### Unpaid Position or Volunteer 
 
+**Estimate the number of hours you work in an UNPAID internship or volunteer position**
 For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.
 
 ```{r}
@@ -170,10 +173,10 @@ plot_frq(bns$unpaid_hours) + xlab("Unpaid Hours")
 
 The majority of respondents (n = 87 58.4%) reported that they work 0 unpaid hours a week, 19.5% (n = 29) work 1-5 unpaid hours, and lastly 12.1% (n = 18) reported they work 21 unpaid hours a week.
 
-### If you are currently in a PAID position, what is your average hourly wage from all jobsworked during the academic year?
+**If you are currently in a PAID position, what is your average hourly wage from all jobsworked during the academic year?**
 
 ```{r}
-plot_frq(bns$FSI4) + coord_flip() + xlab("Hourly Wage")
+plot_frq(bns$FSI4, vjust="center", hjust="left") + coord_flip() + xlab("Hourly Wage")
 ```
 
 35.8% (n = 53) of the respondents reported that they make between `$12.00` and `$12.99`/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.
@@ -193,7 +196,7 @@ Most respondants, or 63.5% (n = 94), reported that they have 1 other person that
 **How much is your household's gross monthly income (before taxes and not including financial aid)?**
 
 ```{r}
-plot_frq(bns$FSI6) + coord_flip() + xlab("Gross Monthly Income")
+plot_frq(bns$FSI6, vjust="center", hjust="left") + coord_flip() + xlab("Gross Monthly Income")
 ```
 
 ### Finding Paid Employment or Internship
@@ -227,7 +230,7 @@ plot_frq(bns$FSI9_1) + xlab("No Transportation")
 **I searched and applied for jobs but was not offered a job.** 
 
 ```{r}
-plot_frq(bns$FSI9_2) + xlab("Not Offered a Job")
+plot_frq(bns$FSI9_2, ylim=c(0,45)) + xlab("Not Offered a Job")
 ```
 
 31.8% (n = 35) of respondents agreed that they searched for a job but was never offered a job and 16.4% (n = 18) reported they disagree with the statement.
@@ -243,7 +246,7 @@ plot_frq(bns$FSI9_3) + xlab("Schedule Conflict")
 **I searched for jobs, but family obligations interfered with any jobs offered to me.**
 
 ```{r}
-plot_frq(bns$FSI9_4) + xlab("Family Obligations Interfered")
+plot_frq(bns$FSI9_4, ylim=c(0,50)) + xlab("Family Obligations Interfered")
 ```
 
 36.4% (n = 40) of respondents disagreed that their family obligations interfered with any jobs offered to them and 10.9% (n = 12) agreed with the statement.
@@ -278,13 +281,7 @@ plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
 
 The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.
 
-### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? 
 
-```{r}
-plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
-```
-
-The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another souce and 3.0% (n = 4) reported they do.
 
 # Time Related Expenses `r emo::ji("star")`
 
@@ -346,7 +343,7 @@ Out of the respondents who reported that someone else payd for their monthly int
 
 ```{r}
 bns$ME4[bns$ME4 == "$0- I donâ€™t have a mobile/cellphone or landline phone"] <- "$0-I don’t have a mobile/cellphone or landline phone"
-plot_frq(bns$ME4) + xlab("Monthly Cell Phone Bill")
+plot_frq(bns$ME4, ylim=c(0,70)) + xlab("Monthly Cell Phone Bill")
 ```
 
 26.2% (n = 38) of respondents reported that they pay \$50-\$99 a month for their monthly cell phone bill, 18.6% (n = 27) reported that they pay more than \$100 a month, and 42.8% (n = 62) reported that they pay \$0 because someone else pays for them.

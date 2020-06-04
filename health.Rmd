@@ -233,7 +233,13 @@ bns$food_insecurity <- factor(bns$food_insecurity, labels = c("No", "Yes"))
 plot_frq(bns$food_insecurity) + xlab("Food Insecure")
 ```
 
+### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? 
 
+```{r}
+plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
+```
+
+The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another souce and 3.0% (n = 4) reported they do.
 
 
 
