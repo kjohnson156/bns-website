@@ -21,8 +21,8 @@ sjPlot::set_theme(base = theme_bw())
 
 ```{r, fig.width=8, fig.height=8}
 src2a <- bns %>% select(starts_with("SRC2a_"))
-names(src2a) <- c("Fewer Hours Paid",
-                  "More Time Unpaid",
+names(src2a) <- c("Worked Fewer Paid Hours",
+                  "More Time for Unpaid Hours",
                   "More Money for Bills",
                   "More Money for Entertainment",
                   "Shop More at Farmers' Market",
@@ -38,7 +38,7 @@ plot_likert(src2a,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 ```{r, fig.width=8, fig.height=8}
@@ -58,7 +58,7 @@ plot_likert(src2b,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 **Please choose the options that best match your feelings of using Food Pantries or CalFresh**
@@ -73,7 +73,7 @@ plot_likert(src3m,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 # Barriers for Food Pantries
@@ -125,7 +125,7 @@ plot_likert(eh1,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 ## How many servings of fruits and vegetables do you usually consume per day? 
@@ -149,7 +149,7 @@ More than half, or 52.4% (n = 76) of respondents, reported that they drink no 10
 **How many ounces of regular soda, cola, or pop, sports drink, or energy drinks do you consume each day?** 
 
 ```{r}
-plot_frq(bns$EH4) + xlab("Ounces of Soda")
+plot_frq(bns$EH4, ylim = c(0,85)) + xlab("Ounces of Soda")
 ```
 
 Alomost half, or 48.6% (n = 71) of respondents, reported that they don't drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.
@@ -181,7 +181,7 @@ Half, or 50.0% (n = 73) of respondents, reported that they do not drink alcohol 
 **Typically, how many servings of alcohol do you consume when you drink alcohol?** 
 
 ```{r}
-plot_frq(bns$EH8a) + xlab("Servings of Alcohol")
+plot_frq(bns$EH8a, ylim = c(0,45)) + xlab("Servings of Alcohol")
 ```
 
 More than half, or 54.7% (n = 35) of respondents, reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.
@@ -219,7 +219,7 @@ plot_likert(eh9,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 

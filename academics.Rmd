@@ -30,7 +30,7 @@ plot_likert(tm1,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
 

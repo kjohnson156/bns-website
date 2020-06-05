@@ -56,44 +56,37 @@ Only 7.4% (n = 11) of respondents reported that they have smoked over 100 cigare
 plot_frq(bns$TU2) + xlab("Frequency of Smoking Cigarettes")
 ```
 
-3.4% (n = 5) reported that they smoke cigarettes on some days and 96.6% (n = 142) reported that they do not smoke cigarettes.
+Only 3.4% (n = 5) respondents reported that they smoke cigarettes on some days and 96.6% (n = 142) reported that they do not smoke cigarettes.
 
 # Sleep
 
-## On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during the week?
+**On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during the week?**
+
 
 ```{r}
-nsleep <- as.data.frame(table(bns$SLPD1_1))
-pctsleep <- as.data.frame(prop.table(table(bns$SLPD1_1)))
-sleep <- left_join(nsleep,pctsleep, by = "Var1")
-names(sleep) <- c("Hours", "n", "%")
-sleep$`%` <- round(sleep$`%` * 100, 2)
-sleep %>% kable() %>% kable_styling()
+plot_frq(bns$SLPD1_1, type = c("histogram")) + xlab("Average Hours of Sleep During Academic Year")
 ```
 
-## On average, during the academic year, howmany hours of sleep do you getin a typical 24-hour period during weekends?
+
+The majority of respondents, or 75.68%, reported getting an average of 5-7 hours of sleep in a typical 24-hour period during the academic year. 
+
+**On average, during the academic year, howmany hours of sleep do you getin a typical 24-hour period during weekends?**
+
 
 ```{r}
-nsleep2 <- as.data.frame(table(bns$SLPD2_1))
-pctsleep2 <- as.data.frame(prop.table(table(bns$SLPD2_1)))
-sleep2 <- left_join(nsleep2,pctsleep2, by = "Var1")
-names(sleep2) <- c("Hours", "n", "%")
-sleep2$`%` <- round(sleep2$`%` * 100, 2)
-sleep2 %>% kable() %>% kable_styling()
+plot_frq(bns$SLPD2_1, type = c("histogram")) + xlab("Average Hours of Sleep During Weekends")
 ```
+The majority of respondents, or 79.06%, reported getting an average of 6-10 hours of sleep in a typical 24-hour period during the weekends. 
 
-## On average, how many times per month do you feel deprived of sleep?
+**On average, how many times per month do you feel deprived of sleep?**
+
 
 ```{r}
-nsleep3 <- as.data.frame(table(bns$SLPD3_1))
-pctsleep3 <- as.data.frame(prop.table(table(bns$SLPD3_1)))
-sleep3 <- left_join(nsleep3,pctsleep3, by = "Var1")
-names(sleep3) <- c("Days", "n", "%")
-sleep3$`%` <- round(sleep3$`%` * 100, 2)
-sleep3 %>% kable() %>% kable_styling()
+plot_frq(bns$SLPD3_1, type = c("histogram")) + xlab("Average Times Felt Deprived of Sleep Per Month")
 ```
 
-# Select the activities that cause you to feel deprived of sleep
+
+**Select the activities that cause you to feel deprived of sleep**
 
 ```{r}
 sleep_act <- bns %>% select(starts_with("SLPD4_")) %>% select(-c("SLPD4_6_TEXT"))
@@ -109,19 +102,27 @@ names(sleep_act) <- c("Studying or finishing coursework",
 multi.table(sleep_act) %>% kable(col.names = c("n", "%")) %>% kable_styling()
 ```
 
-## How frequently do you feel tired while at work or school?
+The majority of respondants, or 94.7%, reported that the acitvity of studying or finishing coursework caused them to feel deprived of sleep.
+
+**How frequently do you feel tired while at work or school?**
 
 ```{r}
 plot_frq(bns$SLPD5) + xlab("Frequency of Feeling Tired")
 ```
 
-## Have you fallen asleep in class in the past 12 months?
+Most respondants, or 55.4%, reported occasionally feeling tired while at work or school, while 35% reported always feeling tired at work or school. 
+
+**Have you fallen asleep in class in the past 12 months?**
 
 ```{r}
 plot_frq(bns$SLPD6) + xlab("Fallen Asleep in Class")
 ```
 
-## How many days in the past month have you experienced heightened anxiety, stress, depression and/or problems with emotions?
+More than half of respondants, or 57.1%, reported they had not fallen asleep in class in the past 12 months. 
+
+## Stress, Anxiety, & Depression
+
+**How many days in the past month have you experienced heightened anxiety, stress, depression and/or problems with emotions?**
 
 
 ```{r}
@@ -131,7 +132,7 @@ bns$MH1_1[bns$MH1_1 >= 30] <- "30+"
 plot_frq(bns$MH1_1) + xlab("# of Days") + ylab("Count")
 ```
 
-### By Gender Identity
+**By Gender Identity**
 
 All but three respondents selected either Male or Female for their gender identity. Their response distribution is below. 
 
@@ -151,80 +152,107 @@ bns$MH1_1[bns$D4=="Gender unlisted:"]
 * Two respondents selected `Gender Queer or Gender-Nonconforming`, one reported `15-29` days, the other `30+` days. 
 * The one respondent who selected `Gender Unlisted` reported `10` days. 
 
-## Have you received or tried to receive mental health services over the past 12months?
+## Mental Health Services
+
+**Have you received or tried to receive mental health services over the past 12months?**
 
 ```{r}
 plot_frq(bns$MH2) + xlab("Received Mental Health Services") + ylim(c(0,100))
 ```
 
+Over half of the respondents, or 58.9%, answered no when asked if they had received, or tried to receive, mental health services over the past 12 months. 
 
 
-# Food & Nutrtion 
-## “In the last 12 months, the food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.” Was that often, sometimes,or nevertrue for (you/your household)?
+# Food Security 
+
+## Food/Meal Habits in the Last 12 Months
+
+**“In the last 12 months, the food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.” Was that often, sometimes,or nevertrue for (you/your household)?**
 
 ```{r}
 plot_frq(bns$HH3) + xlab("Food Didn't Last + No Money to Get More")
 ```
 
-## “In the last 12 months, (I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true for (you/your household)?
+Over half of respondents, or 54.3%, said it is sometimes true that in the last 12 months, the food that was bought didn't last and they didn't have money to get more. 21.4% of respondents said that was often true. 
+
+**“In the last 12 months, (I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true for (you/your household)?**
 
 ```{r}
 plot_frq(bns$HH4) + xlab("Couldn't Afford Balanced Meals")
 ```
 
-## In the last 12 months, did you or other adults in your household,ever cut the size of your meals or skip meals because there wasn’t enough money for food?
+Over half of respondents, or 52.1%, said it is sometimes true that in the last 12 months, they couldn't afford to eat balanced meals. 23.2% of respondents said that was often true. 
+
+**In the last 12 months, did you or other adults in your household,ever cut the size of your meals or skip meals because there wasn’t enough money for food?**
 
 ```{r}
 plot_frq(bns$AD1) + xlab("Cut Size/Skip Meals Because No Money")
 ```
 
-## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+Over half of respondents, or 58%, reported that they, or the other adults in their household, cut the size of their meals, or skipped meals, because there was not enough money for food. 
+
+**How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
 
 ```{r}
 plot_frq(bns$AD1a) + xlab("Cut Size/Skip Meals Because No Money")
 ```
 
-## In the last 12 months, did you ever eat less than you felt you should because there was not enough money for food?
+Of the respondents that answered yes to cutting the size of their meals, or skipping meals, over half (54.5%) said this happened some months but not every month. 27.3% reported this happened almost every month. 
+
+**In the last 12 months, did you ever eat less than you felt you should because there was not enough money for food?**
 
 ```{r}
 plot_frq(bns$AD2) + xlab("Ate Less Because Not Enough Money")
 ```
 
-## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+The majority of respondents, or 61.8%. reported eating less then they felt they should over the last 12 months because there was not enough money for food. 
+
+**How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
 
 ```{r}
 plot_frq(bns$AD2a) + xlab("Ate Less Because Not Enough Money")
 ```
 
-## In the last 12 months, were you ever hungry but you did not eat because there wasn’t enough money for food?
+Of those that responded yes that they ate less because there was not enough money for food, about half (50.6%) reported this happend some months but not every month. 24.7% of respondents reported this happend almost every month. 
+
+**In the last 12 months, were you ever hungry but you did not eat because there wasn’t enough money for food?**
 
 ```{r}
 plot_frq(bns$AD3) + xlab("Hungry Because Not Eating Due to Money")
 ```
 
-## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+Over half of respondents, or 54.5%, reported that there were times they were hungry but did not eat because there wasn't enough money for food. 
+
+**How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
 
 ```{r}
 plot_frq(bns$AD3a) + xlab("Hungry Because Not Eating Due to Money")
 ```
 
-## In the last 12 months, did you lose weight because there wasn’t enough money for food?
+Of those that responded yes they were hungry but did not eat because lack of money for food, more than half, or 55.3%, reported this happened some months but not every month. 22.4% of respondents reported this happened almost every month.
+
+**In the last 12 months, did you lose weight because there wasn’t enough money for food?**
 
 ```{r}
 plot_frq(bns$AD4) + xlab("Lose Weight Because No Money for Food")
 ```
-
-## In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn’t enough money for food? 
+Most respondents (67.4%) reported they did not lose weight becuase there wasn't enough money for food. 
+ 
+**In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn’t enough money for food?** 
 
 ```{r}
 plot_frq(bns$AD5) + xlab("Adults did not Eat Because No Money")
 ```
 
-## How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?
+Most respondents (74.8%) reported that none of the adults in their household ever went a whole day without eating becasue there wasn't enough money for food. 
+
+**How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
 
 ```{r}
 plot_frq(bns$AD5a) + xlab("Adults did not Eat Because No Money") + ylim(c(0,20))
 ```
+
+Out of the 34 respondents that answered yes, either they or their adult household member went a whole day without eating because there wasn't enough money for food, over half (51.6%) reported this happened some months but not every month. 22.6% reported this happened every month.  
 
 ## Food Insecure
 
@@ -233,7 +261,11 @@ bns$food_insecurity <- factor(bns$food_insecurity, labels = c("No", "Yes"))
 plot_frq(bns$food_insecurity) + xlab("Food Insecure")
 ```
 
-### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? 
+The majority of respondents, or 65.3%, reported that yes, they were food insecure. 34.7% reported that no, they were not food insecure. 
+
+## Campus Meal Plans
+
+**Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?** 
 
 ```{r}
 plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
