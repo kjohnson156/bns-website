@@ -280,8 +280,10 @@ plot_likert(src1,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
+
+More than 50% of respondants neither agreed or disagreed, or agreed, that they were able to work fewer paid hours (65.1%), had more time for unpaid work (57.6%), had more money for bills (71.4%) and entertainment (59.6%), shopped at the Farmer's Market more (56.8%), were able to learn more about healthy food (71.8%) and were able to purchase healthy foods (87.3%) while they received CalFresh. 
 
 ```{r, fig.width=8}
 src2 <- bns %>% select(starts_with("SRC1b_"))
@@ -290,11 +292,12 @@ plot_likert(src2,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
+More than 50% of respondants neither agreed or disagreed, or agreed, that they were able to cook at home more often (94%), consumed a healthier diet (86.8%), consumed less fast food (84.6%), consumed fewer processed foods (85.9%), consumed fewer sweetened drinks (79.4%), and consumed fewer alcoholic beverages (81.4%) while they received CalFresh. 
 
+```{r, fig.height=6, fig.width=8}
 
-```{r, fig.width=8}
 src3 <- bns %>% select(starts_with("SRC1c_"))
 names(src3) <- c("Enrolled in More Classes",
                  "Concentrated More in Classes",
@@ -311,8 +314,9 @@ plot_likert(src3,
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
             values = "sum.outside",
-            show.prc.sign = TRUE) + theme_bw() + theme(legend.position = "top")
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
+More than 50% of respondants neither agreed or disagreed, or agreed, that while they were receiving CalFresh they were enrolled in more classes (52%), able to concentrate more in classes (94.9%), and their grades improved (96.2%). They had more time to study for exams (93.8%), prepare for class (92.6%), and had more time for homework (92.4%) & office hours (89%). They also reported that they neither disagreed nor agreed, or agreed, that they had more time to attend class (93.6%), for field trips (84.9%), their sleep quality improved (82.3%) and stress level decreased (73.9%) while receiving CalFresh.  
 
 # Barriers to CalFresh `r emo::ji("star")`
 
