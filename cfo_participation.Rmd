@@ -100,7 +100,7 @@ plot_likert(src1,
 
 * **WIC:** Only 2.7% (n = 4) of respondents reported they currently use the WIC nutrition program, 6.8% (n = 10) of respondents reported they have used it in the past, and 17.0% (n = 25) reported they have never heard of it. The majority (n = 108 73.5%) reported that they have heard of it but never have used it.
 
-* **CalWORKS:** Only 0.7% (n = 1) of respondents reported they currently use CalWORKS, 6.8% (n = 10) of respondents reported they have used it in the past, and 7.4% (n = 11) reported they have never heard of it. The majority (n = 126 85.1%) reported that they have heard of it but never have used it.
+* **CalWORKs:** Only 0.7% (n = 1) of respondents reported they currently use CalWORKs, 6.8% (n = 10) of respondents reported they have used it in the past, and 7.4% (n = 11) reported they have never heard of it. The majority (n = 126 85.1%) reported that they have heard of it but never have used it.
 
 * **Emergency Food:** Of the students who responded, 28.4% (n = 42) reported that they currently use emergency food from the food bank, food pantry, or church, 28.4% (n = 42) reported they have used emergency food in the past, and 3.4% (n = 5) reported they never heard of it. The majority (n = 59 39.9%) reported they have heard of it but never used it.
 

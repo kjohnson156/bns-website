@@ -41,6 +41,8 @@ plot_likert(src2a,
             show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
+**While I utilize/utilized campus food pantry/pantries or local food bank(s):** 
+
 ```{r, fig.width=8, fig.height=8}
 src2b <- bns %>% select(starts_with("SRC2b_"))
 names(src2b) <- c("Enrolled in More Classes",
@@ -152,7 +154,7 @@ More than half, or 52.4% (n = 76) of respondents, reported that they drink no 10
 plot_frq(bns$EH4, ylim = c(0,85)) + xlab("Ounces of Soda")
 ```
 
-Alomost half, or 48.6% (n = 71) of respondents, reported that they don't drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.
+Almost half, or 48.6% (n = 71) of respondents, reported that they don't drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.
 
 **How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?** 
 

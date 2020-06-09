@@ -24,13 +24,13 @@ plot_frq(bns$SD9b_1) + xlab ("Work Study")
 
 The majority of respondents, or 88.0% (n = 125), reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
 
-**I participate in CalWorks(i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)**
+**I participate in CalWORKS (i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)**
 
 ```{r}
 plot_frq(bns$SD9b_2) + xlab("CalWorks/AFDC")
 ```
 
-The majority of respondents, or 76.0% (n = 111), report that they do not participate in Calworks or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
+The majority of respondents, or 76.0% (n = 111), report that they do not participate in CalWORKS or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
 
 **I participate in the Job Opportunities and Basic Skills (JOBS) Program**
 
@@ -173,7 +173,7 @@ plot_frq(bns$unpaid_hours) + xlab("Unpaid Hours")
 
 The majority of respondents (n = 87 58.4%) reported that they work 0 unpaid hours a week, 19.5% (n = 29) work 1-5 unpaid hours, and lastly 12.1% (n = 18) reported they work 21 unpaid hours a week.
 
-**If you are currently in a PAID position, what is your average hourly wage from all jobsworked during the academic year?**
+**If you are currently in a PAID position, what is your average hourly wage from all jobs worked during the academic year?**
 
 ```{r}
 plot_frq(bns$FSI4, vjust="center", hjust="left") + coord_flip() + xlab("Hourly Wage")
@@ -191,7 +191,7 @@ bns$adj_size[bns$adj_size >= 5] <- "5+"
 plot_frq(bns$adj_size) + xlab("Household Size")
 ```
 
-Most respondants, or 63.5% (n = 94), reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
+Most respondents, or 63.5% (n = 94), reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
 
 **How much is your household's gross monthly income (before taxes and not including financial aid)?**
 
@@ -337,7 +337,7 @@ plot_frq(bns$ME3) + xlab("Monthly Internet/TV Bill")
 plot_frq(bns$ME3a, y.offset = .3) + xlab("Monthly Internet/TV Bill") + ylim(c(0,8))
 ```
 
-Out of the respondents who reported that someone else payd for their monthly internet/TV bill, 42.9% (n = 6) reported that they pay less than \$50 a month, 28.6% (n = 4) reported they pay \$50-\$99 a month, and 28.6% (n = 4) reported they pay more than \$100 a month.
+Out of the respondents who reported that someone else paid for their monthly internet/TV bill, 42.9% (n = 6) reported that they pay less than \$50 a month, 28.6% (n = 4) reported they pay \$50-\$99 a month, and 28.6% (n = 4) reported they pay more than \$100 a month.
 
 **Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.**
 
@@ -405,7 +405,7 @@ plot_frq(bns$ME7, vjust = "center", y.offset = 3) + xlab("Monthly Transportation
 plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses") + coord_flip()
 ```
 
-35.5% of respondents reported that they pay \$0 for other regularly occuring expenses, 15.9% (n = 22) reported that they pay \$100-\$149 a month, and 14.5% (n = 20) reported that they pay \$10-\$49 a month.
+35.5% of respondents reported that they pay \$0 for other regularly occurring expenses, 15.9% (n = 22) reported that they pay \$100-\$149 a month, and 14.5% (n = 20) reported that they pay \$10-\$49 a month.
 
 **Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.**
 
