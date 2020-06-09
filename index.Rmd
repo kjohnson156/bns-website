@@ -19,7 +19,7 @@ Questions marked with a `r emo::ji('star')` are questions of interest for the CS
 
 ---
 
-## Contact
+### Contact
 
 Questions about the survey or data analysis presented in this report can be directed to:
 
@@ -27,3 +27,8 @@ Questions about the survey or data analysis presented in this report can be dire
 Email: sbianco@csuchico.edu  
 Phone: 530-898-4022
 
+---
+
+### Acknowledgements
+
+This website was built and is maintained by Brandon Leff, Undergraduate student in Statistics and Data Science, CSU Chico, Department of Mathematics and Statistics and Kathleen Johnson, MS, Center for Healthy Communities. 
