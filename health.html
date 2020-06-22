@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -220,6 +219,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -248,6 +248,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -333,19 +339,22 @@ div.tocify {
   <a href="demographics.html">Demographics</a>
 </li>
 <li>
+  <a href="academics.html">Academics</a>
+</li>
+<li>
   <a href="employment.html">Employment</a>
 </li>
 <li>
-  <a href="cfo_participation.html">CalFresh Participation</a>
+  <a href="cfo_participation.html">CalFresh</a>
 </li>
 <li>
   <a href="pantry.html">Food Pantry</a>
 </li>
 <li>
-  <a href="academics.html">Academics</a>
+  <a href="health.html">Health</a>
 </li>
 <li>
-  <a href="health.html">Health</a>
+  <a href="workload.html">Workload</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -546,6 +555,9 @@ Other
 <div id="food-insecure" class="section level2">
 <h2>Food Insecure</h2>
 <p><img src="health_files/figure-html/unnamed-chunk-29-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Food insecurity is defined by meeting 2 or more of the following criteria:</p>
+<p>Selecting sometimes true or often true for not having enough food or money to last and not being able to afford balanced meals.</p>
+<p>Selecting yes for any of the 9 prior questions.</p>
 <p>The majority of respondents, or 65.3%, reported that yes, they were food insecure. 34.7% reported that no, they were not food insecure.</p>
 </div>
 <div id="campus-meal-plans" class="section level2">
@@ -553,6 +565,47 @@ Other
 <p><strong>Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?</strong></p>
 <p><img src="health_files/figure-html/unnamed-chunk-30-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another source and 3.0% (n = 4) reported they do.</p>
+</div>
+</div>
+<div id="habits" class="section level1">
+<h1>Habits</h1>
+<p><strong>For each of the following statements, indicate how strongly agree or disagree about your current eating and cooking habits</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-31-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div id="how-many-servings-of-fruits-and-vegetables-do-you-usually-consume-per-day" class="section level2">
+<h2>How many servings of fruits and vegetables do you usually consume per day?</h2>
+<p><img src="health_files/figure-html/unnamed-chunk-32-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents (n = 101 70.6%) reported that they consume 1-2 servings of fruit and vegetables a day and 16.1% (n = 23) reported that they consume none.</p>
+</div>
+<div id="drinks-juice-water-alcohol-etc." class="section level2">
+<h2>Drinks (juice, water, alcohol, etc.)</h2>
+<p><strong>How many ounces of 100% fruit juices like orange juice, apple juice or grape juice do you consume each day?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-33-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>More than half, or 52.4% (n = 76) of respondents, reported that they drink no 100% fruit juice each day and 34.5% (n = 50) reported that they drink between 1 to 8 ounces a day.</p>
+<p><strong>How many ounces of regular soda, cola, or pop, sports drink, or energy drinks do you consume each day?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Almost half, or 48.6% (n = 71) of respondents, reported that they don’t drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.</p>
+<p><strong>How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-36-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>About 19.0% (n = 27) of respondents reported that they drink 1-8 ounces of water or other unsweetened drinks a day, 7.0% (n = 10) reported they do not drink any ounces of unsweetened drinks a day, and 9.2% (n = 13) reported that they drink more than 65 ounces a day.</p>
+<p><strong>How often do you consume at least one serving of alcohol?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-37-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Half, or 50.0% (n = 73) of respondents, reported that they do not drink alcohol in a week and 43.1% (n = 63) reported they drink at least one serving of alcohol between 1 to 2 days a week.</p>
+<p><strong>Typically, how many servings of alcohol do you consume when you drink alcohol?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-38-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>More than half, or 54.7% (n = 35) of respondents, reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.</p>
+</div>
+<div id="dining-out-or-meal-replacements" class="section level2">
+<h2>Dining Out or Meal Replacements</h2>
+<p><strong>How frequently do you eat out at family-style or sit-down restaurants/café types of dining establishment per week?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-39-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>38.9% (n = 56) of respondents reported that they do not go out to sit-down restaurants in a week and 45.8% (n = 66) reported that they go out between 1 to 2 times in a week.</p>
+<p><strong>How frequently do you eat from fast food restaurants, convenience stores, or vending machines for a meal or meal replacement?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-40-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>20.5% (n = 30) of respondents reported that they do not eat fast food, from convenience stores, or vending machines in a week and 47.3% (n = 69) reported that they eat fast food between 1 to 2 times a week.</p>
+</div>
+<div id="the-following-questions-pertain-to-how-comfortable-you-feel-about-buying-or-preparing-food" class="section level2">
+<h2>The following questions pertain to how comfortable you feel about buying or preparing food</h2>
+<p><img src="health_files/figure-html/unnamed-chunk-41-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 
@@ -566,7 +619,7 @@ Center for Healthy Communities, "Website name", June 2020. Retrieved on xx-xxx-x
 
 <br>
 
-<img src="CHC_Logo.png" alt="CHC Logo" width="300" height="85">
+<img src="CHC_Logo.PNG" alt="CHC Logo" width="300" height="85">
 
 
 </div>

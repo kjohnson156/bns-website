@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -220,6 +219,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -248,6 +248,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -333,19 +339,22 @@ div.tocify {
   <a href="demographics.html">Demographics</a>
 </li>
 <li>
+  <a href="academics.html">Academics</a>
+</li>
+<li>
   <a href="employment.html">Employment</a>
 </li>
 <li>
-  <a href="cfo_participation.html">CalFresh Participation</a>
+  <a href="cfo_participation.html">CalFresh</a>
 </li>
 <li>
   <a href="pantry.html">Food Pantry</a>
 </li>
 <li>
-  <a href="academics.html">Academics</a>
+  <a href="health.html">Health</a>
 </li>
 <li>
-  <a href="health.html">Health</a>
+  <a href="workload.html">Workload</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -426,8 +435,8 @@ Only 6.8% (n = 10) of respondents reported that they currently have free or redu
 <li><p><strong>Free Food from community:</strong> Only 9.5% (n = 14) of respondents reported that they currently get free food from other community organizations such as meal vouchers, 15.5% (n = 23) reported they have used it in the past, and 22.3% (n = 33) reported they have never heard of it. The majority (n = 78 52.7%) reported that they have heard of it but have never used it.</p></li>
 <li><p><strong>Free or reduced lunch:</strong> Only 6.8% (n = 10) of respondents reported that they currently have free or reduced lunch meals at district schools for their children or dependents, 45.3% (n = 67) reported that they have in the past, and 37.2% (n = 55) reported they have heard of it but have never used it. Only 10.8% (n = 16) reported they have never heard of it.</p></li>
 </ul>
-<div id="check-all-statements-below-that-apply-to-you-while-you-receive-or-received-calfresh-benefits" class="section level3">
-<h3>Check all statements below that apply to you while you receive or received CalFresh benefits ⭐</h3>
+<div id="calfresh-benefits" class="section level3">
+<h3>CalFresh Benefits ⭐</h3>
 <!---
 ### I am/was able to work or worked fewer hours each week in a PAID position.
 
@@ -741,7 +750,7 @@ Center for Healthy Communities, "Website name", June 2020. Retrieved on xx-xxx-x
 
 <br>
 
-<img src="CHC_Logo.png" alt="CHC Logo" width="300" height="85">
+<img src="CHC_Logo.PNG" alt="CHC Logo" width="300" height="85">
 
 
 </div>

@@ -114,7 +114,7 @@ plot_likert(src1,
 
 
 
-### Check all statements below that apply to you while you receive or received CalFresh benefits `r emo::ji("star")`
+### CalFresh Benefits `r emo::ji("star")`
 <!---
 ### I am/was able to work or worked fewer hours each week in a PAID position.
 

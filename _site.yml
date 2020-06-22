@@ -7,16 +7,18 @@ navbar:
       href: index.html
     - text: "Demographics"
       href: demographics.html
+    - text: "Academics"
+      href: academics.html
     - text: "Employment"
       href: employment.html
-    - text: "CalFresh Participation"
+    - text: "CalFresh"
       href: cfo_participation.html
     - text: "Food Pantry"
       href: pantry.html
-    - text: "Academics"
-      href: academics.html
     - text: "Health"
       href: health.html
+    - text: "Workload"
+      href: workload.html
 
 output:
   html_document:
