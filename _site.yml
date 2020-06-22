@@ -8,7 +8,11 @@ navbar:
     - text: "Demographics"
       href: demographics.html
     - text: "Academics"
-      href: academics.html
+      menu: 
+      - text: "Student Status"
+        href: academics.html
+      - text: "Workload"
+        href: workload.html
     - text: "Employment"
       href: employment.html
     - text: "CalFresh"
@@ -17,8 +21,7 @@ navbar:
       href: pantry.html
     - text: "Health"
       href: health.html
-    - text: "Workload"
-      href: workload.html
+    
 
 output:
   html_document:

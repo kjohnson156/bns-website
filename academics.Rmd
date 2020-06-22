@@ -1,5 +1,5 @@
 ---
-title: "Academics"
+title: "Student Status"
 output: 
   html_document: 
     toc: yes
@@ -10,8 +10,6 @@ output:
 ```{r, include=FALSE}
 source("common_code.R")
 ```
-
-# Student Status
 
 **Are you a first generation student?** 
 
@@ -28,14 +26,17 @@ The vast majority of respondents (94.7% n = 142) are first generation college st
 table(tolower(bns$major)) %>% kable(col.names = c("Major", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
 ```
 
- <br> 
- **What is your approximate overall Grade Point Average (GPA) for your current degree in progress?** `r emo::ji("star")` 
+<br> 
+
+**What is your approximate overall Grade Point Average (GPA) for your current degree in progress?** `r emo::ji("star")` 
 
 ```{r}
 plot_frq(bns$SD2) + xlab("GPA")
 ```
 
 About a third, or 34.0% (n = 51), of participants reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.
+
+# Units
 
 **How many units (rounded up) are you enrolled in for the current semester at CSU Chico?** 
 
