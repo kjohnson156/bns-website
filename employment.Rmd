@@ -115,7 +115,7 @@ names(finaid) <- c("Pell Grant",
                    "Other Grants",
                    "Federal Loans",
                    "Private Loans",
-                   "Workstudy",
+                   "Work-study",
                    "GI Bill",
                    "Other")
 ```

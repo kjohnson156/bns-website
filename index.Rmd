@@ -3,9 +3,8 @@ title: "Exploring patterns of basic needs in college students"
 output: html_document
 ---
 
-### Overview
 
-Food insecurity among college students is problem that can impact student performance in the classroom and ultimately effect student success. The [Center for Healthy Communities](https://www.csuchico.edu/chc/) (CHC) developed the **Basic Needs Student Success Survey (BNS3)** and administered it to undergraduate students at [California State University, Chico](https://www.csuchico.edu/) in April 2019. The [Educational Opportunity Program](https://www.csuchico.edu/eop/) (EOP) office assisted in the recruitment and provided computers for students to take the survey. Participants were given a $25 gift card for their participation. 
+Food insecurity among college students is problem that can impact student performance in the classroom and ultimately effect student success. The [Center for Healthy Communities](https://www.csuchico.edu/chc/) (CHC) developed the **Basic Needs Student Success Survey (BNS3)** and administered it to undergraduate students at [California State University, Chico](https://www.csuchico.edu/) in April 2019. The [Educational Opportunity Program](https://www.csuchico.edu/eop/) (EOP) office assisted in the recruitment and provided computers for students to take the survey. Participants were given a $25 gift card for their participation. Initially, EOP students were identified as the target population for this survey because of their low-income and first-generation status which makes these students more likely eligible to qualify for CalFresh.
 
 The purpose of this cross-sectional pilot study was to create a tool that identifies student perception of the impact of receiving [CalFresh](https://www.csuchico.edu/calfresh/index.shtml) assistance on their health, nutrition, cooking confidence, time management and academic performance. 
 
