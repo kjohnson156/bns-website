@@ -185,7 +185,7 @@ plot_frq(bns$HH4) + xlab("Couldn't Afford Balanced Meals")
 
 Over half of respondents, or 52.1%, said it is sometimes true that in the last 12 months, they couldn't afford to eat balanced meals. 23.2% of respondents said that was often true. 
 
-* **In the last 12 months, did you or other adults in your household, ever cut the size of your meals or skip meals because there wasn’t enough money for food?**
+* **In the last 12 months, did you or other adults in your household, ever cut the size of your meals or skip meals because there wasn’t enough money for food?** 
 
 ```{r}
 plot_frq(bns$AD1) + xlab("Cut Size/Skip Meals Because No Money")
@@ -193,7 +193,7 @@ plot_frq(bns$AD1) + xlab("Cut Size/Skip Meals Because No Money")
 
 Over half of respondents, or 58%, reported that they, or the other adults in their household, cut the size of their meals, or skipped meals, because there was not enough money for food. 
 
-* **How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
 
 ```{r}
 plot_frq(bns$AD1a) + xlab("Cut Size/Skip Meals Because No Money")
@@ -209,7 +209,7 @@ plot_frq(bns$AD2) + xlab("Ate Less Because Not Enough Money")
 
 The majority of respondents, or 61.8%, reported eating less then they felt they should over the last 12 months because there was not enough money for food. 
 
-* **How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
 
 ```{r}
 plot_frq(bns$AD2a) + xlab("Ate Less Because Not Enough Money")
@@ -225,7 +225,7 @@ plot_frq(bns$AD3) + xlab("Hungry Because Not Eating Due to Money")
 
 Over half of respondents, or 54.5%, reported that there were times they were hungry but did not eat because there wasn't enough money for food. 
 
-* **How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
 
 ```{r}
 plot_frq(bns$AD3a) + xlab("Hungry Because Not Eating Due to Money")
@@ -248,7 +248,7 @@ plot_frq(bns$AD5) + xlab("Adults did not Eat Because No Money")
 
 Most respondents (74.8%) reported that none of the adults in their household ever went a whole day without eating because there wasn't enough money for food. 
 
-* **How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?**
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
 
 ```{r}
 plot_frq(bns$AD5a) + xlab("Adults did not Eat Because No Money") + ylim(c(0,20))
@@ -262,7 +262,7 @@ Food insecurity is defined by meeting 2 or more of the following criteria:
 
 *Selecting sometimes true or often true for not having enough food or money to last and not being able to afford balanced meals. 
 
-*Selecting yes for any of the 9 prior  questions.
+*Selecting yes for any of the 5 prior bulleted, bold questions.
 
 ```{r}
 bns$food_insecurity <- factor(bns$food_insecurity, labels = c("No", "Yes"))

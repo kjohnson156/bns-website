@@ -11,7 +11,7 @@ source("common_code.R")
 
 **For each of the following statements, indicate how strongly you agree or disagree about your confidence in academic performance.**
 
-```{r, fig.width=8, fig.height=10}
+```{r, fig.width=5.5, fig.height=5}
 tm1 <- bns %>% select(starts_with("TM1_"))
 tm1con <- tm1[,c(1,2)]
 tm1other <- tm1[,c(3:9)]
@@ -33,7 +33,7 @@ plot_likert(tm1con,
 
 **For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities.**
 
-```{r}
+```{r, fig.width=6, fig.height=5}
 plot_likert(tm1other, 
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,

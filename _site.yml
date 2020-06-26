@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "BNS3"
   left:
-    - text: "Home"
+    - text: "Overview"
       href: index.html
     - text: "Demographics"
       href: demographics.html

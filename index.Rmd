@@ -27,8 +27,11 @@ Questions marked with a `r emo::ji('star')` are questions of interest for the CS
 
 Questions about the survey or data analysis presented in this report can be directed to:
 
-* ##### [Stephanie Bianco](https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml)
+* ##### [Stephanie Bianco](https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml), CHC Director, PI
 Email: sbianco@csuchico.edu  
+
+* ##### [Robin Donatello](https://norcalbiostat.netlify.app/), Data Manager
+Email: rdonatello@csuchico.edu
 
 
 ---
