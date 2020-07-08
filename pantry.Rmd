@@ -12,6 +12,22 @@ source("common_code.R")
 sjPlot::set_theme(base = theme_bw())
 ```
 
+# Participation
+
+# Impact
+
+# Barriers
+
+
+
+
+
+
+
+
+
+
+
 
 # Impact of Pantries
 

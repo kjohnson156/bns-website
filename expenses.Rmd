@@ -1,0 +1,12 @@
+---
+title: "Expenses"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    css: styles.css
+---
+
+```{r, include=FALSE}
+source("common_code.R")
+```

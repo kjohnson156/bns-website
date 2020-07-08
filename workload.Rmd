@@ -7,7 +7,9 @@ output: html_document
 source("common_code.R")
 ```
 
-# Time Management and Performance
+# Time Management
+
+# Academic Performance
 
 **For each of the following statements, indicate how strongly you agree or disagree about your confidence in academic performance.**
 

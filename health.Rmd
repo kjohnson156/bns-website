@@ -11,6 +11,20 @@ output:
 source("common_code.R")
 ```
 
+# Physical Activity
+
+# Tobacco Use
+
+# Sleep
+
+# Eating and Cooking Habits
+
+
+
+
+
+
+
 
 # Physical Activity
 

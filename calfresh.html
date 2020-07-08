@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Participation in Basic Needs Programs and Services</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BNSS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Overview</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Demographics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="demo_personal.html">Personal Demographics</a>
+    </li>
+    <li>
+      <a href="demo_student.html">Student Demographics</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="basic_needs_status.html">Basic Needs Status</a>
+</li>
+<li>
+  <a href="workload.html">Workload</a>
+</li>
+<li>
+  <a href="academics.html">Academics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Finances
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="financial_support.html">Financial Support and Income</a>
+    </li>
+    <li>
+      <a href="barriers_employ.html">Barriers to Employment</a>
+    </li>
+    <li>
+      <a href="expenses.html">Expenses</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calfresh.html">CalFresh</a>
+</li>
+<li>
+  <a href="pantry.html">Food Pantry</a>
+</li>
+<li>
+  <a href="health.html">Health</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Participation in Basic Needs Programs and Services</h1>
+
+</div>
+
+
+<div id="eligibility" class="section level1">
+<h1>Eligibility</h1>
+</div>
+<div id="participation" class="section level1">
+<h1>Participation</h1>
+</div>
+<div id="impact" class="section level1">
+<h1>Impact</h1>
+</div>
+<div id="barriers" class="section level1">
+<h1>Barriers</h1>
+</div>
+<div id="participation-in-programs" class="section level1">
+<h1>Participation in Programs ⭐</h1>
+<!---
+### CalFresh
+**(also known as Food Stamps or SNAP benefits)**
+
+<img src="calfresh_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" />
+
+Half, or 50.0% (n = 74) of respondents, reported that they currently CalFresh and 17.6% (n = 26) have used it in the past. 31.1% (n = 46) reported they have heard of CalFresh but have never used it and 1.4% (n = 2) have never heard of it.
+
+### Women, Infant and Children (WIC) nutrition program 
+
+<img src="calfresh_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" />
+
+Only 2.7% (n = 4) of respondents reported they currently use the WIC nutrition program, 6.8% (n = 10) of respondents reported they have used it in the past, and 17.0% (n = 25) reported they have never heard of it. The majority (n = 108 73.5%) reported that they have heard of it but never have used it.
+
+### CalWORKS 
+**(also known as Cash Aid or Welfare)**
+
+<img src="calfresh_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" />
+
+Only 0.7% (n = 1) of respondents reported they currently use CalWORKS, 6.8% (n = 10) of respondents reported they have used it in the past, and 7.4% (n = 11) reported they have never heard of it. The majority (n = 126 85.1%) reported that they have heard of it but never have used it.
+
+### Emergency food from food bank, food pantry, or church
+
+<img src="calfresh_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" />
+
+Of the students who responded, 28.4% (n = 42) reported that they currently use emergency food from the food bank, food pantry, or church, 28.4% (n = 42) reported they have used emergency food in the past, and 3.4% (n = 5) reported they never heard of it. The majority (n = 59 39.9%) reported they have heard of it but never used it.
+
+**At any time in the last 12 months, have you utilized campus food pantries or local food banks for food?**
+
+
+
+
+<img src="calfresh_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" />
+
+47.6% (n = 69) of the respondents reported that they utilized the food pantry for 1-2 months in the last year, 7.6% (n = 11) reported that they utilized the pantry more than 8 months in the last year, and 17.2% (n = 25) reported they did not utilize the food pantry because there was no need.
+
+### Free food from other community organization 
+**(meal vouchers, bag of groceries, gleaned produce, etc.)**
+
+<img src="calfresh_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" />
+
+Only 9.5% (n = 14) of respondents reported that they currently get free food from other community organizations such as meal vouchers, 15.5% (n = 23) reported they have used it in the past, and 22.3% (n = 33) reported they have never heard of it. The majority (n = 78 52.7%) reported that they have heard of it but have never used it.
+
+### Free or reduced lunch meals at district schools for my children and/or dependents
+
+<img src="calfresh_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" />
+
+Only 6.8% (n = 10) of respondents reported that they currently have free or reduced lunch meals at district schools for theit children or dependents, 45.3% (n = 67) reported that they have in the past, and 37.2% (n = 55) reported they have heard of it but have never used it. Only 10.8% (n = 16) reported they have never heard of it.
+
+--->
+<p><img src="calfresh_files/figure-html/unnamed-chunk-10-1.png" width="960" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p><strong>CalFresh:</strong> Half, or 50.0% (n = 74) of respondents, reported that they currently CalFresh and 17.6% (n = 26) have used it in the past. 31.1% (n = 46) reported they have heard of CalFresh but have never used it and 1.4% (n = 2) have never heard of it.</p></li>
+<li><p><strong>WIC:</strong> Only 2.7% (n = 4) of respondents reported they currently use the WIC nutrition program, 6.8% (n = 10) of respondents reported they have used it in the past, and 17.0% (n = 25) reported they have never heard of it. The majority (n = 108 73.5%) reported that they have heard of it but never have used it.</p></li>
+<li><p><strong>CalWORKs:</strong> Only 0.7% (n = 1) of respondents reported they currently use CalWORKs, 6.8% (n = 10) of respondents reported they have used it in the past, and 7.4% (n = 11) reported they have never heard of it. The majority (n = 126 85.1%) reported that they have heard of it but never have used it.</p></li>
+<li><p><strong>Emergency Food:</strong> Of the students who responded, 28.4% (n = 42) reported that they currently use emergency food from the food bank, food pantry, or church, 28.4% (n = 42) reported they have used emergency food in the past, and 3.4% (n = 5) reported they never heard of it. The majority (n = 59 39.9%) reported they have heard of it but never used it.</p></li>
+<li><p><strong>Food Pantry:</strong> 47.6% (n = 69) of the respondents reported that they utilized the food pantry for 1-2 months in the last year, 7.6% (n = 11) reported that they utilized the pantry more than 8 months in the last year, and 17.2% (n = 25) reported they did not utilize the food pantry because there was no need.</p></li>
+<li><p><strong>Free Food from community:</strong> Only 9.5% (n = 14) of respondents reported that they currently get free food from other community organizations such as meal vouchers, 15.5% (n = 23) reported they have used it in the past, and 22.3% (n = 33) reported they have never heard of it. The majority (n = 78 52.7%) reported that they have heard of it but have never used it.</p></li>
+<li><p><strong>Free or reduced lunch:</strong> Only 6.8% (n = 10) of respondents reported that they currently have free or reduced lunch meals at district schools for their children or dependents, 45.3% (n = 67) reported that they have in the past, and 37.2% (n = 55) reported they have heard of it but have never used it. Only 10.8% (n = 16) reported they have never heard of it.</p></li>
+</ul>
+<div id="calfresh-benefits" class="section level3">
+<h3>CalFresh Benefits ⭐</h3>
+<!---
+### I am/was able to work or worked fewer hours each week in a PAID position.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" />
+
+29.0% (n = 29) of respondents agreed that they are/were able to work fewer hours in a paid position when they received CalFresh benefits and 17.0% (n = 17) disagreed with the statement. 25.0% (n = 25) neither agreed nor disagreed.
+
+### I have/had more time to do an UNPAID internship or volunteer work.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" />
+
+20.0% (n = 20) of respondents agreed that they had more time for unpaid work when they received CalFresh benefits and 26.0% (n = 26) disagreed with the statement. 33.0% (n = 33) neither agreed nor disagreed.
+
+### I have/had more money to pay for bills (rent, utility bills, clothes, etc.)
+
+<img src="calfresh_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" />
+
+35.0% (n = 35) of respondents agreed that they had more money to pay bills when they received CalFresh benefits and 18.0% (n = 18) disagreed with the statement. 20.0% (n = 20) neither agreed nor disagreed.
+
+### I have/had more money for entertainment and social activities(ex. attending movies, shopping, and bars or parties, etc.)
+
+<img src="calfresh_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" />
+
+31.0% (n = 31) of respondents agreed that they had more money for entertainment and social activities when they received CalFresh benefits and 25.0% (n = 25) disagreed with the statement. 25.0% (n = 20) neither agreed nor disagreed.
+
+### I am/was able to shop/shopped more frequently at the farmers’ market.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" />
+
+23.0% (n = 23) of respondents agreed that they were able to shop more at the farmers' market when they received CalFresh benefits and 24.0% (n = 24) disagreed with the statement. 27.0% (n = 27) neither agreed nor disagreed.
+
+### I have/had learned more about healthier foods.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" />
+
+48.0% (n = 48) of respondents agreed that they learned more about healthier foods when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 15.0% (n = 15) neither agreed nor disagreed.
+
+### I am/was able to purchase/purchased healthier foods.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" />
+
+40.0% (n = 40) of respondents agreed that they were able to purchase healthier foods when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 15.0% (n = 15) neither agreed nor disagreed.
+
+### I cook/cooked more frequently at home.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" />
+
+40.0% (n = 40) of respondents agreed that they were able to cook more frequently at home when they received CalFresh benefits and 2.0% (n = 2) disagreed with the statement. 7.0% (n = 7) neither agreed nor disagreed.
+
+### I consume/consumed a healthier diet.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" />
+
+45.0% (n = 45) of respondents agreed that were able to consume a healthier diet when they received CalFresh benefits and 7.0% (n = 7) disagreed with the statement. 14.0% (n = 14) neither agreed nor disagreed.
+
+### I consume/consumed less fast food.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" />
+
+44.0% (n = 44) of respondents agreed that they eat less fast food when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 11.0% (n = 11) neither agreed nor disagreed.
+
+### I consume/consumed fewer processed foods.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-21-1.png" width="576" style="display: block; margin: auto;" />
+
+38.0% (n = 38) of respondents agreed that they eat less processed foods when they received CalFresh benefits and 7.0% (n = 7) disagreed with the statement. 23.0% (n = 23) neither agreed nor disagreed.
+
+### I consume/consumed fewer sugar-sweetened beverages like soda and energy drinks.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" />
+
+37.0% (n = 37) of respondents agreed that they drink fewer sugar-sweetened drinks when they received CalFresh benefits and 11.0% (n = 11) disagreed with the statement. 17.0% (n = 17) neither agreed nor disagreed.
+
+### I consume/consumed less alcohol or fewer alcoholic beverages.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-23-1.png" width="576" style="display: block; margin: auto;" />
+
+29.0% (n = 29) of respondents agreed that they drink fewer alcoholic drinks when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 28.0% (n = 28) neither agreed nor disagreed.
+
+### I enroll/enrolled in more classes.
+
+<img src="calfresh_files/figure-html/unnamed-chunk-24-1.png" width="576" style="display: block; margin: auto;" />
+
+38.0% (n = 38) of respondents agreed that they enrolled in more classes when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 39.0% (n = 39) neither agreed nor disagreed.
+
+### I concentrate/concentrated more in class(es)
+
+<img src="calfresh_files/figure-html/unnamed-chunk-25-1.png" width="576" style="display: block; margin: auto;" />
+
+55.0% (n = 55) of respondents agreed that they concentrated more in classes when they received CalFresh benefits and 3.0% (n = 3) disagreed with the statement. 20.0% (n = 20) neither agreed nor disagreed.
+
+### My grades have/had improved
+
+<img src="calfresh_files/figure-html/unnamed-chunk-26-1.png" width="576" style="display: block; margin: auto;" />
+
+41.0% (n = 41) of respondents agreed that their grades improved when they received CalFresh benefits and 2.0% (n = 2) disagreed with the statement. 36.0% (n = 36) neither agreed nor disagreed.
+
+### I have/had more time to study for exams and quizzes
+
+<img src="calfresh_files/figure-html/unnamed-chunk-27-1.png" width="576" style="display: block; margin: auto;" />
+
+41.0% (n = 41) of respondents agreed that they had more time to study for exams and quizzes when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 34.0% (n = 34) neither agreed nor disagreed.
+
+### I have/had more time to read course materials or prepare for the next class`
+
+<img src="calfresh_files/figure-html/unnamed-chunk-28-1.png" width="576" style="display: block; margin: auto;" />
+
+42.4% (n = 42) of respondents agreed that they had more time to read and prepare for their next class when they received CalFresh benefits and 5.1% (n = 5) disagreed with the statement. 33.3% (n = 33) neither agreed nor disagreed.
+
+### I have/had more time to finish homework or course assignments and activities
+
+<img src="calfresh_files/figure-html/unnamed-chunk-29-1.png" width="576" style="display: block; margin: auto;" />
+
+41.0% (n = 41) of respondents agreed that they had more time to finish homework and other course assignments when they received CalFresh benefits and 5.0% (n = 5) disagreed with the statement. 32.0% (n = 32) neither agreed nor disagreed.
+
+### I have/had more time to go to my professors’office hours when needed
+
+<img src="calfresh_files/figure-html/unnamed-chunk-30-1.png" width="576" style="display: block; margin: auto;" />
+
+38.0% (n = 38) of respondents agreed that they had more time to go to their professors' office hours when they received CalFresh benefits and 8.0% (n = 8) disagreed with the statement. 35.0% (n = 35) neither agreed nor disagreed.
+
+### I have/had more time to attend all classes as they are scheduled
+
+<img src="calfresh_files/figure-html/unnamed-chunk-31-1.png" width="576" style="display: block; margin: auto;" />
+
+39.4% (n = 39) of respondents agreed that they had more time to attend all their classes as they are scheduled when they received CalFresh benefits and 4.0% (n = 4) disagreed with the statement. 34.3% (n = 34) neither agreed nor disagreed.
+
+### I have/had more time to go on field trips or field work placements
+
+<img src="calfresh_files/figure-html/unnamed-chunk-32-1.png" width="576" style="display: block; margin: auto;" />
+
+31.0% (n = 31) of respondents agreed that they had more time to go on field trips or field work placements when they received CalFresh benefits and 8.0% (n = 8) disagreed with the statement. 42.0% (n = 42) neither agreed nor disagreed.
+
+### My sleep quality has/had improved
+
+<img src="calfresh_files/figure-html/unnamed-chunk-33-1.png" width="576" style="display: block; margin: auto;" />
+
+39.4% (n = 39) of respondents agreed that their sleep quality improved when they received CalFresh benefits and 10.1% (n = 10) disagreed with the statement. 26.3% (n = 26) neither agreed nor disagreed.
+
+### My stress level has/had decreased. (ex. I’m not stressed about having money for food or bills)
+
+<img src="calfresh_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" />
+
+34.0% (n = 34) of respondents agreed that their stress levels decreased when they received CalFresh benefits and 9.0% (n = 9) disagreed with the statement. 14.0% (n = 14) neither agreed nor disagreed. Additionally, 35.0% (n = 35) strongly agreed that their stress levels decreased.
+--->
+<p><img src="calfresh_files/figure-html/unnamed-chunk-35-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>More than 50% of respondents neither agreed or disagreed, or agreed, that they were able to work fewer paid hours (65.1%), had more time for unpaid work (57.6%), had more money for bills (71.4%) and entertainment (59.6%), shopped at the Farmer’s Market more (56.8%), were able to learn more about healthy food (71.8%) and were able to purchase healthy foods (87.3%) while they received CalFresh.</p>
+<p><img src="calfresh_files/figure-html/unnamed-chunk-36-1.png" width="768" style="display: block; margin: auto;" /> More than 50% of respondents neither agreed or disagreed, or agreed, that they were able to cook at home more often (94%), consumed a healthier diet (86.8%), consumed less fast food (84.6%), consumed fewer processed foods (85.9%), consumed fewer sweetened drinks (79.4%), and consumed fewer alcoholic beverages (81.4%) while they received CalFresh.</p>
+<p><img src="calfresh_files/figure-html/unnamed-chunk-37-1.png" width="768" style="display: block; margin: auto;" /> More than 50% of respondents neither agreed or disagreed, or agreed, that while they were receiving CalFresh they were enrolled in more classes (52%), able to concentrate more in classes (94.9%), and their grades improved (96.2%). They had more time to study for exams (93.8%), prepare for class (92.6%), and had more time for homework (92.4%) &amp; office hours (89%). They also reported that they neither disagreed nor agreed, or agreed, that they had more time to attend class (93.6%), for field trips (84.9%), their sleep quality improved (82.3%) and stress level decreased (73.9%) while receiving CalFresh.</p>
+</div>
+</div>
+<div id="barriers-to-calfresh" class="section level1">
+<h1>Barriers to CalFresh ⭐</h1>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Didn’t Think They Were Eligible
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+15.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Too Long
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+8.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Could Not Get Verification Document
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+6.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+5.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Too Difficult
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+4.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+No Time To Go To Office
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Family Does Not Want To
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+No Need
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Embarrassed
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+No Transportation
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beliefs
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Campus Was Not Helpful
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<hr>
+
+This work was supported by <i>insert grant information here</i>. Any use of these results in further work must use the following citation: 
+
+<br>
+Center for Healthy Communities, "Website name", June 2020. Retrieved on xx-xxx-xxxx from https://chicocalfresh.github.io/bns-website/index.html
+
+<br>
+
+<img src="CHC_Logo.PNG" alt="CHC Logo" width="300" height="85">
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

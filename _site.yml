@@ -1,22 +1,32 @@
-name: "BNS3 survey"
+name: "BNSS Survey"
 output_dir: "."
 navbar:
-  title: "BNS3"
+  title: "BNSS"
   left:
     - text: "Overview"
       href: index.html
     - text: "Demographics"
-      href: demographics.html
+      menu:
+      - text: "Personal Demographics"
+        href: demo_personal.html
+      - text: "Student Demographics"
+        href: demo_student.html
+    - text: "Basic Needs Status"
+      href: basic_needs_status.html
+    - text: "Workload"
+      href: workload.html
     - text: "Academics"
+      href: academics.html
+    - text: "Finances"
       menu: 
-      - text: "Student Status"
-        href: academics.html
-      - text: "Workload"
-        href: workload.html
-    - text: "Employment"
-      href: employment.html
+      - text: "Financial Support and Income"
+        href: financial_support.html
+      - text: "Barriers to Employment"
+        href: barriers_employ.html
+      - text: "Expenses"
+        href: expenses.html
     - text: "CalFresh"
-      href: cfo_participation.html
+      href: calfresh.html
     - text: "Food Pantry"
       href: pantry.html
     - text: "Health"

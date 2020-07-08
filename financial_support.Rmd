@@ -1,0 +1,18 @@
+---
+title: "Financial Support and Income"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    css: styles.css
+---
+
+```{r, include=FALSE}
+source("common_code.R")
+```
+
+# Financial Aid
+
+# Hourly Wages
+
+# Receive SSI
