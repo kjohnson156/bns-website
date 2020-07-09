@@ -13,6 +13,65 @@ source("common_code.R")
 
 # Financial Aid
 
+**Select ALL sources of financial support you currently receive while attending college? (Mark all that apply)**
+
+```{r}
+finaid <- bns %>% select(FS_PellGrant,
+                         FS_CalGrantAorB,
+                         FS_NonAtheletic,
+                         FS_Atheletic,
+                         FS_OtherGrants,
+                         FS_FedLoans,
+                         FS_PrivateLoans,
+                         FS_WorkStudy,
+                         FS_GIBill,
+                         FS_Other)
+
+names(finaid) <- c("Pell Grant",
+                   "Cal Grant A or B",
+                   "Non Athletic",
+                   "Athletic",
+                   "Other Grants",
+                   "Federal Loans",
+                   "Private Loans",
+                   "Work-study",
+                   "GI Bill",
+                   "Other")
+```
+
+```{r}
+multi.table(finaid) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
+
 # Hourly Wages
 
+**If you are currently in a PAID position, what is your average hourly wage from all jobs worked during the academic year?**
+
+```{r}
+plot_frq(bns$FSI4, vjust="center", hjust="left") + coord_flip() + xlab("Hourly Wage")
+```
+
+35.8% (n = 53) of the respondents reported that they make between `$12.00` and `$12.99`/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.
+
 # Receive SSI
+
+**Do you receive Supplemental Security Income (SSI) in California?**
+
+```{r}
+plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
+```
+
+The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.
+
+
+
+
+
+
+
+
+
+
+
+
+

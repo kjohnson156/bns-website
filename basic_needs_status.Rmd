@@ -13,6 +13,178 @@ source("common_code.R")
 
 # Housing
 
+```{r}
+test1 <- as.data.frame(table(bns$SD10))
+test2 <- as.data.frame(prop.table(table(bns$SD10)))
+finaltest <- left_join(test1, test2, by = "Var1")
+names(finaltest) <- c("Housing Situation", "n", "%")
+finaltest$`%` <- round(finaltest$`%` * 100, 2)
+finaltest %>% kable() %>% kable_styling()
+```
+
 # USDA Food Security Questions
 
+* **“In the last 12 months, the food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.” Was that often, sometimes, or never true for (you/your household)?**
+
+```{r}
+plot_frq(bns$HH3) + xlab("Food Didn't Last + No Money to Get More")
+```
+
+Over half of respondents, or 54.3%, said it is sometimes true that in the last 12 months, the food that was bought didn't last and they didn't have money to get more. 21.4% of respondents said that was often true. 
+
+* **“In the last 12 months, (I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true for (you/your household)?**
+
+```{r}
+plot_frq(bns$HH4) + xlab("Couldn't Afford Balanced Meals")
+```
+
+Over half of respondents, or 52.1%, said it is sometimes true that in the last 12 months, they couldn't afford to eat balanced meals. 23.2% of respondents said that was often true. 
+
+* **In the last 12 months, did you or other adults in your household, ever cut the size of your meals or skip meals because there wasn’t enough money for food?** 
+
+```{r}
+plot_frq(bns$AD1) + xlab("Cut Size/Skip Meals Because No Money")
+```
+
+Over half of respondents, or 58%, reported that they, or the other adults in their household, cut the size of their meals, or skipped meals, because there was not enough money for food. 
+
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
+
+```{r}
+plot_frq(bns$AD1a) + xlab("Cut Size/Skip Meals Because No Money")
+```
+
+Of the respondents that answered yes to cutting the size of their meals, or skipping meals, over half (54.5%) said this happened some months but not every month. 27.3% reported this happened almost every month. 
+
+* **In the last 12 months, did you ever eat less than you felt you should because there was not enough money for food?**
+
+```{r}
+plot_frq(bns$AD2) + xlab("Ate Less Because Not Enough Money")
+```
+
+The majority of respondents, or 61.8%, reported eating less then they felt they should over the last 12 months because there was not enough money for food. 
+
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
+
+```{r}
+plot_frq(bns$AD2a) + xlab("Ate Less Because Not Enough Money")
+```
+
+Of those that responded yes that they ate less because there was not enough money for food, about half (50.6%) reported this happened some months but not every month. 24.7% of respondents reported this happened almost every month. 
+
+* **In the last 12 months, were you ever hungry but you did not eat because there wasn’t enough money for food?**
+
+```{r}
+plot_frq(bns$AD3) + xlab("Hungry Because Not Eating Due to Money")
+```
+
+Over half of respondents, or 54.5%, reported that there were times they were hungry but did not eat because there wasn't enough money for food. 
+
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
+
+```{r}
+plot_frq(bns$AD3a) + xlab("Hungry Because Not Eating Due to Money")
+```
+
+Of those that responded yes they were hungry but did not eat because lack of money for food, more than half, or 55.3%, reported this happened some months but not every month. 22.4% of respondents reported this happened almost every month.
+
+* **In the last 12 months, did you lose weight because there wasn’t enough money for food?**
+
+```{r}
+plot_frq(bns$AD4) + xlab("Lose Weight Because No Money for Food")
+```
+Most respondents (67.4%) reported they did not lose weight because there wasn't enough money for food. 
+ 
+* **In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn’t enough money for food?** 
+
+```{r}
+plot_frq(bns$AD5) + xlab("Adults did not Eat Because No Money")
+```
+
+Most respondents (74.8%) reported that none of the adults in their household ever went a whole day without eating because there wasn't enough money for food. 
+
+* *How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?*
+
+```{r}
+plot_frq(bns$AD5a) + xlab("Adults did not Eat Because No Money") + ylim(c(0,20))
+```
+
+Out of the 34 respondents that answered yes, either they or their adult household member went a whole day without eating because there wasn't enough money for food, over half (51.6%) reported this happened some months but not every month. 22.6% reported this happened every month.  
+
+## Food Insecure
+
+Food insecurity is defined by meeting 2 or more of the following criteria:
+
+*Selecting sometimes true or often true for not having enough food or money to last and not being able to afford balanced meals. 
+
+*Selecting yes for any of the 5 prior bulleted, bold questions.
+
+```{r}
+bns$food_insecurity <- factor(bns$food_insecurity, labels = c("No", "Yes"))
+plot_frq(bns$food_insecurity) + xlab("Food Insecure")
+```
+
+The majority of respondents, or 65.3%, reported that yes, they were food insecure in the last 12 months. 34.7% reported that no, they were not food insecure. 
+
 # Mental Health
+
+**How many days in the past month have you experienced heightened anxiety, stress, depression and/or problems with emotions?**
+
+```{r}
+bns$MH1_1[bns$MH1_1 >= 15 & bns$MH1_1 < 30] <- "15-29"
+bns$MH1_1[bns$MH1_1 >= 30] <- "30+"
+
+plot_frq(bns$MH1_1) + xlab("# of Days") + ylab("Count")
+```
+
+**By Gender Identity**
+
+All but three respondents selected either Male or Female for their gender identity. Their response distribution is below. 
+
+```{r, fig.width=12, fig.height=5}
+toplot <- bns %>% filter(D4 %in% c('Man', 'Woman'))
+plot_xtab(x=toplot$MH1_1, grp=toplot$D4, margin="col", show.total = FALSE) + 
+          xlab("# of Days") + ylab("Percent (count)") + 
+          theme(legend.position="top", legend.title=element_blank()) 
+
+```
+
+```{r, eval=FALSE}
+bns$MH1_1[bns$D4=="Gender Queer or Gender-Nonconforming"]
+bns$MH1_1[bns$D4=="Gender unlisted:"]
+```
+
+* Two respondents selected `Gender Queer or Gender-Nonconforming`, one reported `15-29` days, the other `30+` days. 
+* The one respondent who selected `Gender Unlisted` reported `10` days. 
+
+## Mental Health Services
+
+**Have you received or tried to receive mental health services over the past 12months?**
+
+```{r}
+plot_frq(bns$MH2) + xlab("Received Mental Health Services") + ylim(c(0,100))
+```
+
+Over half of the respondents, or 58.9%, answered no when asked if they had received, or tried to receive, mental health services over the past 12 months. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

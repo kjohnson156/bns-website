@@ -11,6 +11,190 @@ output:
 source("common_code.R")
 ```
 
-# Header
+# Header (Figure Out Actual Header Title)
+
+**What is your major at CSU, Chico?**
+
+```{r}
+table(tolower(bns$major)) %>% kable(col.names = c("Major", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
+```
+
+**What is your approximate overall Grade Point Average (GPA) for your current degree in progress?** `r emo::ji("star")` 
+
+```{r}
+plot_frq(bns$SD2) + xlab("GPA")
+```
+
+About a third, or 34.0% (n = 51), of participants reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.
+
+**Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester)** `r emo::ji("star")`
+
+```{r}
+plot_frq(bns$SD5, hjust = "left", vjust="center")+xlab("Class Level")+
+        scale_y_continuous(limits=c(0,80)) + 
+        coord_flip()
+```
+
+Just under half, or 45.0% (n = 67) of respondents, reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
+
+
+ Matriculation Date Plot
+
+ Expected Grad Date Plot
+
+**Have you taken a semester off since you began attending Chico State? If so, how many?** 
+
+```{r}
+plot_frq(bns$SD8_1) + xlab("Semester Taken Off")
+```
+
+The majority of respondents, or 92.7% (n = 139), reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.
 
 # Student Identifiers
+
+**I identify as a(an)... `r emo::ji("star")`**
+
+```{r}
+npct <- function(var){
+  paste0(sum(var=="Yes", na.rm=TRUE), "/", sum(!is.na(var)), 
+         " (", round(mean(var=="Yes", na.rm = TRUE)*100,1), "%)")}
+
+bns %>% summarise('Transfer student' = npct(SD9_1), 
+                  'Former foster youth/child'= npct(SD9_3), 
+                  'International student' = npct(SD9_4), 
+                  `Non-California resident (Not International)` = npct(SD9_5), 
+                  `College prep program*` = npct(SD9_6), 
+                  'EOP (Educational Opportunity Program) student' = npct(SD9_7), 
+                  'REACH (Raising Educational Achievement in Collaborative Hubs) student' = npct(SD9a_1), 
+                  'ESL (English as a Second Language) student' = npct(SD9a_2), 
+                  'Veteran of military service' = npct(SD9a_3), 
+                  `Active duty military personnel` = npct(SD9a_4), 
+                  `Student Athlete` = npct(SD9a_5), 
+                  'DREAM (i.e. undocumented) student' = npct(SD9a_6),
+                  'DACA (i.e. Deferred Action for Childhood Arrivals) student' = npct(SD9a_7))%>%
+  t() %>% kable(col.names = c("Percentage")) %>% kable_styling()
+   
+
+```
+
+**I receive services through the Accessibility Resource Center or Disability Support Services Center**
+
+```{r}
+plot_frq(bns$SD9_2) + xlab("Services Through ARC or DSSC")
+```
+
+The majority of the students in this survey (87.3% n = 131) report they do not receive services through the
+Accessibility Resource Center or Disability Support Services Center and 12.7% (n = 19) report they do.
+
+**I am approved, awarded, or accepted for work study (with or without a work study job)**
+
+```{r}
+plot_frq(bns$SD9b_1) + xlab ("Work Study")
+```
+
+The majority of respondents, or 88.0% (n = 125), reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
+
+**I participate in CalWORKS (i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)**
+
+```{r}
+plot_frq(bns$SD9b_2) + xlab("CalWorks/AFDC")
+```
+
+The majority of respondents, or 76.0% (n = 111), report that they do not participate in CalWORKS or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
+
+**I participate in the Job Opportunities and Basic Skills (JOBS) Program**
+
+```{r}
+plot_frq(bns$SD9b_3) + xlab("JOBS Program")
+```
+
+Most respondents, or 95.2% (n = 138), report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.
+
+**I participate in the CalFresh Employment or Training (CFET) Program**
+
+```{r}
+plot_frq(bns$SD9b_4) + xlab("CFET Program")
+```
+
+Of respondents, 83.3% (n = 120) report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.
+
+**I am enrolled in Workforce Innovation and Opportunity Act (WIOA)**
+
+```{r}
+plot_frq(bns$SD9b_5) + xlab("WIOA")
+```
+
+All respondents in this survey (100% n = 147) report that they are not enrolled in Workforce Innovation and Opportunity Act.
+
+**I am enrolled in Cooperative Agencies Resources for Education (CARE)**
+
+```{r}
+plot_frq(bns$SD9b_6) + xlab("CARE")
+```
+
+A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.
+
+**I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program**
+
+```{r}
+plot_frq(bns$SD9b_7) + xlab("MESA")
+```
+
+The majority of respondents (95.3% n = 142) reported that they are not enrolled in the MESA Program while 4.7% (n = 7) report they are.
+
+**I am a student attending CSU, receiving Cal Grant A OR B**
+
+```{r}
+plot_frq(bns$SD9c_1) + xlab("Cal Grant A or B")
+```
+
+Most respondents, or 87.4% (n = 125), reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.
+
+**I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)**
+
+```{r}
+plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
+```
+
+A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.
+
+**I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare**
+
+```{r}
+plot_frq(bns$SD9c_3) + xlab("Parental Control")
+```
+
+All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.
+
+**I am a single parent of a dependent household member under the age of 12**
+
+```{r}
+plot_frq(bns$SD9c_4) + xlab("Single Parent")
+```
+
+Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

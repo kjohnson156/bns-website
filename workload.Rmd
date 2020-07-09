@@ -7,41 +7,75 @@ output: html_document
 source("common_code.R")
 ```
 
-# Time Management
+# Academic Workload
 
-# Academic Performance
+**How many units (rounded up) are you enrolled in for the current semester at CSU Chico?** 
 
-**For each of the following statements, indicate how strongly you agree or disagree about your confidence in academic performance.**
-
-```{r, fig.width=5.5, fig.height=5}
-tm1 <- bns %>% select(starts_with("TM1_"))
-tm1con <- tm1[,c(1,2)]
-tm1other <- tm1[,c(3:9)]
-names(tm1con) <- c("Confident in Writing Skills",
-                "Confident in Test-Taking Ability")
-names(tm1other) <- c("Enough Time to Study for Exams",
-                "Enough Time to Prepare for Class",
-                "Enough Time to do Homework",
-                "Enough Time for Office Hours",
-                "Enough Time for Tutoring",
-                "Enough Time to Attend All Classes",
-                "Enough Time for Field Trips")
-plot_likert(tm1con, 
-            grid.range = c(1.2, 1.2),
-            expand.grid = FALSE,
-            values = "sum.outside",
-            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```{r}
+bns$units_relevel <- bns$SD3_1
+bns$units_relevel[bns$units_relevel < 12] <- "0-11"
+bns$units_relevel[bns$units_relevel > 12 & bns$units_relevel <= 15] <- "13-15"
+bns$units_relevel[bns$units_relevel >= 16] <- "16+"
+plot_frq(bns$units_relevel, ylim = c(0,100)) + xlab("Units Enrolled")
 ```
 
-**For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities.**
+More than half, or 53.7% (n = 80), of students filling out this survey are enrolled in 13-15 units in the semester of the survey, a quarter of the students (24.2% n = 36) are enrolled in 12 units, and 20.8% (n = 31) are enrolled in 16 or more units.
 
-```{r, fig.width=6, fig.height=5}
-plot_likert(tm1other, 
-            grid.range = c(1.2, 1.2),
-            expand.grid = FALSE,
-            values = "sum.outside",
-            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+**If currently enrolled at more than one college, how many units (rounded up) are you enrolled in for the current semester at other colleges (NOT CSU Chico)?**
+
+```{r}
+bns$outside_units <- bns$SD4_1
+bns$outside_units[bns$outside_units <= 3] <- "1-3"
+bns$outside_units[bns$outside_units >= 13] <- "13+"
+plot_frq(bns$outside_units, vjust=-0.5,  ylim = c(0,4)) + xlab("Units Enrolled Outside CSU Chico")
 ```
+
+Out of the students who reported they are taking units outside of CSU Chico, about 37.5% (n = 3) are taking 13 or more units in a different college, 25.0% (n = 2) are taking either 1-3 units or 12 units respectively, and only 1 person (12.5%) is enrolled in 10 units outside of CSU Chico.
+
+# Non-Academic Workload
+
+**Estimate the number of hours you work in a PAID job or paid internship per week**
+
+```{r}
+bns$paid_hours <- bns$FSI2
+bns$paid_hours[bns$paid_hours >= 1 & bns$paid_hours <= 5] <- "1-5"
+bns$paid_hours[bns$paid_hours == 6] <- "6-10"
+bns$paid_hours[bns$paid_hours == 7] <- "6-10"
+bns$paid_hours[bns$paid_hours == 8] <- "6-10"
+bns$paid_hours[bns$paid_hours == 9] <- "6-10"
+bns$paid_hours[bns$paid_hours == 10] <- "6-10"
+bns$paid_hours[bns$paid_hours > 10 & bns$paid_hours <= 15] <- "11-15"
+bns$paid_hours[bns$paid_hours > 15 & bns$paid_hours <= 20] <- "16-20"
+bns$paid_hours <- factor(bns$paid_hours, labels = c("0", "1-5", "6-10", "11-15", "16-20", "21"))
+```
+
+```{r}
+plot_frq(bns$paid_hours) + xlab("Paid Hours")
+```
+
+The majority of the students in this survey (n = 51 34.2%) reported that they work 0 paid hours a week, roughly 20% (n = 29) reported they work 6-10 paid hours a week and only 4.7% (n = 7) work 1-5 paid hours a week.
+
+**Estimate the number of hours you work in an UNPAID internship or volunteer position**
+For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.
+
+```{r}
+bns$unpaid_hours <- bns$FSI3
+bns$unpaid_hours[bns$unpaid_hours >= 1 & bns$unpaid_hours <= 5] <- "1-5"
+bns$unpaid_hours[bns$unpaid_hours == 6] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 7] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 8] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 9] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours == 10] <- "6-10"
+bns$unpaid_hours[bns$unpaid_hours > 10 & bns$unpaid_hours <= 15] <- "11-15"
+bns$unpaid_hours[bns$unpaid_hours > 15 & bns$unpaid_hours <= 20] <- "16-20"
+bns$unpaid_hours <- factor(bns$unpaid_hours, labels = c("0", "1-5", "6-10", "11-15", "16-20", "21"))
+```
+
+```{r}
+plot_frq(bns$unpaid_hours) + xlab("Unpaid Hours")
+```
+
+The majority of respondents (n = 87 58.4%) reported that they work 0 unpaid hours a week, 19.5% (n = 29) work 1-5 unpaid hours, and lastly 12.1% (n = 18) reported they work 21 unpaid hours a week.
 
 
 

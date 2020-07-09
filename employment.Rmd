@@ -273,7 +273,7 @@ plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
 plot_frq(bns$FSI9_7) + xlab("Did Not Expect a Job")
 ```
 
-### Do you receive Supplemental Security Income (SSI)* in California? 
+**Do you receive Supplemental Security Income (SSI) in California?**
 
 ```{r}
 plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
