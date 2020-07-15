@@ -11,7 +11,7 @@ output:
 source("common_code.R")
 ```
 
-# Header (Figure Out Actual Header Title)
+# Major, GPA, & Units
 
 **What is your major at CSU, Chico?**
 
@@ -38,9 +38,21 @@ plot_frq(bns$SD5, hjust = "left", vjust="center")+xlab("Class Level")+
 Just under half, or 45.0% (n = 67) of respondents, reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.
 
 
- Matriculation Date Plot
+**What month and year did you first attend Chico State?** 
+ 
+```{r}
+table(tolower(bns$matriculation_date)) %>% kable(col.names = c("matriculation_date", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
+```
 
- Expected Grad Date Plot
+Out of all the students who took this survey, the student who attended Chico state the earliest started in 08/01/2012 and the two students who attended the latest started in 08/01/2019.
+
+**What month and year do you expect to graduate from Chico State to earn your current degree?** 
+
+```{r}
+table(tolower(bns$exp_grad_date)) %>% kable(col.names = c("exp_grad_date", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
+```
+
+Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in 05/31/2019 and the student who expects to graduate the latest expects to graduate in 05/31/2023.
 
 **Have you taken a semester off since you began attending Chico State? If so, how many?** 
 

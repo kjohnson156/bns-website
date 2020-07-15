@@ -116,7 +116,7 @@ ggplot(a, aes(x=type, y=N)) + geom_col(fill="#336699") +
 About 5% (n = 8) of the total number of respondents say they have dependents that are between 6-12 years old, 5% (n = 7) say they have dependents that are between 19-60 years old, and only 1 person says they have dependents that are over 61 years old.
 
 
-## Header
+## First Generation Student
 
 **Are you a first generation student?** 
 
