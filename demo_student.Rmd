@@ -41,7 +41,7 @@ Just under half, or 45.0% (n = 67) of respondents, reported that they are Junior
 **What month and year did you first attend Chico State?** 
  
 ```{r}
-table(tolower(bns$matriculation_date)) %>% kable(col.names = c("matriculation_date", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
+table(tolower(bns$matriculation_date)) %>% kable(col.names = c("Matriculation Date", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
 ```
 
 Out of all the students who took this survey, the student who attended Chico state the earliest started in 08/01/2012 and the two students who attended the latest started in 08/01/2019.
@@ -49,7 +49,7 @@ Out of all the students who took this survey, the student who attended Chico sta
 **What month and year do you expect to graduate from Chico State to earn your current degree?** 
 
 ```{r}
-table(tolower(bns$exp_grad_date)) %>% kable(col.names = c("exp_grad_date", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
+table(tolower(bns$exp_grad_date)) %>% kable(col.names = c("Expected Graduation Date", "Frequency")) %>% kable_styling() %>% scroll_box(width = "500px", height = "500px")
 ```
 
 Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in 05/31/2019 and the student who expects to graduate the latest expects to graduate in 05/31/2023.

@@ -1,10 +1,7 @@
 ---
 title: "Barriers to Employment"
-output: 
-  html_document: 
-    toc: yes
-    toc_float: yes
-    css: styles.css
+output: html_document
+
 ---
 
 ```{r, include=FALSE}
@@ -27,7 +24,7 @@ plot_frq(bns$FSI8, geom.size = .4) + xlab("Success in Finding Job")
 
 A little over a third, or 34.3% (n = 48) of students, reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.
 
-### If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
+# If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
 
 **I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.**
 

@@ -1,6 +1,10 @@
 ---
 title: "Workload"
-output: html_document
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
