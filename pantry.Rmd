@@ -14,22 +14,12 @@ sjPlot::set_theme(base = theme_bw())
 
 # Participation
 
+```{r fig.width=10, fig.height=8}
+plot_frq(bns$SRC2) + xlab("Food Pantry/Bank Utilization")
+```
+
+
 # Impact
-
-# Barriers
-
-
-
-
-
-
-
-
-
-
-
-
-# Impact of Pantries
 
 **For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.**
 
@@ -79,6 +69,11 @@ plot_likert(src2b,
             show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
+
+# Barriers
+
+
+
 **Please choose the options that best match your feelings of using Food Pantries or CalFresh**
 
 ```{r, fig.width=8}
@@ -94,7 +89,6 @@ plot_likert(src3m,
             show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
-# Barriers for Food Pantries
 
 **What is/are the reason(s) for you to not go to campus food pantries or local food banks?**
 

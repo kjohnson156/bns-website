@@ -125,9 +125,9 @@ bns$firstgenplot <- bns$firstgen %>% factor(labels = c("No", "Yes"))
 plot_frq(bns$firstgenplot) + xlab("First Generation Student")
 ```
 
-The vast majority of respondents (94.7% n = 142) are first generation college students with only 8 (5.3%) not being first generation students.
+The vast majority of respondents (94.7% n = 142) are first generation college students with only 8 (5.3%) not being first generation* students.
 
-
+*First Generation: a student whose parent(s)/legal guardian(s) have not completed a bachelor's degree. 
 
 
 
