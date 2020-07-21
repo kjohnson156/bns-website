@@ -13,11 +13,9 @@ source("common_code.R")
 
 # Time Management
 
-# Academic Performance
+**For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities.**
 
-**For each of the following statements, indicate how strongly you agree or disagree about your confidence in academic performance.**
-
-```{r, fig.width=5.5, fig.height=5}
+```{r, fig.width=6, fig.height=5}
 tm1 <- bns %>% select(starts_with("TM1_"))
 tm1con <- tm1[,c(1,2)]
 tm1other <- tm1[,c(3:9)]
@@ -30,16 +28,7 @@ names(tm1other) <- c("Enough Time to Study for Exams",
                 "Enough Time for Tutoring",
                 "Enough Time to Attend All Classes",
                 "Enough Time for Field Trips")
-plot_likert(tm1con, 
-            grid.range = c(1.2, 1.2),
-            expand.grid = FALSE,
-            values = "sum.outside",
-            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
-```
 
-**For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities.**
-
-```{r, fig.width=6, fig.height=5}
 plot_likert(tm1other, 
             grid.range = c(1.2, 1.2),
             expand.grid = FALSE,
@@ -47,6 +36,21 @@ plot_likert(tm1other,
             show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
 ```
 
+
+
+
+# Academic Performance
+
+**For each of the following statements, indicate how strongly you agree or disagree about your confidence in academic performance.**
+
+```{r, fig.width=5.5, fig.height=5}
+
+plot_likert(tm1con, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
 
 
 
