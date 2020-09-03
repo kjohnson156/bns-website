@@ -8,8 +8,7 @@ Food insecurity among college students is problem that can impact student perfor
 
 The purpose of this cross-sectional pilot study was to create a tool that identifies student perception of the impact of receiving [CalFresh](https://www.csuchico.edu/calfresh/index.shtml) assistance on their health, nutrition, cooking confidence, time management and academic performance. 
 
-This report provides a top level descriptive analysis of each question in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate further research hypotheses and questions.
-  
+This report provides a top level descriptive analysis of each question in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate research questions and hypotheses.
 
 
 ---
@@ -35,4 +34,4 @@ Questions about the survey or data analysis presented in this report can be dire
 
 ### Acknowledgements
 
-This website was built and is maintained by Brandon Leff, Undergraduate student in Statistics and Data Science, CSU Chico, Department of Mathematics and Statistics and Kathleen Johnson, MS, Center for Healthy Communities. 
+This website was built and is maintained by Brandon Leff, Undergraduate student in Statistics and Data Science, CSU Chico, Department of Mathematics and Statistics and Kathleen Johnson, MS, Center for Healthy Communities. This pilot study was conducted with the additional support of Chia-Hsuan “Candie” Cho, a graduate student in CSU, Chico’s Department of Nutrition and Food Science, Naomi Stamper, a Program Analyst at CSU, Chico’s Center for Healthy Communities, and Marianne Paiva, faculty in CSU, Chico’s Department of Sociology. 

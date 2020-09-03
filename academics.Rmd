@@ -11,7 +11,7 @@ output:
 source("common_code.R")
 ```
 
-# Time Management
+# Time Management Related to Academics
 
 **For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities.**
 
