@@ -39,3 +39,4 @@ output:
     css: styles.css
     include:
       after_body: footer.html
+
