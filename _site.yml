@@ -1,18 +1,42 @@
-name: "brandon-leff"
+name: "BNSS Survey"
 output_dir: "."
 navbar:
-  title: "BNS Survey "
+  title: "BNSS"
   left:
-    - text: "Abstract"
+    - text: "Overview"
       href: index.html
     - text: "Demographics"
-      href: demographics.html
-    - text: "Employment"
-      href: employment.html
-    - text: "CalFresh Participation"
-      href: cfo_participation.html
+      menu:
+      - text: "Personal Demographics"
+        href: demo_personal.html
+      - text: "Student Demographics"
+        href: demo_student.html
+    - text: "Basic Needs Status"
+      href: basic_needs_status.html
+    - text: "Workload"
+      href: workload.html
+    - text: "Academics"
+      href: academics.html
+    - text: "Finances"
+      menu: 
+      - text: "Financial Support and Income"
+        href: financial_support.html
+      - text: "Barriers to Employment"
+        href: barriers_employ.html
+      - text: "Expenses"
+        href: expenses.html
+    - text: "CalFresh"
+      href: calfresh.html
+    - text: "Food Pantry"
+      href: pantry.html
+    - text: "Health"
+      href: health.html
+    
+
 output:
   html_document:
-     theme: cosmo
-     highlight: textmate
-     css: styles.css
+    highlight: null
+    css: styles.css
+    include:
+      after_body: footer.html
+

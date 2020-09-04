@@ -4,68 +4,51 @@ output:
   html_document: 
     toc: yes
     toc_float: yes
+    css: styles.css
 ---
 
 ```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-
-load("../data/bns_clean.Rdata")
-bns <- out
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with session to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
-
-sjPlot::set_theme(base = theme_bw())
+source("common_code.R")
 ```
 
-# Supported Employment `r emo::ji("star")` `r emo::ji("pencil")`
 
-### I am approved, awarded, or accepted for work study (with or without a work study job)
+# Supported Employment `r emo::ji("star")`
+
+### Work Study, JOBS Program, CFET Program, WIOA, CARE, MESA
+
+**I am approved, awarded, or accepted for work study (with or without a work study job)**
 
 ```{r}
 plot_frq(bns$SD9b_1) + xlab ("Work Study")
 ```
 
-88.0% (n = 125) of respondents reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
+The majority of respondents, or 88.0% (n = 125), reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.
 
-### I participate in CalWorks(i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)
+**I participate in CalWORKS (i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)**
 
 ```{r}
 plot_frq(bns$SD9b_2) + xlab("CalWorks/AFDC")
 ```
 
-76.0% (n = 111) of respondents report that they do not participate in Calworks or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
+The majority of respondents, or 76.0% (n = 111), report that they do not participate in CalWORKS or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.
 
-### I participate in the Job Opportunities and Basic Skills (JOBS) Program
+**I participate in the Job Opportunities and Basic Skills (JOBS) Program**
 
 ```{r}
 plot_frq(bns$SD9b_3) + xlab("JOBS Program")
 ```
 
-95.2% (n = 138) of respondents report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.
+Most respondents, or 95.2% (n = 138), report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.
 
-### I participate in the CalFresh Employment or Training (CFET) Program
+**I participate in the CalFresh Employment or Training (CFET) Program**
 
 ```{r}
 plot_frq(bns$SD9b_4) + xlab("CFET Program")
 ```
 
-83.3% (n = 120) of respondents report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.
+Of respondents, 83.3% (n = 120) report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.
 
-### I am enrolled in Workforce Innovation and Opportunity Act (WIOA)
+**I am enrolled in Workforce Innovation and Opportunity Act (WIOA)**
 
 ```{r}
 plot_frq(bns$SD9b_5) + xlab("WIOA")
@@ -73,7 +56,7 @@ plot_frq(bns$SD9b_5) + xlab("WIOA")
 
 All respondents in this survey (100% n = 147) report that they are not enrolled in Workforce Innovation and Opportunity Act.
 
-### I am enrolled in Cooperative Agencies Resources for Education (CARE)
+**I am enrolled in Cooperative Agencies Resources for Education (CARE)**
 
 ```{r}
 plot_frq(bns$SD9b_6) + xlab("CARE")
@@ -81,7 +64,7 @@ plot_frq(bns$SD9b_6) + xlab("CARE")
 
 A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.
 
-### I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program
+**I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program**
 
 ```{r}
 plot_frq(bns$SD9b_7) + xlab("MESA")
@@ -89,15 +72,17 @@ plot_frq(bns$SD9b_7) + xlab("MESA")
 
 The majority of respondents (95.3% n = 142) reported that they are not enrolled in the MESA Program while 4.7% (n = 7) report they are.
 
-### I am a student attending CSU, receiving Cal Grant A OR B
+### Cal Grant A or B, Current & former foster youth programs
+
+**I am a student attending CSU, receiving Cal Grant A OR B**
 
 ```{r}
 plot_frq(bns$SD9c_1) + xlab("Cal Grant A or B")
 ```
 
-87.4% (n = 125) of respondents reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.
+Most respondents, or 87.4% (n = 125), reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.
 
-### I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)
+**I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)**
 
 ```{r}
 plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
@@ -105,36 +90,45 @@ plot_frq(bns$SD9c_2) + xlab("Foster Youth Program")
 
 A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.
 
-### I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare
+
+
+### Financial Aid
+
+**Select ALL sources of financial support you currently receive while attending college? (Mark all that apply)**
 
 ```{r}
-plot_frq(bns$SD9c_3) + xlab("Parental Control")
+finaid <- bns %>% select(FS_PellGrant,
+                         FS_CalGrantAorB,
+                         FS_NonAtheletic,
+                         FS_Atheletic,
+                         FS_OtherGrants,
+                         FS_FedLoans,
+                         FS_PrivateLoans,
+                         FS_WorkStudy,
+                         FS_GIBill,
+                         FS_Other)
+
+names(finaid) <- c("Pell Grant",
+                   "Cal Grant A or B",
+                   "Non Athletic",
+                   "Athletic",
+                   "Other Grants",
+                   "Federal Loans",
+                   "Private Loans",
+                   "Work-study",
+                   "GI Bill",
+                   "Other")
 ```
 
-All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.
-
-### I am a single parent of a dependent household member under the age of 12
-
 ```{r}
-plot_frq(bns$SD9c_4) + xlab("Single Parent")
-```
-
-Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.
-
-### Which best describes your current housing situation? `r emo::ji("pencil")`
-
-```{r}
-test1 <- as.data.frame(table(bns$SD10))
-test2 <- as.data.frame(prop.table(table(bns$SD10)))
-finaltest <- left_join(test1, test2, by = "Var1")
-names(finaltest) <- c("Housing Situation", "n", "%")
-finaltest$`%` <- round(finaltest$`%` * 100, 2)
-finaltest %>% kable() %>% kable_styling()
+multi.table(finaid) %>% kable(col.names = c("n", "%")) %>% kable_styling()
 ```
 
 # Employment `r emo::ji("star")`
 
-### Paid Job or Paid Internship `r emo::ji("pencil")`
+### Paid Job or Paid Internship 
+
+**Estimate the number of hours you work in a PAID job or paid internship per week**
 
 ```{r}
 bns$paid_hours <- bns$FSI2
@@ -155,8 +149,9 @@ plot_frq(bns$paid_hours) + xlab("Paid Hours")
 
 The majority of the students in this survey (n = 51 34.2%) reported that they work 0 paid hours a week, roughly 20% (n = 29) reported they work 6-10 paid hours a week and only 4.7% (n = 7) work 1-5 paid hours a week.
 
-### Unpaid Position or Volunteer `r emo::ji("pencil")`
+### Unpaid Position or Volunteer 
 
+**Estimate the number of hours you work in an UNPAID internship or volunteer position**
 For example, research with faculty on campus, shadowing a professional or volunteering at a shelter.
 
 ```{r}
@@ -178,15 +173,17 @@ plot_frq(bns$unpaid_hours) + xlab("Unpaid Hours")
 
 The majority of respondents (n = 87 58.4%) reported that they work 0 unpaid hours a week, 19.5% (n = 29) work 1-5 unpaid hours, and lastly 12.1% (n = 18) reported they work 21 unpaid hours a week.
 
-### If you are currently in a PAID position, what is your average hourly wage from all jobsworked during the academic year?
+**If you are currently in a PAID position, what is your average hourly wage from all jobs worked during the academic year?**
 
 ```{r}
-plot_frq(bns$FSI4) + coord_flip() + xlab("Hourly Wage")
+plot_frq(bns$FSI4, vjust="center", hjust="left") + coord_flip() + xlab("Hourly Wage")
 ```
 
 35.8% (n = 53) of the respondents reported that they make between `$12.00` and `$12.99`/hr and 35.8% (n = 53) reported they are currently not working, while only a total of 6 people reported they make over $14.00 an hour.
 
-### For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you? `r emo::ji("pencil")`
+### Household Size & Gross Monthly Income
+
+**For this survey, household size is determined by the number of people you purchase and prepare food with. This may or may not include your roommate(s). How many people are in your household who purchase and prepare food with you?**
 
 ```{r}
 bns$adj_size <- bns$household_size
@@ -194,15 +191,17 @@ bns$adj_size[bns$adj_size >= 5] <- "5+"
 plot_frq(bns$adj_size) + xlab("Household Size")
 ```
 
-63.5% (n = 94) reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
+Most respondents, or 63.5% (n = 94), reported that they have 1 other person that they purchase and prepare food with while 16.2% (n = 24) reported that they have 2 other people they purchase and prepare food with. Only 6.8% (n = 10) reported that they have 5 or more other people they purchase and prepare food with.
 
-### How much is your household's gross monthly income (before taxes and not including financial aid)? `r emo::ji("pencil")`
+**How much is your household's gross monthly income (before taxes and not including financial aid)?**
 
 ```{r}
-plot_frq(bns$FSI6) + coord_flip() + xlab("Gross Monthly Income")
+plot_frq(bns$FSI6, vjust="center", hjust="left") + coord_flip() + xlab("Gross Monthly Income")
 ```
 
-### Before attending college, did you expect to find or want to find a PAID job or PAID internship during the academic year to help cover your college expenses and personal expenses while in college?
+### Finding Paid Employment or Internship
+
+**Before attending college, did you expect to find or want to find a PAID job or PAID internship during the academic year to help cover your college expenses and personal expenses while in college?**
 
 ```{r}
 plot_frq(bns$FSI7) + xlab("Expected to Find Paid Job")
@@ -210,17 +209,17 @@ plot_frq(bns$FSI7) + xlab("Expected to Find Paid Job")
 
 The majority of students (n = 112 83.0%) reported that they did expect to find a paid job during the academic year to help support their expenses while 17.0% (n = 23) did not.
 
-### If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?
+**If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?**
 
-```{r}
-plot_frq(bns$FSI8) + xlab("Success in Finding Job")
+```{r fig.height=5, fig.width=9}
+plot_frq(bns$FSI8, geom.size = .4) + xlab("Success in Finding Job") 
 ```
 
-34.3% (n = 48) of students reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.
+A little over a third, or 34.3% (n = 48) of students, reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.
 
-## If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
+### If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?
 
-### I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.
+**I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.**
 
 ```{r}
 plot_frq(bns$FSI9_1) + xlab("No Transportation")
@@ -228,15 +227,15 @@ plot_frq(bns$FSI9_1) + xlab("No Transportation")
 
 33.6% (n = 37) of respondents reported that they disagree with the statement that they were not able to work because they had no transportation and 17.3% (n = 19) agreed with the statement.
 
-### I searched and applied for jobs but was not offered a job. 
+**I searched and applied for jobs but was not offered a job.** 
 
 ```{r}
-plot_frq(bns$FSI9_2) + xlab("Not Offered a Job")
+plot_frq(bns$FSI9_2, ylim=c(0,45)) + xlab("Not Offered a Job")
 ```
 
 31.8% (n = 35) of respondents agreed that they searched for a job but was never offered a job and 16.4% (n = 18) reported they disagree with the statement.
 
-### I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.
+**I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.**
 
 ```{r}
 plot_frq(bns$FSI9_3) + xlab("Schedule Conflict")
@@ -244,15 +243,15 @@ plot_frq(bns$FSI9_3) + xlab("Schedule Conflict")
 
 42.7% (n = 47) of respondents agreed that their class or study schedule conflicted with the work hours so were not able to work and 15.4% (n = 17) reported that they disagree with the statement.
 
-### I searched for jobs, but family obligations interfered with any jobs offered to me.
+**I searched for jobs, but family obligations interfered with any jobs offered to me.**
 
 ```{r}
-plot_frq(bns$FSI9_4) + xlab("Family Obligations Interfered")
+plot_frq(bns$FSI9_4, ylim=c(0,50)) + xlab("Family Obligations Interfered")
 ```
 
 36.4% (n = 40) of respondents disagreed that their family obligations interfered with any jobs offered to them and 10.9% (n = 12) agreed with the statement.
 
-### I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.
+**I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.**
 
 ```{r}
 plot_frq(bns$FSI9_5) + xlab("No Time")
@@ -260,7 +259,7 @@ plot_frq(bns$FSI9_5) + xlab("No Time")
 
 25.4% (n = 28) disagreed that they expected to find a job, but never searched for one because their school work did not allow time and 23.6% (n = 26) agreed with the statement. 20.0% (n = 22) neither agreed nor disagreed with the statement.
 
-### I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.
+**I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.**
 
 ```{r}
 plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
@@ -268,13 +267,13 @@ plot_frq(bns$FSI9_6) + xlab("Unexpected Obligations")
 
 33.6% (n = 37) disagreed that they expected to find a job, but due to other unexpected obligations, they did not find a job and 12.7% (n = 14) agreed with the statement. 25.4% (n = 28) neither agreed nor disagreed with the statement.
 
-### I did not expect to or want to find a job while in college.
+**I did not expect to or want to find a job while in college.**
 
 ```{r}
 plot_frq(bns$FSI9_7) + xlab("Did Not Expect a Job")
 ```
 
-### Do you receive Supplemental Security Income (SSI)* in California? `r emo::ji("pencil")`
+**Do you receive Supplemental Security Income (SSI) in California?**
 
 ```{r}
 plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
@@ -282,17 +281,13 @@ plot_frq(bns$FSI10) + xlab("Supplemental Security Income")
 
 The majority of respondents (96.3% n = 131) reported that they do not receive Supplemental Security Income in California and 3.7% (n = 5) reported they do.
 
-### Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)? `r emo::ji("pencil")`
 
-```{r}
-plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
-```
-
-The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another souce and 3.0% (n = 4) reported they do.
 
 # Time Related Expenses `r emo::ji("star")`
 
-### Please estimate the monthly housing/rent/mortgage bill (garbage may or may not be included) that you pay for with your own money.
+### Rent
+
+**Please estimate the monthly housing/rent/mortgage bill (garbage may or may not be included) that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME1, vjust="center", y.offset=5) + xlab("Monthly Housing Bill") + coord_flip()
@@ -300,7 +295,7 @@ plot_frq(bns$ME1, vjust="center", y.offset=5) + xlab("Monthly Housing Bill") + c
 
 43.5% (n = 64) of respondents reported that they pay \$100-\$500 a month in housing/rent with their own money and 35.4% (n = 52) reported that they pay \$500-\$1,000 a month. Only 7.5% (n = 11) reported that they pay \$0 because someone else pays.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME1a, y.offset = 0.1) + xlab("Monthly Housing Bill") + ylim(c(0,5))
@@ -308,7 +303,9 @@ plot_frq(bns$ME1a, y.offset = 0.1) + xlab("Monthly Housing Bill") + ylim(c(0,5))
 
 Out of the respondents who said they have others pay for their monthly rent/housing, 44.4% (n = 4) reported that they pay \$500-\$1000 and 33.3% (n = 3) pay \$1000-\$1500.
 
-### Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.
+### Utilities
+
+**Please estimate the monthly utility (i.e. gas, electric, water, and garbage) bills that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME2) + xlab("Monthly Utility Bill")
@@ -316,7 +313,7 @@ plot_frq(bns$ME2) + xlab("Monthly Utility Bill")
 
 51.0% (n = 74) of respondents reported that they pay \$50-\$99 a month for their utility bill, 20.7% (n = 30) reported that they pay less than \$50 a month, and only 9.7% (n = 14) reported that they pay \$0 because someone else pays.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME2a, y.offset = .3) + xlab("Monthly Utility Bill") + ylim(c(0,8))
@@ -324,7 +321,9 @@ plot_frq(bns$ME2a, y.offset = .3) + xlab("Monthly Utility Bill") + ylim(c(0,8))
 
 Out of people who have someone else pay for their monthly utility bill, 50% (n = 6) reported that they pay \$100+ a month and 33.3% (n = 4) reported they pay \$50-\$99 a month, and 16.7% (n = 2) reported they pay less than \$50 a month.
 
-### Please estimate your monthly internet, cable tv/satellite, and streaming service bills that you pay for with your own money.
+### Other (internet, TV, cell phone, medical, transportation)
+
+**Please estimate your monthly internet, cable tv/satellite, and streaming service bills that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME3) + xlab("Monthly Internet/TV Bill")
@@ -332,24 +331,24 @@ plot_frq(bns$ME3) + xlab("Monthly Internet/TV Bill")
 
 59.0% (n = 85) of respondents reported that they pay less than \$50 a month for their internet/TV bill and 21.5% (n = 31) reported that they pay \$50-\$99 a month. 12.5% (n = 18) reported that they pay \$0 because someone else pays and 4.9% (n = 7) reported they pay \$0 because it is included in their rent.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME3a, y.offset = .3) + xlab("Monthly Internet/TV Bill") + ylim(c(0,8))
 ```
 
-Out of the respondents who reported that someone else payd for their monthly internet/TV bill, 42.9% (n = 6) reported that they pay less than \$50 a month, 28.6% (n = 4) reported they pay \$50-\$99 a month, and 28.6% (n = 4) reported they pay more than \$100 a month.
+Out of the respondents who reported that someone else paid for their monthly internet/TV bill, 42.9% (n = 6) reported that they pay less than \$50 a month, 28.6% (n = 4) reported they pay \$50-\$99 a month, and 28.6% (n = 4) reported they pay more than \$100 a month.
 
-### Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.
+**Please estimate the monthly mobile/cell phone or landline phone bills that you pay for with your own money.**
 
 ```{r}
 bns$ME4[bns$ME4 == "$0- I donâ€™t have a mobile/cellphone or landline phone"] <- "$0-I don’t have a mobile/cellphone or landline phone"
-plot_frq(bns$ME4) + xlab("Monthly Cell Phone Bill")
+plot_frq(bns$ME4, ylim=c(0,70)) + xlab("Monthly Cell Phone Bill")
 ```
 
 26.2% (n = 38) of respondents reported that they pay \$50-\$99 a month for their monthly cell phone bill, 18.6% (n = 27) reported that they pay more than \$100 a month, and 42.8% (n = 62) reported that they pay \$0 because someone else pays for them.
 
-### If someone else pays for you, how much do they pay each month?
+**If someone else pays for you, how much do they pay each month?**
 
 ```{r}
 plot_frq(bns$ME4a) + xlab("Monthly Cell Phone Bill") + ylim(c(0,25))
@@ -357,7 +356,7 @@ plot_frq(bns$ME4a) + xlab("Monthly Cell Phone Bill") + ylim(c(0,25))
 
 Out of the people who reported that they have someone else pay for their monthly cell phone bill, 41.3% (n = 19) reported that they pay more than \$100 a month, 30.4% (n = 14) reported that they pay less than \$50 a month, and 28.3% (n = 13) reported that they pay \$50-\$99 a month.
 
-### Please estimate the monthly medical expenses (including insurance premiums, co-pays, deductibles, medications, etc.) that you pay for with your own money.
+**Please estimate the monthly medical expenses (including insurance premiums, co-pays, deductibles, medications, etc.) that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
@@ -365,13 +364,19 @@ plot_frq(bns$ME5) + xlab("Montly Medical Expenses")
 
 The majority of respondents (76.3% n = 100) reported that they pay \$0 a month in medical expenses because they have no medical expenses, 12.2% (n = 16) reported that they pay \$25-\$100 a month, and 9.9% (n = 13) reported that they pay less than \$25 a month.
 
-### What type of health insurance do you currently have? `r emo::ji("pencil")`
+**What type of health insurance do you currently have?** 
 
 ```{r}
-plot_frq(bns$ME6)
+hi1 <- as.data.frame(table(bns$ME6))
+hi2 <- as.data.frame(prop.table(table(bns$ME6)))
+finalhi <- left_join(hi1, hi2, by = "Var1")
+names(finalhi) <- c("Health Insurance", "n", "%")
+finalhi$`%` <- round(finalhi$`%` * 100, 2)
+finalhi %>% kable() %>% kable_styling()
 ```
 
-### Please estimate the monthly transportation bills that you pay for with your own money
+
+**Please estimate the monthly transportation bills that you pay for with your own money**
 
 ```{r}
 bns$ME7 <- as.character(bns$ME7)
@@ -392,15 +397,17 @@ plot_frq(bns$ME7, vjust = "center", y.offset = 3) + xlab("Monthly Transportation
 
 33.1% (n = 47) of respondents reported that they pay less than \$25 a month on transportation, 22.5% (n = 32) reported that they pay \$100-\$199 a month on transportation, and 9.2% (n = 13) reported that they pay \$0.
 
-### Please estimate your monthly expenses for any other regularly occurring expenses such as credit card payments, gym membership, child care expenses, etc. that you pay for with your own money.
+### Monthly & School Supplies Expenses
+
+**Please estimate your monthly expenses for any other regularly occurring expenses such as credit card payments, gym membership, child care expenses, etc. that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME8, vjust = "center", y.offset = 3) + xlab("Other Monthly Expenses") + coord_flip()
 ```
 
-35.5% of respondents reported that they pay \$0 for other regularly occuring expenses, 15.9% (n = 22) reported that they pay \$100-\$149 a month, and 14.5% (n = 20) reported that they pay \$10-\$49 a month.
+35.5% of respondents reported that they pay \$0 for other regularly occurring expenses, 15.9% (n = 22) reported that they pay \$100-\$149 a month, and 14.5% (n = 20) reported that they pay \$10-\$49 a month.
 
-### Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.
+**Please estimate your semester expenses for school supplies, textbooks, school related printing expenses, etc., that you pay for with your own money.**
 
 ```{r}
 levels(bns$ME9)[levels(bns$ME9) == "$351 to 450 per semester"] <- "$351-$450/term"
@@ -409,11 +416,10 @@ plot_frq(bns$ME9, vjust = "center", y.offset = 2) + coord_flip() + xlab("Semeste
 
 20.8% (n = 30) of respondents reported that they pay \$151-\$250 a semester on expenses such as school supplies, textbooks, and school related printing expenses, 18.1% (n = 26) reported that they pay \$251-\$350 a semester, and 15.3% (n = 22) reported that they pay \$451-\$550 a semester.
 
-### Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.
+### Food, Alcohol, Cigarettes, etc. Expenses
 
-```{r}
-levels(bns$ME10)
-```
+**Please estimate the weekly expenses for food and non-alcoholic beverages that you pay for with your own money.**
+
 
 ```{r}
 levels(bns$ME10)[levels(bns$ME10) == "I donâ€™t have any other food expenses because I have a meal plan."] <- "0"
@@ -427,7 +433,7 @@ plot_frq(bns$ME10, vjust = "center", y.offset = 4) + xlab("Weekly Food Expenses"
 
 40.1% (n = 57) of respondents reported that they pay \$50-\$99 a week for food and non-alcoholic beverages, 27.5% (n = 39) reported that they pay \$10-\$49 a week, and 4.9% (n = 7) reported that they pay \$0.
 
-### Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.
+**Please estimate the weekly expenses for alcoholic beverages that you pay for with your own money. Include all weekly beverage expenses from house parties, bars, liquor stores, etc.**
 
 ```{r}
 plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
@@ -435,11 +441,11 @@ plot_frq(bns$ME11) + xlab("Weekly Expenses for Alcoholic Beverages")
 
 31.5% (n = 45) of respondents reported that they pay less than \$10 a week on alcoholic beverages, 19.6% reported that they pay \$10-\$49 a week, and 42.7% (n = 61) reported that they pay \$0 a week on alcoholic beverages.
 
-### Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.
+**Please estimate the weekly expenses for cigarettes, marijuana and/or similar expenses that you pay for with your own money.**
 
 ```{r}
 plot_frq(bns$ME12) + xlab("Weekly Expenses for Cigarettes/Marijuana")
 ```
 
-84.5% (n = 120) of respondents reported that they pay \$0 a week on cigarettes and tobacco, 5.6% (n = 8) reported they pay less than \$10 a week, and 6.3% (n = 9) reported they pay \$10-\$49 a week.
+Most respondents, or 84.5% (n = 120), reported that they pay \$0 a week on cigarettes and tobacco, 5.6% (n = 8) reported they pay less than \$10 a week, and 6.3% (n = 9) reported they pay \$10-\$49 a week.
 

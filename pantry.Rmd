@@ -1,0 +1,120 @@
+---
+title: "Food Pantry"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    css: styles.css
+---
+
+```{r, include=FALSE}
+source("common_code.R")
+sjPlot::set_theme(base = theme_bw())
+```
+
+# Participation
+
+```{r fig.width=10, fig.height=8}
+plot_frq(bns$SRC2) + xlab("Food Pantry/Bank Utilization")
+```
+
+
+# Impact
+
+**For the following questions, please choose how much you agree or disagree with the impact campus food pantries/food banks has or had on your life.**
+
+**While I utilize/utilized campus food pantry/pantries or local food bank(s):**
+
+```{r, fig.width=8, fig.height=8}
+src2a <- bns %>% select(starts_with("SRC2a_"))
+names(src2a) <- c("Worked Fewer Paid Hours",
+                  "More Time for Unpaid Hours",
+                  "More Money for Bills",
+                  "More Money for Entertainment",
+                  "Shop More at Farmers' Market",
+                  "Learned More about Healthy Foods",
+                  "Purchase More Healthy Foods",
+                  "Cook More at Home",
+                  "Consumed a Healthier Diet",
+                  "Consumed Less Fast Food",
+                  "Consumed Fewer Processed Foods",
+                  "Consumed Fewer Sweetened Beverages",
+                  "Consumed Fewer Alcoholic Beverages")
+plot_likert(src2a, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+**While I utilize/utilized campus food pantry/pantries or local food bank(s):** 
+
+```{r, fig.width=8, fig.height=8}
+src2b <- bns %>% select(starts_with("SRC2b_"))
+names(src2b) <- c("Enrolled in More Classes",
+                  "Concentrated More in Classes",
+                  "Grades have Improved",
+                  "More Time to Study for Exams",
+                  "More Time to Prepare for Class",
+                  "More Time for Homework",
+                  "More Time for Office Hours",
+                  "More Time to Attend All Classes",
+                  "More Time for Field Trips",
+                  "Sleep Quality Improved",
+                  "Stress Level Decreased")
+plot_likert(src2b, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+
+# Barriers
+
+
+
+**Please choose the options that best match your feelings of using Food Pantries or CalFresh**
+
+```{r, fig.width=8}
+src3m <- bns %>% select(starts_with("SRC3_"))
+names(src3m) <- c("Embarrassed to Access Food Pantry",
+                  "Grateful to Access Food Panty",
+                  "Embarrassed by Having CalFresh",
+                  "Grateful for having CalFresh")
+plot_likert(src3m, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+
+**What is/are the reason(s) for you to not go to campus food pantries or local food banks?**
+
+```{r}
+pb <- bns %>% select(PB_Embarrassed,
+                     PB_NotAware,
+                     PB_NoTime,
+                     PB_NoTransportation,
+                     PB_FamilyBarrier,
+                     PB_DontBelieve,
+                     PB_NoLocalLoc,
+                     PB_Other)
+```
+
+```{r}
+names(pb) <- c("Embarrassed",
+               "Not Aware",
+               "No Time",
+               "No Transportation",
+               "Family Barrier",
+               "Don't Believe",
+               "No Local Pantries",
+               "Other")
+```
+
+```{r}
+multi.table(pb) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
+

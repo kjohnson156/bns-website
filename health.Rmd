@@ -1,0 +1,253 @@
+---
+title: "Health"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    css: styles.css
+---
+
+```{r, include=FALSE}
+source("common_code.R")
+```
+
+# Physical Activity
+
+## On how many of the past 7 days did you:
+
+**Do moderate-intensity cardio or aerobic exercise (caused a noticeable increase in heart rate, such as brisk walk) for at least 30 minutes?**
+
+```{r}
+plot_frq(bns$PA1_1) + xlab("# of Days/Week")
+```
+
+One fourth, or 25.0% (n = 37) of respondents, reported that they do not do any days a week of cardio or aerobic exercise for at least 30 minutes, 11.5% (n = 17) reported that they exercise for 1 day, and 18.9% (n = 28) reported that they exercise for 2 days.
+
+**Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?**
+
+```{r}
+plot_frq(bns$PA1_2) + xlab("# of Days/Week") + ylim(c(0,70))
+```
+
+36.5% (n = 54) of respondents reported that they did not do vigorous-intensity cardio for at least 20 minutes per day in the past 7 days, 18.2% (n = 27) reported they did for 1 day, and 20.9% (n = 31) reported they did for 2 days.
+
+**Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?**
+
+```{r}
+plot_frq(bns$PA1_3) + xlab("# of Days") + ylim(c(0,90))
+```
+
+Almost half, or 47.3% (n = 70) of respondents, that they did not do 8-10 strength training exercises per day in the past 7 days, 11.5% (n = 17) reported they did for 1 day, and 16.2% (n = 24) reported they did for 2 days.
+
+# Tobacco Use
+
+**Have you smoked at least 100 tobacco cigarettes in your entire life?** 
+
+```{r}
+plot_frq(bns$TU1) + xlab("100 Cigarettes in Entire Life") + ylim(c(0,180))
+```
+
+Only 7.4% (n = 11) of respondents reported that they have smoked over 100 cigarettes in their entire life and 92.6% (n = 137) reported they have not.
+
+**How frequently do you currently smoke tobacco cigarettes?**
+
+```{r}
+plot_frq(bns$TU2) + xlab("Frequency of Smoking Cigarettes")
+```
+
+Only 3.4% (n = 5) respondents reported that they smoke cigarettes on some days and 96.6% (n = 142) reported that they do not smoke cigarettes.
+
+# Sleep
+
+**On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during the week?**
+
+
+```{r}
+plot_frq(bns$SLPD1_1, type = c("histogram")) + xlab("Average Hours of Sleep During Academic Year")
+```
+
+
+The majority of respondents, or 75.68%, reported getting an average of 5-7 hours of sleep in a typical 24-hour period during the academic year. 
+
+**On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during weekends?**
+
+
+```{r}
+plot_frq(bns$SLPD2_1, type = c("histogram")) + xlab("Average Hours of Sleep During Weekends")
+```
+The majority of respondents, or 79.06%, reported getting an average of 6-10 hours of sleep in a typical 24-hour period during the weekends. 
+
+**On average, how many times per month do you feel deprived of sleep?**
+
+
+```{r}
+plot_frq(bns$SLPD3_1, type = c("histogram")) + xlab("Average Times Felt Deprived of Sleep Per Month")
+```
+
+
+**Select the activities that cause you to feel deprived of sleep**
+
+```{r}
+sleep_act <- bns %>% select(starts_with("SLPD4_")) %>% select(-c("SLPD4_6_TEXT"))
+names(sleep_act) <- c("Studying or finishing coursework",
+                      "Working a paid, or unpaid job or internship",
+                      "Attending social activities or events",
+                      "Spending time with family or friends",
+                      "Watching movies, playing games, social media etc.",
+                      "Other")
+```
+
+```{r}
+multi.table(sleep_act) %>% kable(col.names = c("n", "%")) %>% kable_styling()
+```
+
+The majority of respondents, or 94.7%, reported that the activity of studying or finishing coursework caused them to feel deprived of sleep.
+
+**How frequently do you feel tired while at work or school?**
+
+```{r}
+plot_frq(bns$SLPD5) + xlab("Frequency of Feeling Tired")
+```
+
+Most respondents, or 55.4%, reported occasionally feeling tired while at work or school, while 35% reported always feeling tired at work or school. 
+
+**Have you fallen asleep in class in the past 12 months?**
+
+```{r}
+plot_frq(bns$SLPD6) + xlab("Fallen Asleep in Class")
+```
+
+More than half of respondents, or 57.1%, reported they had not fallen asleep in class in the past 12 months. 
+
+# Eating and Cooking Habits
+
+**For each of the following statements, indicate how strongly agree or disagree about your current eating and cooking habits**
+
+```{r, fig.width=8}
+eh1 <- bns %>% select(starts_with("EH1_"))
+names(eh1) <- c("No Access to a Kitchen",
+                  "Secure Place to Store Food",
+                  "No Room to Store Food",
+                  "Thinking about Food is Stressful",
+                  "Wish I Had more Food to Eat",
+                  "Always Skip Meals",
+                  "Don't Cook or Shop for Food",
+                  "No One Cooks at Home",
+                  "Do Not Think about Habits")
+plot_likert(eh1, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+## How many servings of fruits and vegetables do you usually consume per day? 
+
+```{r}
+plot_frq(bns$EH2) + xlab("Servings of Fruit and Vegetables")
+```
+
+The majority of respondents (n = 101 70.6%) reported that they consume 1-2 servings of fruit and vegetables a day and 16.1% (n = 23) reported that they consume none.
+
+## Drinks (juice, water, alcohol, etc.)
+
+**How many ounces of 100% fruit juices like orange juice, apple juice or grape juice do you consume each day?** 
+
+```{r}
+plot_frq(bns$EH3) + xlab("Ounces of 100% Fruit Juice")
+```
+
+More than half, or 52.4% (n = 76) of respondents, reported that they drink no 100% fruit juice each day and 34.5% (n = 50) reported that they drink between 1 to 8 ounces a day.
+
+**How many ounces of regular soda, cola, or pop, sports drink, or energy drinks do you consume each day?** 
+
+```{r}
+plot_frq(bns$EH4, ylim = c(0,85)) + xlab("Ounces of Soda")
+```
+
+Almost half, or 48.6% (n = 71) of respondents, reported that they don't drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.
+
+**How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?** 
+
+```{r}
+bns$EH5[bns$EH5 == "24-36 ounces"] <- "25-36 ounces"
+bns$EH5_f <- factor(bns$EH5, levels = c("Zero", "1-8 ounces", "9-16 ounces",
+                                        "17-24 ounces", "25-36 ounces",
+                                        "37-48 ounces", "49-56 ounces",
+                                        "57-64 ounces", "65 ounces or more"))
+```
+
+```{r}
+plot_frq(bns$EH5_f,vjust = "center", y.offset = 3) + xlab("Ounces of Unsweetened Drinks") + coord_flip() + ylim(c(0,40))
+```
+
+About 19.0% (n = 27) of respondents reported that they drink 1-8 ounces of water or other unsweetened drinks a day, 7.0% (n = 10) reported they do not drink any ounces of unsweetened drinks a day, and 9.2% (n = 13) reported that they drink more than 65 ounces a day.
+
+**How often do you consume at least one serving of alcohol?** 
+
+```{r}
+plot_frq(bns$EH8) + xlab("Alcohol Consumption")
+```
+
+Half, or 50.0% (n = 73) of respondents, reported that they do not drink alcohol in a week and 43.1% (n = 63) reported they drink at least one serving of alcohol between 1 to 2 days a week.
+
+**Typically, how many servings of alcohol do you consume when you drink alcohol?** 
+
+```{r}
+plot_frq(bns$EH8a, ylim = c(0,45)) + xlab("Servings of Alcohol")
+```
+
+More than half, or 54.7% (n = 35) of respondents, reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.
+
+
+## Dining Out or Meal Replacements
+
+**How frequently do you eat out at family-style or sit-down restaurants/café types of dining establishment per week?** 
+
+```{r}
+plot_frq(bns$EH6) + xlab("# of Time Dining Out")
+```
+
+38.9% (n = 56) of respondents reported that they do not go out to sit-down restaurants in a week and 45.8% (n = 66) reported that they go out between 1 to 2 times in a week.
+
+**How frequently do you eat from fast food restaurants, convenience stores, or vending machines for a meal or meal replacement?** 
+
+```{r}
+plot_frq(bns$EH7) + xlab("# of Time Eating Fast Food")
+```
+
+20.5% (n = 30) of respondents reported that they do not eat fast food, from convenience stores, or vending machines in a week and 47.3% (n = 69) reported that they eat fast food between 1 to 2 times a week.
+
+## The following questions pertain to how comfortable you feel about buying or preparing food
+
+```{r, fig.width=8}
+eh9 <- bns %>% select(starts_with("EH9_"))
+names(eh9) <- c("Use Same Healthy Ingredient in More Than One Meal",
+                "Basic Cooking Skills",
+                "Buy Healthy Foods on a Budget",
+                "Cook Healthy Foods on a Budget")
+plot_likert(eh9, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+
+
+
+
+
+
+
+
+## Campus Meal Plans
+
+**Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?** 
+
+```{r}
+plot_frq(bns$FSI11) + xlab("More than Half Meals from Another Source")
+```
+
+The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another source and 3.0% (n = 4) reported they do.
+

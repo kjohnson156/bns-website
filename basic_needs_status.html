@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Basic Needs Status</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BNSS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Overview</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Demographics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="demo_personal.html">Personal Demographics</a>
+    </li>
+    <li>
+      <a href="demo_student.html">Student Demographics</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="basic_needs_status.html">Basic Needs Status</a>
+</li>
+<li>
+  <a href="workload.html">Workload</a>
+</li>
+<li>
+  <a href="academics.html">Academics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Finances
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="financial_support.html">Financial Support and Income</a>
+    </li>
+    <li>
+      <a href="barriers_employ.html">Barriers to Employment</a>
+    </li>
+    <li>
+      <a href="expenses.html">Expenses</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calfresh.html">CalFresh</a>
+</li>
+<li>
+  <a href="pantry.html">Food Pantry</a>
+</li>
+<li>
+  <a href="health.html">Health</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Basic Needs Status</h1>
+
+</div>
+
+
+<div id="housing" class="section level1">
+<h1>Housing</h1>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Housing Situation
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+I am temporarily living with friends or relatives, without permanent housing (couch surfing)
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live in a sorority or fraternity house
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live in a/the university housing or residence halls
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+4.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live with parents or other relatives, not paying rent with my own money
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+7.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I live with parents or other relatives, paying rent with my own money
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I own my own home
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I rent an apartment or house with roommates
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+71.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I rent an apartment or house without roommates
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+10.67
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usda-food-security-questions" class="section level1">
+<h1>USDA Food Security Questions</h1>
+<ul>
+<li><strong>“In the last 12 months, the food that (I/we) bought just didn’t last, and (I/we) didn’t have money to get more.” Was that often, sometimes, or never true for (you/your household)?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Over half of respondents, or 54.3%, said it is sometimes true that in the last 12 months, the food that was bought didn’t last and they didn’t have money to get more. 21.4% of respondents said that was often true.</p>
+<ul>
+<li><strong>“In the last 12 months, (I/we) couldn’t afford to eat balanced meals.” Was that often, sometimes, or never true for (you/your household)?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Over half of respondents, or 52.1%, said it is sometimes true that in the last 12 months, they couldn’t afford to eat balanced meals. 23.2% of respondents said that was often true.</p>
+<ul>
+<li><strong>In the last 12 months, did you or other adults in your household, ever cut the size of your meals or skip meals because there wasn’t enough money for food?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Over half of respondents, or 58%, reported that they, or the other adults in their household, cut the size of their meals, or skipped meals, because there was not enough money for food.</p>
+<ul>
+<li><em>How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?</em></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Of the respondents that answered yes to cutting the size of their meals, or skipping meals, over half (54.5%) said this happened some months but not every month. 27.3% reported this happened almost every month.</p>
+<ul>
+<li><strong>In the last 12 months, did you ever eat less than you felt you should because there was not enough money for food?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents, or 61.8%, reported eating less then they felt they should over the last 12 months because there was not enough money for food.</p>
+<ul>
+<li><em>How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?</em></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Of those that responded yes that they ate less because there was not enough money for food, about half (50.6%) reported this happened some months but not every month. 24.7% of respondents reported this happened almost every month.</p>
+<ul>
+<li><strong>In the last 12 months, were you ever hungry but you did not eat because there wasn’t enough money for food?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Over half of respondents, or 54.5%, reported that there were times they were hungry but did not eat because there wasn’t enough money for food.</p>
+<ul>
+<li><em>How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?</em></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Of those that responded yes they were hungry but did not eat because lack of money for food, more than half, or 55.3%, reported this happened some months but not every month. 22.4% of respondents reported this happened almost every month.</p>
+<ul>
+<li><strong>In the last 12 months, did you lose weight because there wasn’t enough money for food?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /> Most respondents (67.4%) reported they did not lose weight because there wasn’t enough money for food.</p>
+<ul>
+<li><strong>In the last 12 months, did (you/you or other adults in your household) ever not eat for a whole day because there wasn’t enough money for food?</strong></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Most respondents (74.8%) reported that none of the adults in their household ever went a whole day without eating because there wasn’t enough money for food.</p>
+<ul>
+<li><em>How often did this happen—almost every month, some months but not every month, or in only 1 or 2 months?</em></li>
+</ul>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Out of the 34 respondents that answered yes, either they or their adult household member went a whole day without eating because there wasn’t enough money for food, over half (51.6%) reported this happened some months but not every month. 22.6% reported this happened every month.</p>
+<div id="food-insecure" class="section level2">
+<h2>Food Insecure</h2>
+<p>Food insecurity is defined by meeting 2 or more of the following criteria:</p>
+<p>*Selecting sometimes true or often true for not having enough food or money to last and not being able to afford balanced meals.</p>
+<p>*Selecting yes for any of the 5 prior bulleted, bold questions.</p>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents, or 65.3%, reported that yes, they were food insecure in the last 12 months. 34.7% reported that no, they were not food insecure.</p>
+</div>
+</div>
+<div id="mental-health" class="section level1">
+<h1>Mental Health</h1>
+<p><strong>How many days in the past month have you experienced heightened anxiety, stress, depression and/or problems with emotions?</strong></p>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>By Gender Identity</strong></p>
+<p>All but three respondents selected either Male or Female for their gender identity. Their response distribution is below.</p>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-16-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Two respondents selected <code>Gender Queer or Gender-Nonconforming</code>, one reported <code>15-29</code> days, the other <code>30+</code> days.</li>
+<li>The one respondent who selected <code>Gender Unlisted</code> reported <code>10</code> days.</li>
+</ul>
+<div id="mental-health-services" class="section level2">
+<h2>Mental Health Services</h2>
+<p><strong>Have you received or tried to receive mental health services over the past 12months?</strong></p>
+<p><img src="basic_needs_status_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Over half of the respondents, or 58.9%, answered no when asked if they had received, or tried to receive, mental health services over the past 12 months.</p>
+</div>
+</div>
+
+
+<hr>
+
+<h3>Funding</h3>
+
+<br>
+
+Partially funded by USDA SNAP, known in California as CalFresh, an equal opportunity provider and employer, and the California Department of  Social Services. Any use of these results in further work must use the following citation: 
+
+<br> 
+
+<i>Center for Healthy Communities, "Basic Needs Survey", June 2020. Retrieved on xx-xxx-xxxx from https://chicocalfresh.github.io/bns-website/index.html</i>
+
+<br>
+
+<img src="CHC_Logo.png" alt="CHC Logo" width="300" height="85">
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

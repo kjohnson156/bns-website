@@ -1,0 +1,77 @@
+---
+title: "Student Status"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    css: styles.css
+---
+
+```{r, include=FALSE}
+source("common_code.R")
+```
+
+# Time Management Related to Academics
+
+**For each of the following statements, indicate how strongly you agree or disagree about the time you have available for these academic activities.**
+
+```{r, fig.width=6, fig.height=5}
+tm1 <- bns %>% select(starts_with("TM1_"))
+tm1con <- tm1[,c(1,2)]
+tm1other <- tm1[,c(3:9)]
+names(tm1con) <- c("Confident in Writing Skills",
+                "Confident in Test-Taking Ability")
+names(tm1other) <- c("Enough Time to Study for Exams",
+                "Enough Time to Prepare for Class",
+                "Enough Time to do Homework",
+                "Enough Time for Office Hours",
+                "Enough Time for Tutoring",
+                "Enough Time to Attend All Classes",
+                "Enough Time for Field Trips")
+
+plot_likert(tm1other, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+
+
+
+# Academic Performance
+
+**For each of the following statements, indicate how strongly you agree or disagree about your confidence in academic performance.**
+
+```{r, fig.width=5.5, fig.height=5}
+
+plot_likert(tm1con, 
+            grid.range = c(1.2, 1.2),
+            expand.grid = FALSE,
+            values = "sum.outside",
+            show.prc.sign = TRUE, reverse.scale = TRUE) + theme_bw() + theme(legend.position = "top")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

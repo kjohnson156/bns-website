@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Barriers to Employment</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BNSS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Overview</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Demographics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="demo_personal.html">Personal Demographics</a>
+    </li>
+    <li>
+      <a href="demo_student.html">Student Demographics</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="basic_needs_status.html">Basic Needs Status</a>
+</li>
+<li>
+  <a href="workload.html">Workload</a>
+</li>
+<li>
+  <a href="academics.html">Academics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Finances
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="financial_support.html">Financial Support and Income</a>
+    </li>
+    <li>
+      <a href="barriers_employ.html">Barriers to Employment</a>
+    </li>
+    <li>
+      <a href="expenses.html">Expenses</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calfresh.html">CalFresh</a>
+</li>
+<li>
+  <a href="pantry.html">Food Pantry</a>
+</li>
+<li>
+  <a href="health.html">Health</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Barriers to Employment</h1>
+
+</div>
+
+
+<p><strong>Before attending college, did you expect to find or want to find a PAID job or PAID internship during the academic year to help cover your college expenses and personal expenses while in college?</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of students (n = 112 83.0%) reported that they did expect to find a paid job during the academic year to help support their expenses while 17.0% (n = 23) did not.</p>
+<p><strong>If you expected or wanted to find a paid job or paid internship, were you successful in securing a position that paid enough to cover your expenses?</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-3-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p>A little over a third, or 34.3% (n = 48) of students, reported that they were not able to find a paid position that meets their expenses and 32.1% (n = 45) reported they were sometimes able to find a paid position. 24.3% (n = 34) of students reported that they were able to find a job that almost always has been able to meet their expenses.</p>
+<div id="if-you-have-not-found-paid-jobs-or-internships-that-have-consistently-covered-your-expenses-while-in-college-how-strongly-do-you-agree-or-disagree-with-these-statements" class="section level1">
+<h1>If you have not found paid jobs or internships that have consistently covered your expenses while in college, how strongly do you agree or disagree with these statements?</h1>
+<p><strong>I was offered jobs, but did not have transportation to a job or available jobs were not within walking/bike riding/bus distance of my residence or campus.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>33.6% (n = 37) of respondents reported that they disagree with the statement that they were not able to work because they had no transportation and 17.3% (n = 19) agreed with the statement.</p>
+<p><strong>I searched and applied for jobs but was not offered a job.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>31.8% (n = 35) of respondents agreed that they searched for a job but was never offered a job and 16.4% (n = 18) reported they disagree with the statement.</p>
+<p><strong>I searched for jobs, but my class schedule or study time was not compatible with any jobs that were offered to me.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>42.7% (n = 47) of respondents agreed that their class or study schedule conflicted with the work hours so were not able to work and 15.4% (n = 17) reported that they disagree with the statement.</p>
+<p><strong>I searched for jobs, but family obligations interfered with any jobs offered to me.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>36.4% (n = 40) of respondents disagreed that their family obligations interfered with any jobs offered to them and 10.9% (n = 12) agreed with the statement.</p>
+<p><strong>I expected to find a job, but never searched for a job because my school work (studying) did not allow time for a job.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>25.4% (n = 28) disagreed that they expected to find a job, but never searched for one because their school work did not allow time and 23.6% (n = 26) agreed with the statement. 20.0% (n = 22) neither agreed nor disagreed with the statement.</p>
+<p><strong>I expected to find a job, but never searched for a job, due to other unexpected obligations or conflicts that did not allow time for a job.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>33.6% (n = 37) disagreed that they expected to find a job, but due to other unexpected obligations, they did not find a job and 12.7% (n = 14) agreed with the statement. 25.4% (n = 28) neither agreed nor disagreed with the statement.</p>
+<p><strong>I did not expect to or want to find a job while in college.</strong></p>
+<p><img src="barriers_employ_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+
+
+<hr>
+
+<h3>Funding</h3>
+
+<br>
+
+Partially funded by USDA SNAP, known in California as CalFresh, an equal opportunity provider and employer, and the California Department of  Social Services. Any use of these results in further work must use the following citation: 
+
+<br> 
+
+<i>Center for Healthy Communities, "Basic Needs Survey", June 2020. Retrieved on xx-xxx-xxxx from https://chicocalfresh.github.io/bns-website/index.html</i>
+
+<br>
+
+<img src="CHC_Logo.png" alt="CHC Logo" width="300" height="85">
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

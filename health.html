@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Health</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BNSS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Overview</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Demographics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="demo_personal.html">Personal Demographics</a>
+    </li>
+    <li>
+      <a href="demo_student.html">Student Demographics</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="basic_needs_status.html">Basic Needs Status</a>
+</li>
+<li>
+  <a href="workload.html">Workload</a>
+</li>
+<li>
+  <a href="academics.html">Academics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Finances
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="financial_support.html">Financial Support and Income</a>
+    </li>
+    <li>
+      <a href="barriers_employ.html">Barriers to Employment</a>
+    </li>
+    <li>
+      <a href="expenses.html">Expenses</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calfresh.html">CalFresh</a>
+</li>
+<li>
+  <a href="pantry.html">Food Pantry</a>
+</li>
+<li>
+  <a href="health.html">Health</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Health</h1>
+
+</div>
+
+
+<div id="physical-activity" class="section level1">
+<h1>Physical Activity</h1>
+<div id="on-how-many-of-the-past-7-days-did-you" class="section level2">
+<h2>On how many of the past 7 days did you:</h2>
+<p><strong>Do moderate-intensity cardio or aerobic exercise (caused a noticeable increase in heart rate, such as brisk walk) for at least 30 minutes?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>One fourth, or 25.0% (n = 37) of respondents, reported that they do not do any days a week of cardio or aerobic exercise for at least 30 minutes, 11.5% (n = 17) reported that they exercise for 1 day, and 18.9% (n = 28) reported that they exercise for 2 days.</p>
+<p><strong>Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>36.5% (n = 54) of respondents reported that they did not do vigorous-intensity cardio for at least 20 minutes per day in the past 7 days, 18.2% (n = 27) reported they did for 1 day, and 20.9% (n = 31) reported they did for 2 days.</p>
+<p><strong>Do vigorous-intensity cardio or aerobic exercise (caused large increases in breathing or heart rate, such as jogging) for at least 20 minutes?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Almost half, or 47.3% (n = 70) of respondents, that they did not do 8-10 strength training exercises per day in the past 7 days, 11.5% (n = 17) reported they did for 1 day, and 16.2% (n = 24) reported they did for 2 days.</p>
+</div>
+</div>
+<div id="tobacco-use" class="section level1">
+<h1>Tobacco Use</h1>
+<p><strong>Have you smoked at least 100 tobacco cigarettes in your entire life?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Only 7.4% (n = 11) of respondents reported that they have smoked over 100 cigarettes in their entire life and 92.6% (n = 137) reported they have not.</p>
+<p><strong>How frequently do you currently smoke tobacco cigarettes?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Only 3.4% (n = 5) respondents reported that they smoke cigarettes on some days and 96.6% (n = 142) reported that they do not smoke cigarettes.</p>
+</div>
+<div id="sleep" class="section level1">
+<h1>Sleep</h1>
+<p><strong>On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during the week?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents, or 75.68%, reported getting an average of 5-7 hours of sleep in a typical 24-hour period during the academic year.</p>
+<p><strong>On average, during the academic year, how many hours of sleep do you get in a typical 24-hour period during weekends?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /> The majority of respondents, or 79.06%, reported getting an average of 6-10 hours of sleep in a typical 24-hour period during the weekends.</p>
+<p><strong>On average, how many times per month do you feel deprived of sleep?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Select the activities that cause you to feel deprived of sleep</strong></p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Studying or finishing coursework
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:right;">
+94.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Working a paid, or unpaid job or internship
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+50.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Attending social activities or events
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+46.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spending time with family or friends
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+44.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Watching movies, playing games, social media etc.
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+46.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+9.3
+</td>
+</tr>
+</tbody>
+</table>
+<p>The majority of respondents, or 94.7%, reported that the activity of studying or finishing coursework caused them to feel deprived of sleep.</p>
+<p><strong>How frequently do you feel tired while at work or school?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Most respondents, or 55.4%, reported occasionally feeling tired while at work or school, while 35% reported always feeling tired at work or school.</p>
+<p><strong>Have you fallen asleep in class in the past 12 months?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>More than half of respondents, or 57.1%, reported they had not fallen asleep in class in the past 12 months.</p>
+</div>
+<div id="eating-and-cooking-habits" class="section level1">
+<h1>Eating and Cooking Habits</h1>
+<p><strong>For each of the following statements, indicate how strongly agree or disagree about your current eating and cooking habits</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-14-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div id="how-many-servings-of-fruits-and-vegetables-do-you-usually-consume-per-day" class="section level2">
+<h2>How many servings of fruits and vegetables do you usually consume per day?</h2>
+<p><img src="health_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents (n = 101 70.6%) reported that they consume 1-2 servings of fruit and vegetables a day and 16.1% (n = 23) reported that they consume none.</p>
+</div>
+<div id="drinks-juice-water-alcohol-etc." class="section level2">
+<h2>Drinks (juice, water, alcohol, etc.)</h2>
+<p><strong>How many ounces of 100% fruit juices like orange juice, apple juice or grape juice do you consume each day?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>More than half, or 52.4% (n = 76) of respondents, reported that they drink no 100% fruit juice each day and 34.5% (n = 50) reported that they drink between 1 to 8 ounces a day.</p>
+<p><strong>How many ounces of regular soda, cola, or pop, sports drink, or energy drinks do you consume each day?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Almost half, or 48.6% (n = 71) of respondents, reported that they don’t drink any soda each day and 24.0% (n = 35) reported they drink between 1 to 8 ounces a day.</p>
+<p><strong>How many ounces or cups of water or unsweetened clear drinks, such as tea, do you consume each day?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>About 19.0% (n = 27) of respondents reported that they drink 1-8 ounces of water or other unsweetened drinks a day, 7.0% (n = 10) reported they do not drink any ounces of unsweetened drinks a day, and 9.2% (n = 13) reported that they drink more than 65 ounces a day.</p>
+<p><strong>How often do you consume at least one serving of alcohol?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Half, or 50.0% (n = 73) of respondents, reported that they do not drink alcohol in a week and 43.1% (n = 63) reported they drink at least one serving of alcohol between 1 to 2 days a week.</p>
+<p><strong>Typically, how many servings of alcohol do you consume when you drink alcohol?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-21-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>More than half, or 54.7% (n = 35) of respondents, reported that when they consume alcohol, they consume between 1 to 2 servings and 26.6% (n = 17) reported that when they consume alcohol, they consume between 3 to 4 servings.</p>
+</div>
+<div id="dining-out-or-meal-replacements" class="section level2">
+<h2>Dining Out or Meal Replacements</h2>
+<p><strong>How frequently do you eat out at family-style or sit-down restaurants/café types of dining establishment per week?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>38.9% (n = 56) of respondents reported that they do not go out to sit-down restaurants in a week and 45.8% (n = 66) reported that they go out between 1 to 2 times in a week.</p>
+<p><strong>How frequently do you eat from fast food restaurants, convenience stores, or vending machines for a meal or meal replacement?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-23-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>20.5% (n = 30) of respondents reported that they do not eat fast food, from convenience stores, or vending machines in a week and 47.3% (n = 69) reported that they eat fast food between 1 to 2 times a week.</p>
+</div>
+<div id="the-following-questions-pertain-to-how-comfortable-you-feel-about-buying-or-preparing-food" class="section level2">
+<h2>The following questions pertain to how comfortable you feel about buying or preparing food</h2>
+<p><img src="health_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div id="campus-meal-plans" class="section level2">
+<h2>Campus Meal Plans</h2>
+<p><strong>Does anyone in your household get more than half (11 or more) of their meals per week from another source (e.g. university meal plan)?</strong></p>
+<p><img src="health_files/figure-html/unnamed-chunk-25-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents (97.0% n = 129) reported that they do not have any people in their household that have more than half of their meals from another source and 3.0% (n = 4) reported they do.</p>
+</div>
+</div>
+
+
+<hr>
+
+<h3>Funding</h3>
+
+<br>
+
+Partially funded by USDA SNAP, known in California as CalFresh, an equal opportunity provider and employer, and the California Department of  Social Services. Any use of these results in further work must use the following citation: 
+
+<br> 
+
+<i>Center for Healthy Communities, "Basic Needs Survey", June 2020. Retrieved on xx-xxx-xxxx from https://chicocalfresh.github.io/bns-website/index.html</i>
+
+<br>
+
+<img src="CHC_Logo.png" alt="CHC Logo" width="300" height="85">
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

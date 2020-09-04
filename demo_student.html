@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Student Demographics</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BNSS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Overview</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Demographics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="demo_personal.html">Personal Demographics</a>
+    </li>
+    <li>
+      <a href="demo_student.html">Student Demographics</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="basic_needs_status.html">Basic Needs Status</a>
+</li>
+<li>
+  <a href="workload.html">Workload</a>
+</li>
+<li>
+  <a href="academics.html">Academics</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Finances
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="financial_support.html">Financial Support and Income</a>
+    </li>
+    <li>
+      <a href="barriers_employ.html">Barriers to Employment</a>
+    </li>
+    <li>
+      <a href="expenses.html">Expenses</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calfresh.html">CalFresh</a>
+</li>
+<li>
+  <a href="pantry.html">Food Pantry</a>
+</li>
+<li>
+  <a href="health.html">Health</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Student Demographics</h1>
+
+</div>
+
+
+<div id="major-gpa-units" class="section level1">
+<h1>Major, GPA, &amp; Units</h1>
+<p><strong>What is your major at CSU, Chico?</strong></p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Major
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Frequency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+accounting
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+agriculture crop science
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+animal science
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+anthropology
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+anthropology - pre med
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+art studio
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+biochemistry
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+biology
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business- finance
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business administration
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business administration - finance
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business administration human resource
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business entrepreneurship
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business information systems
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+business management
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cell molecular biology
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+chemistry
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+child development
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+child development and social work
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+civil engineering
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cj
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+communication science and disorder
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+communication science and disorders
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+communication sciences and disorders
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+communication studies
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+computer animation and game development
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+concrete industry management
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+concrete industry management minor in business
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+construction management
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+construction management &amp; concrete industry management
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+criminal justice
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+criminal justice and psychology
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+english education
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+exercise physiology
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+game developtment
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+graphic design
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health education
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health science
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health science admin
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health science administration
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health science with an emphasis in health education
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health science: education
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+health services administration
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+journalism- public relations
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+kinesiology (movement studies)
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lbst/ comm. sciences and disorders
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+liberal studies
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+math education
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mathematics - statistics
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mechanical engineering
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mechatronic engineering
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+microbiology
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+multicultural gender studies
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nutrition and food science
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nutritiona and food science
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+organizational communications
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parks and rec
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parks and recs
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pre-nursing
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pre nursing
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pre recording arts min;afam studies
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psychological sciences
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psychology
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psychology and child development
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psychology and spanish
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psychology/criminal justice
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+public admin
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+public health
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+public relations
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pyschology
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+recording arts and music industry
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+recreational therapy
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+social work
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sociology
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spanish
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studio art
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+undeclared or not decided
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>What is your approximate overall Grade Point Average (GPA) for your current degree in progress?</strong> ⭐</p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>About a third, or 34.0% (n = 51), of participants reported that their GPA is between 2.51 and 3.0, 32.0% (n = 48) reported that their GPA is between 3.01 and 3.5, and 20.0% (n = 30) reported that their GPA is between 2.01 and 2.5. 12.0% (n = 18) reported that their GPA is above 3.5 and lastly 2.0% (n = 3) reported that their GPA is between 1.51 and 2.0.</p>
+<p><strong>Estimate your class level for the 2018-2019 academic school year by units completed (do not include units currently in progress this semester)</strong> ⭐</p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Just under half, or 45.0% (n = 67) of respondents, reported that they are Juniors (60-89 units), 44.3% (n = 66) reported that they are Seniors (90+ units), 7.4% (n = 11) reported that they are Sophomores (30-59 units), 2.7% (n = 4) reported that they are Freshman (0-29 units), and lastly 0.7% (n = 1) reported that they are a Graduate Student year 2+.</p>
+<p><strong>What month and year did you first attend Chico State?</strong></p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Matriculation Date
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Frequency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2012-08-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2013-06-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2013-08-01
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2014-08-01
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2015-05-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2015-06-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2015-08-01
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2016-08-01
+</td>
+<td style="text-align:right;">
+43
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2016-09-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2017-01-01
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2017-08-01
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2018-01-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2018-08-01
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-01-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Out of all the students who took this survey, the student who attended Chico state the earliest started in 08/01/2012 and the two students who attended the latest started in 08/01/2019.</p>
+<p><strong>What month and year do you expect to graduate from Chico State to earn your current degree?</strong></p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Expected Graduation Date
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Frequency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2019-05-31
+</td>
+<td style="text-align:right;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-31
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-12-31
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-05-31
+</td>
+<td style="text-align:right;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-08-31
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-12-31
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2021-05-31
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2022-05-31
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2023-05-31
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Out of all the students who took this survey, the student who expects to graduate the earliest expects to graduate in 05/31/2019 and the student who expects to graduate the latest expects to graduate in 05/31/2023.</p>
+<p><strong>Have you taken a semester off since you began attending Chico State? If so, how many?</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents, or 92.7% (n = 139), reported that they have not taken a semester off since they began attending Chico State, 2.7% (n = 4) reported that they took 1 semester off, 2.0% (n = 3) reported that they took 2 semesters off, 2.0% (n = 3) reported that they took 3 semesters off, and lastly 0.7% (n = 1) reported that they took 4 semesters off.</p>
+</div>
+<div id="student-identifiers" class="section level1">
+<h1>Student Identifiers</h1>
+<p><strong>I identify as a(an)… ⭐</strong></p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Percentage
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Transfer student
+</td>
+<td style="text-align:left;">
+40/150 (26.7%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Former foster youth/child
+</td>
+<td style="text-align:left;">
+7/150 (4.7%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+International student
+</td>
+<td style="text-align:left;">
+0/150 (0%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Non-California resident (Not International)
+</td>
+<td style="text-align:left;">
+4/149 (2.7%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+College prep program*
+</td>
+<td style="text-align:left;">
+68/149 (45.6%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EOP (Educational Opportunity Program) student
+</td>
+<td style="text-align:left;">
+110/148 (74.3%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REACH (Raising Educational Achievement in Collaborative Hubs) student
+</td>
+<td style="text-align:left;">
+17/149 (11.4%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ESL (English as a Second Language) student
+</td>
+<td style="text-align:left;">
+33/145 (22.8%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Veteran of military service
+</td>
+<td style="text-align:left;">
+0/150 (0%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Active duty military personnel
+</td>
+<td style="text-align:left;">
+0/150 (0%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Student Athlete
+</td>
+<td style="text-align:left;">
+2/149 (1.3%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DREAM (i.e. undocumented) student
+</td>
+<td style="text-align:left;">
+8/150 (5.3%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DACA (i.e. Deferred Action for Childhood Arrivals) student
+</td>
+<td style="text-align:left;">
+8/150 (5.3%)
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>I receive services through the Accessibility Resource Center or Disability Support Services Center</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of the students in this survey (87.3% n = 131) report they do not receive services through the Accessibility Resource Center or Disability Support Services Center and 12.7% (n = 19) report they do.</p>
+<p><strong>I am approved, awarded, or accepted for work study (with or without a work study job)</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents, or 88.0% (n = 125), reported that they are approved, awarded, or accepted for work study, and 12.0% (n = 17) are not.</p>
+<p><strong>I participate in CalWORKS (i.e. TANF or cash aid for needy families) or Aid to Families with Dependent Children (AFDC)</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents, or 76.0% (n = 111), report that they do not participate in CalWORKS or Aid to Families with Dependent Children, and 24.0% (n = 35) report they do.</p>
+<p><strong>I participate in the Job Opportunities and Basic Skills (JOBS) Program</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Most respondents, or 95.2% (n = 138), report that they do not participate in the Job Opportunities and Basic Skills program and 4.8% (n = 7) report they do.</p>
+<p><strong>I participate in the CalFresh Employment or Training (CFET) Program</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Of respondents, 83.3% (n = 120) report they do not participate in the CalFresh Employment or Training Program and 16.7% (n = 24) report they do not.</p>
+<p><strong>I am enrolled in Workforce Innovation and Opportunity Act (WIOA)</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>All respondents in this survey (100% n = 147) report that they are not enrolled in Workforce Innovation and Opportunity Act.</p>
+<p><strong>I am enrolled in Cooperative Agencies Resources for Education (CARE)</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-15-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>A very small percentage (3.4% n = 5) of respondents are enrolled in Cooperative Agencies Resources for Education with the majority (96.6% n = 143) are not.</p>
+<p><strong>I am enrolled in the Mathematics, Engineering, Science achievement (MESA) Program</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The majority of respondents (95.3% n = 142) reported that they are not enrolled in the MESA Program while 4.7% (n = 7) report they are.</p>
+<p><strong>I am a student attending CSU, receiving Cal Grant A OR B</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Most respondents, or 87.4% (n = 125), reported that they do receive either Cal Grant A or B while 12.6% (n = 18) reported they do not.</p>
+<p><strong>I am enrolled in a program that increases employability for current and former foster youth (Guardian Scholars, FYSI, CAFYES, ETV or Extended Foster Care)</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>A large proportion (96.6% n = 144) of respondents reported that they are not enrolled in a program that increases employability for current and former foster youth while 3.4% (n = 5) reported that they are.</p>
+<p><strong>I exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-19-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>All respondents (100% n = 147) reported that they do not exert parental control over a dependent household member between the age of 6 and 12 with no adequate childcare.</p>
+<p><strong>I am a single parent of a dependent household member under the age of 12</strong></p>
+<p><img src="demo_student_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Only 1 (0.7%) person reported that they are a single parent of a dependent household member under the age of 12 while the rest (99.3% n = 148) reported they are not.</p>
+</div>
+
+
+<hr>
+
+<h3>Funding</h3>
+
+<br>
+
+Partially funded by USDA SNAP, known in California as CalFresh, an equal opportunity provider and employer, and the California Department of  Social Services. Any use of these results in further work must use the following citation: 
+
+<br> 
+
+<i>Center for Healthy Communities, "Basic Needs Survey", June 2020. Retrieved on xx-xxx-xxxx from https://chicocalfresh.github.io/bns-website/index.html</i>
+
+<br>
+
+<img src="CHC_Logo.png" alt="CHC Logo" width="300" height="85">
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

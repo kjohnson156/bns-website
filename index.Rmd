@@ -1,41 +1,37 @@
 ---
-title: "Basic Needs Survey"
+title: "Exploring patterns of basic needs in college students"
+output: html_document
 ---
-```{r, include=FALSE}
-library(ggplot2)
-library(sjPlot)
-library(kableExtra)
-library(knitr)
-library(dplyr)
-library(tidyverse)
-
-opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, cache=FALSE, fig.height=4, fig.width=6, fig.align = 'center')
-# don't forget when done with sessino to turn CACHE = FALSE and clear knitr cache (last option under the knit button)
-
-# Helper functions to display text answers without blank lines
-display.text <- function(data, var){
-  data %>% filter(!!as.symbol(var)!="") %>% select(!!as.symbol(var)) %>%
-           kable(col.names=NULL) %>% 
-           kable_styling(full_width = FALSE, 
-           bootstrap_options =c("striped", "responsive", "hover", "condensed"))
-}
 
 
-# brandon set global theme option here for plots
-```
+Food insecurity among college students is problem that can impact student performance in the classroom and ultimately effect student success. The [Center for Healthy Communities](https://www.csuchico.edu/chc/) (CHC) developed the **Basic Needs Student Success Survey (BNS3)** and administered it to undergraduate students at [California State University, Chico](https://www.csuchico.edu/) in April 2019. The [Educational Opportunity Program](https://www.csuchico.edu/eop/) (EOP) office assisted in the recruitment and provided computers for students to take the survey. Participants were given a $25 gift card for their participation. Initially, EOP students were identified as the target population for this survey because of their low-income and first-generation status which makes these students more likely eligible to qualify for CalFresh.
 
-The Center for Healthy Communities developed the Basic Needs Survey (BNS), and administered it to undergraduate EOP students at CSU, Chico from April 2, 2019 to May 2, 2019. A total of 150 students participated in the survey.
+The purpose of this cross-sectional pilot study was to create a tool that identifies student perception of the impact of receiving [CalFresh](https://www.csuchico.edu/calfresh/index.shtml) assistance on their health, nutrition, cooking confidence, time management and academic performance. 
 
-This report provides a top level descriptive analysis of each question students responded to in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate further resarch hypotheses and questions.
-  
-Questions marked with a `r emo::ji('star')` are questions of interest for the EOP office.
+This report provides a top level descriptive analysis of each question in the survey. Researchers and campus staff are encouraged to review the information in this analysis to formulate research questions and hypotheses.
+
+
+---
+
+### How to use this site
+
+Each tab represents specific questions from the BNS3. The questions are then grouped by topic area and labeled with a header.
+
+Questions marked with a `r emo::ji('star')` are questions of interest for the CSU, Chico EOP office.
+
+---
+
+### Contact
 
 Questions about the survey or data analysis presented in this report can be directed to:
 
-#### [Stephanie Bianco](https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml)
+* ##### [Stephanie Bianco](https://www.csuchico.edu/chc/about/staff/stephanie-bianco.shtml), CHC Director, PI Email: sbianco@csuchico.edu  
 
-Email: sbianco@csuchico.edu
-
-Phone: 530-898-4022
+* ##### [Robin Donatello](https://norcalbiostat.netlify.app/), Data Manager Email: rdonatello@csuchico.edu
 
 
+---
+
+### Acknowledgements
+
+This website was built and is maintained by Brandon Leff, Undergraduate student in Statistics and Data Science, CSU Chico, Department of Mathematics and Statistics and Kathleen Johnson, MS, Center for Healthy Communities. This pilot study was conducted with the additional support of Chia-Hsuan “Candie” Cho, a graduate student in CSU, Chico’s Department of Nutrition and Food Science, Naomi Stamper, a Program Analyst at CSU, Chico’s Center for Healthy Communities, and Marianne Paiva, faculty in CSU, Chico’s Department of Sociology. 
